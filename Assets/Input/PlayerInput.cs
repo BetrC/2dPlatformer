@@ -53,6 +53,24 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""normalAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""a0a7b34d-e612-4b33-8ec0-d9fab4b8234b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""chargeAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""af0f1710-1f00-4d38-b8d4-9b870e10d619"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -165,6 +183,50 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""action"": ""JumpRelease"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c1fdf191-2743-4740-be85-85026122932e"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""keyboard"",
+                    ""action"": ""normalAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c2774888-f89f-477b-9f64-9847043b77b8"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""gamepad"",
+                    ""action"": ""normalAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""778bdc2a-96a9-46f3-b86e-2177339f26f3"",
+                    ""path"": ""<Keyboard>/o"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""keyboard"",
+                    ""action"": ""chargeAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c710a974-c6b0-4d1c-82f7-9a48afd8ce45"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""gamepad"",
+                    ""action"": ""chargeAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -187,6 +249,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_JumpPress = m_Player.FindAction("JumpPress", throwIfNotFound: true);
         m_Player_JumpRelease = m_Player.FindAction("JumpRelease", throwIfNotFound: true);
+        m_Player_normalAttack = m_Player.FindAction("normalAttack", throwIfNotFound: true);
+        m_Player_chargeAttack = m_Player.FindAction("chargeAttack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -249,6 +313,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_JumpPress;
     private readonly InputAction m_Player_JumpRelease;
+    private readonly InputAction m_Player_normalAttack;
+    private readonly InputAction m_Player_chargeAttack;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
@@ -256,6 +322,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @JumpPress => m_Wrapper.m_Player_JumpPress;
         public InputAction @JumpRelease => m_Wrapper.m_Player_JumpRelease;
+        public InputAction @normalAttack => m_Wrapper.m_Player_normalAttack;
+        public InputAction @chargeAttack => m_Wrapper.m_Player_chargeAttack;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -274,6 +342,12 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @JumpRelease.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJumpRelease;
                 @JumpRelease.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJumpRelease;
                 @JumpRelease.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJumpRelease;
+                @normalAttack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNormalAttack;
+                @normalAttack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNormalAttack;
+                @normalAttack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNormalAttack;
+                @chargeAttack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChargeAttack;
+                @chargeAttack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChargeAttack;
+                @chargeAttack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChargeAttack;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -287,6 +361,12 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @JumpRelease.started += instance.OnJumpRelease;
                 @JumpRelease.performed += instance.OnJumpRelease;
                 @JumpRelease.canceled += instance.OnJumpRelease;
+                @normalAttack.started += instance.OnNormalAttack;
+                @normalAttack.performed += instance.OnNormalAttack;
+                @normalAttack.canceled += instance.OnNormalAttack;
+                @chargeAttack.started += instance.OnChargeAttack;
+                @chargeAttack.performed += instance.OnChargeAttack;
+                @chargeAttack.canceled += instance.OnChargeAttack;
             }
         }
     }
@@ -314,5 +394,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnJumpPress(InputAction.CallbackContext context);
         void OnJumpRelease(InputAction.CallbackContext context);
+        void OnNormalAttack(InputAction.CallbackContext context);
+        void OnChargeAttack(InputAction.CallbackContext context);
     }
 }

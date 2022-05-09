@@ -31,6 +31,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "normalAttack",
+                    "type": "Button",
+                    "id": "a0a7b34d-e612-4b33-8ec0-d9fab4b8234b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "chargeAttack",
+                    "type": "Button",
+                    "id": "af0f1710-1f00-4d38-b8d4-9b870e10d619",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -141,6 +159,50 @@
                     "processors": "",
                     "groups": "gamepad",
                     "action": "JumpRelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c1fdf191-2743-4740-be85-85026122932e",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "keyboard",
+                    "action": "normalAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c2774888-f89f-477b-9f64-9847043b77b8",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "gamepad",
+                    "action": "normalAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "778bdc2a-96a9-46f3-b86e-2177339f26f3",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "keyboard",
+                    "action": "chargeAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c710a974-c6b0-4d1c-82f7-9a48afd8ce45",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "gamepad",
+                    "action": "chargeAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

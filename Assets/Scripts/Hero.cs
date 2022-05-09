@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using static AnimationParamString;
 
 public class Hero : Actor2D
 {
@@ -22,7 +23,7 @@ public class Hero : Actor2D
 
 
     [Header("Actor Status")]
-    public bool jump;
+    public bool jumping;
 
     private PlayerInput playerInput;
 
@@ -42,7 +43,7 @@ public class Hero : Actor2D
 
     void OnGroundTouch()
     {
-
+        jumping = false;
     }
 
     private void Update()
@@ -58,6 +59,8 @@ public class Hero : Actor2D
             jumpTime = jumpThreshold;
         else
             jumpTime -= Time.deltaTime;
+
+        SetAnimation();
     }
 
     private void Walk()
@@ -68,7 +71,7 @@ public class Hero : Actor2D
 
     public void JumpPressed()
     {
-        if (!collisionChecker.onGround)
+        if (!collisionChecker.onGround && jumpTime <= 0)
             return;
         tempV2.Set(rg2D.velocity.x, 0);
         tempV2 += Vector2.up * jumpSpeed;
@@ -83,5 +86,20 @@ public class Hero : Actor2D
             tempV2.Set(rg2D.velocity.x, rg2D.velocity.y / 2);
         }
         rg2D.velocity = tempV2;
+    }
+
+    public void SetAnimation()
+    {
+        // flip
+        float yAngle = 0;
+        if (lastInputHorizontalInput < 0)
+            yAngle = 180;
+        transform.rotation = Quaternion.Euler(0, yAngle, 0);
+
+        if (animator == null)
+            return;
+        animator.SetFloat(FLOAT_HORIZONTAL_INPUT, Mathf.Abs(horizontalInput));
+        animator.SetFloat(FLOAT_SPEEDY, Mathf.Abs(rg2D.velocity.y));
+        animator.SetBool(BOOL_GROUND, collisionChecker.onGround);
     }
 }
