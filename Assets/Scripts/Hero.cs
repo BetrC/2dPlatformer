@@ -26,6 +26,7 @@ public class Hero : Actor2D
     public bool jumping;
 
     private PlayerInput playerInput;
+    public bool pressAttack;
 
     protected override void Awake()
     {
@@ -60,17 +61,29 @@ public class Hero : Actor2D
         else
             jumpTime -= Time.deltaTime;
 
+        // normal attack
+        if (playerInput.Player.normalAttack.triggered && !pressAttack)
+        {
+            pressAttack = true;
+        }
+
         SetAnimation();
     }
 
     private void Walk()
     {
+        if (pressAttack)
+            return;
+
         tempV2.Set(horizontalInput.Normalize() * runSpeed, rg2D.velocity.y);
         rg2D.velocity = tempV2;
     }
 
     public void JumpPressed()
     {
+        if (pressAttack)
+            return;
+
         if (!collisionChecker.onGround && jumpTime <= 0)
             return;
         tempV2.Set(rg2D.velocity.x, 0);
