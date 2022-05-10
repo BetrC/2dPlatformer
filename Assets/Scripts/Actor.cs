@@ -13,4 +13,6 @@ public class Actor : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
+
+    protected virtual void OnAnimationEvent(string content) { }
 }
