@@ -90,6 +90,7 @@ public class Hero : Actor2D
         tempV2 += Vector2.up * jumpSpeed;
         rg2D.velocity = tempV2;
         jumpTime = 0f;
+        jumping = true;
     }
 
     public void JumpReleased()
