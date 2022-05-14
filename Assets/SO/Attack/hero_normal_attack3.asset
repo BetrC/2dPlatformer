@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba6cac4ecd07e3a41b54289c7eddc4ad, type: 3}
-  m_Name: hero_normal_attack1
+  m_Name: hero_normal_attack3
   m_EditorClassIdentifier: 
   skName: 
-  hitPointOffset: {x: 0.76, y: 0.3}
-  attackRange: 0.7
-  attackDamage: 2
-  linkTime: 5
-  attackAnimation: {fileID: 7400000, guid: db5fa6080231d4c5b9e19a3266fb672e, type: 2}
+  hitPointOffset: {x: 0.78, y: 0.37}
+  attackRange: 0.81
+  attackDamage: 3
+  linkTime: 2
+  attackAnimation: {fileID: 7400000, guid: 31a891b534a28461ab182152bfe34161, type: 2}
   hitLayerMask:
     serializedVersion: 2
     m_Bits: 256

@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Attack/AttackConf")]
 public class AttackConf : ScriptableObject
 {
+    [Header("招式名称")]
+    public string skName = "";
 
     [Header("打击点位移")]
     [Tooltip("相对角色坐标的位移")]
@@ -22,6 +24,20 @@ public class AttackConf : ScriptableObject
     [Header("攻击动画")]
     public AnimationClip attackAnimation;
 
+    [Header("攻击层 默认Enemy")]
+    public LayerMask hitLayerMask;
+
+    [Header("Debug 显示范围")]
+    public Color debugRangeColor = Color.cyan;
+
     public string AnimStateName => attackAnimation.name;
 
+
+    private void Awake()
+    {
+        if (hitLayerMask == LayerMask.NameToLayer("None"))
+            hitLayerMask = LayerMask.NameToLayer("Enemy");
+        if (skName == "")
+            skName = name;
+    }
 }

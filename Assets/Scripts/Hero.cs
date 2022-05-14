@@ -10,8 +10,13 @@ public class Hero : Actor2D
     //public float dashSpeed = 40f;
 
     [Header("Threshold")]
-    public float jumpThreshold = .1f;
+    public float jumpThreshold = .15f;
+    public float fallJumpThreshould = .1f;
+
     private float jumpTime = 0f;
+    private float fallJumpTime = 0f;
+
+    
 
     private Rigidbody2D rg2D;
     private CollisionChecker collisionChecker;
@@ -28,11 +33,14 @@ public class Hero : Actor2D
     private PlayerInput playerInput;
     public bool pressAttack;
 
+    private NormalAttack normalAttack;
+
     protected override void Awake()
     {
         base.Awake();
         rg2D = GetComponent<Rigidbody2D>();
         collisionChecker = GetComponent<CollisionChecker>();
+        normalAttack = GetComponent<NormalAttack>();
         collisionChecker.OnGroundTouch -= OnGroundTouch;
         collisionChecker.OnGroundTouch += OnGroundTouch;
 
@@ -45,6 +53,10 @@ public class Hero : Actor2D
     void OnGroundTouch()
     {
         jumping = false;
+        if (fallJumpTime > 0f)
+        {
+            JumpPressed();
+        }
     }
 
     private void Update()
@@ -57,14 +69,19 @@ public class Hero : Actor2D
 
         // jumpthreshold
         if (collisionChecker.onGround)
+        {
             jumpTime = jumpThreshold;
-        else
+            fallJumpTime = 0f;
+        }else
+        {
             jumpTime -= Time.deltaTime;
+            fallJumpTime -= Time.deltaTime;
+        }
 
         // normal attack
-        if (playerInput.Player.normalAttack.triggered && !pressAttack)
+        if (playerInput.Player.normalAttack.triggered)
         {
-            pressAttack = true;
+            normalAttack.TriggerAttack();
         }
 
         SetAnimation();
@@ -72,20 +89,21 @@ public class Hero : Actor2D
 
     private void Walk()
     {
-        if (pressAttack)
-            return;
-
+        float speed = runSpeed;
+        if (normalAttack.IsPlayingAttackAnim)
+            speed = 0.1f;
         tempV2.Set(horizontalInput.Normalize() * runSpeed, rg2D.velocity.y);
         rg2D.velocity = tempV2;
     }
 
     public void JumpPressed()
     {
-        if (pressAttack)
-            return;
-
         if (!collisionChecker.onGround && jumpTime <= 0)
+        {
+            fallJumpTime = fallJumpThreshould;
             return;
+        }
+
         tempV2.Set(rg2D.velocity.x, 0);
         tempV2 += Vector2.up * jumpSpeed;
         rg2D.velocity = tempV2;
@@ -115,5 +133,6 @@ public class Hero : Actor2D
         animator.SetFloat(FLOAT_HORIZONTAL_INPUT, Mathf.Abs(horizontalInput));
         animator.SetFloat(FLOAT_SPEEDY, Mathf.Abs(rg2D.velocity.y));
         animator.SetBool(BOOL_GROUND, collisionChecker.onGround);
+        animator.SetBool("IsCastingSkill", normalAttack.IsPlayingAttackAnim);
     }
 }
