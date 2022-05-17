@@ -16,7 +16,7 @@ MonoBehaviour:
   hitPointOffset: {x: 0.78, y: 0.37}
   attackRange: 0.81
   attackDamage: 3
-  linkTime: 2
+  linkTime: 1
   attackAnimation: {fileID: 7400000, guid: 31a891b534a28461ab182152bfe34161, type: 2}
   hitLayerMask:
     serializedVersion: 2

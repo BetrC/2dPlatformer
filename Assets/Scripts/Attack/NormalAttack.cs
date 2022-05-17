@@ -24,10 +24,10 @@ public class NormalAttack : MonoBehaviour
             return;
 
         AttackConf conf = confList[lastCastConfIndex];
-        long curTimestamp = MiscUtility.GetNowUnixTimeSeconds();
+        long curTimestamp = MiscUtility.GetNowUnixTimeMilliSeconds();
         int nextCastConfIndex = (lastCastConfIndex + 1) % confList.Count;
 
-        if (curTimestamp > lastTimestamp + conf.linkTime)
+        if (curTimestamp > lastTimestamp + (long)(conf.linkTime * 1000))
             nextCastConfIndex = 0;
         conf = confList[nextCastConfIndex];
 
@@ -36,6 +36,7 @@ public class NormalAttack : MonoBehaviour
         // record last cast attack
         lastTimestamp = curTimestamp;
         lastCastConfIndex = nextCastConfIndex;
+
     }
 
     
@@ -61,7 +62,7 @@ public class NormalAttack : MonoBehaviour
     /// 当前状态是否可释放攻击
     /// </summary>
     /// <returns></returns>
-    private bool CanCast()
+    public bool CanCast()
     {
         if (confList.Count == 0)
             return false;

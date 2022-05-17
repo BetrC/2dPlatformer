@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using static AnimationParamString;
 
 public class Hero : Actor2D
@@ -7,7 +8,9 @@ public class Hero : Actor2D
     [Header("Speed")]
     public float runSpeed = 5f;
     public float jumpSpeed = 25f;
-    //public float dashSpeed = 40f;
+    public float attackShiftSpeed = 1f;
+    public float dashSpeed = 40f;
+    public float dashTime = .4f;
 
     [Header("Threshold")]
     public float jumpThreshold = .15f;
@@ -25,15 +28,16 @@ public class Hero : Actor2D
     private float horizontalInput;
     private float lastInputHorizontalInput;
 
-
+    private bool lockMove = false;
+    private bool isDashing = false;
 
     [Header("Actor Status")]
     public bool jumping;
 
     private PlayerInput playerInput;
-    public bool pressAttack;
-
     private NormalAttack normalAttack;
+
+    public DashTrail dashTrail;
 
     protected override void Awake()
     {
@@ -62,10 +66,6 @@ public class Hero : Actor2D
     private void Update()
     {
         horizontalInput = playerInput.Player.Movement.ReadValue<float>();
-        Walk();
-
-        if (horizontalInput != 0)
-            lastInputHorizontalInput = horizontalInput;
 
         // jumpthreshold
         if (collisionChecker.onGround)
@@ -79,20 +79,68 @@ public class Hero : Actor2D
         }
 
         // normal attack
-        if (playerInput.Player.normalAttack.triggered)
+        if (playerInput.Player.normalAttack.triggered && !isDashing)
         {
             normalAttack.TriggerAttack();
         }
 
+        // dash
+        if (playerInput.Player.Dash.triggered)
+        {
+            Dash();
+        }
+
+        CheckLockMove();
+
+        if (horizontalInput != 0 && !lockMove)
+            lastInputHorizontalInput = horizontalInput;
+
+        Walk();
+
         SetAnimation();
+    }
+
+    private void CheckLockMove()
+    {
+        lockMove = !normalAttack.CanCast() || isDashing;
+    }
+
+    private void Dash()
+    {
+        if (lockMove)
+            return;
+        isDashing = true;
+        dashTrail.ShowTrail(this);
+    }
+
+    public void DashEnd()
+    {
+        isDashing = false;
     }
 
     private void Walk()
     {
-        float speed = runSpeed;
-        if (normalAttack.IsPlayingAttackAnim)
-            speed = 0.1f;
-        tempV2.Set(horizontalInput.Normalize() * runSpeed, rg2D.velocity.y);
+        if (lockMove)
+        {
+            if (normalAttack.IsPlayingAttackAnim)
+            {
+                // attack shift
+                tempV2.Set(Mathf.Sign(lastInputHorizontalInput) * attackShiftSpeed, rg2D.velocity.y);
+            }else if (isDashing)
+            {
+                tempV2.Set(Mathf.Sign(lastInputHorizontalInput) * dashSpeed, rg2D.velocity.y);
+            } else
+            {
+                // lock move
+                tempV2.Set(0f, rg2D.velocity.y);
+            }
+        }
+        else
+        {
+            // normal walk
+            tempV2.Set(horizontalInput.Normalize() * runSpeed, rg2D.velocity.y);
+        }
+
         rg2D.velocity = tempV2;
     }
 
@@ -134,5 +182,6 @@ public class Hero : Actor2D
         animator.SetFloat(FLOAT_SPEEDY, Mathf.Abs(rg2D.velocity.y));
         animator.SetBool(BOOL_GROUND, collisionChecker.onGround);
         animator.SetBool("IsCastingSkill", normalAttack.IsPlayingAttackAnim);
+        animator.SetBool("isDashing", isDashing);
     }
 }
