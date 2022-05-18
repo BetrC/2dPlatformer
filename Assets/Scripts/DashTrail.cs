@@ -9,7 +9,7 @@ public class DashTrail : MonoBehaviour
     public Color fadeColor;
     public float fadeTime = .5f;
 
-    public void ShowTrail(Actor2D actor)
+    public void ShowTrail(DamageableActor actor)
     {
         var actorSprite = actor.GetComponent<SpriteRenderer>();
         Sequence sequence = DOTween.Sequence();

@@ -7,10 +7,12 @@ public class NormalAttack : MonoBehaviour
     public List<AttackConf> confList;
 
     private Animator animator;
+    private Transform casterTrans;
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInParent<Animator>();
+        casterTrans = transform.parent;
         lastCastConfIndex = confList.Count - 1;
     }
 
@@ -72,28 +74,19 @@ public class NormalAttack : MonoBehaviour
         return true;
     }
 
-    public void CastAttack(AttackConf attackConf)
+    private Vector3 GetHitPoint(AttackConf conf)
     {
-        //AttackConf conf = attackConf as AttackConf;
-        if (attackConf == null)
-        {
-            LogUtility.LogWarning($"Skill Name [{attackConf.skName} conf not exist!]");
-            return;
-        }
-
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + (Vector3)attackConf.hitPointOffset, attackConf.attackRange, attackConf.hitLayerMask);
-        foreach (Collider2D collider in colliders)
-        {
-            collider.GetComponent<Health>().TakeDamage(attackConf.attackDamage);
-        }
+        return casterTrans.position + ((Vector3)conf.hitPointOffset).Multiple(casterTrans.right);
     }
 
     private void OnDrawGizmos()
     {
+        if (casterTrans == null)
+            casterTrans = transform.parent;
         foreach(AttackConf attackConf in confList)
         {
             Gizmos.color = attackConf.debugRangeColor;
-            Gizmos.DrawWireSphere(transform.position + (Vector3)attackConf.hitPointOffset, attackConf.attackRange);
+            Gizmos.DrawWireSphere(GetHitPoint(attackConf), attackConf.attackRange);
         }
     }
 }

@@ -39,4 +39,5 @@ public class SimpleEnemyEditor : Editor
     {
         enemy = (SimpleEnemy)target;
     }
+
 }

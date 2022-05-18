@@ -2,7 +2,7 @@
 using UnityEngine;
 using static AnimationParamString;
 
-public class Hero : Actor2D
+public class Hero : DamageableActor
 {
 
     [Header("Speed")]
@@ -43,8 +43,8 @@ public class Hero : Actor2D
     {
         base.Awake();
         rg2D = GetComponent<Rigidbody2D>();
-        collisionChecker = GetComponent<CollisionChecker>();
-        normalAttack = GetComponent<NormalAttack>();
+        collisionChecker = gameObject.GetComponentInHierarchy<CollisionChecker>();
+        normalAttack = gameObject.GetComponentInHierarchy<NormalAttack>();
         collisionChecker.OnGroundTouch -= OnGroundTouch;
         collisionChecker.OnGroundTouch += OnGroundTouch;
 
@@ -179,9 +179,8 @@ public class Hero : Actor2D
         if (animator == null)
             return;
         animator.SetFloat(FLOAT_HORIZONTAL_INPUT, Mathf.Abs(horizontalInput));
-        animator.SetFloat(FLOAT_SPEEDY, Mathf.Abs(rg2D.velocity.y));
         animator.SetBool(BOOL_GROUND, collisionChecker.onGround);
-        animator.SetBool("IsCastingSkill", normalAttack.IsPlayingAttackAnim);
-        animator.SetBool("isDashing", isDashing);
+        animator.SetBool(BOOL_IS_CASTING_SKILL, normalAttack.IsPlayingAttackAnim);
+        animator.SetBool(BOOL_IS_DASHING, isDashing);
     }
 }

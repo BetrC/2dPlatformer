@@ -20,7 +20,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: hero_chain_attack_1
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4322236275021729448}
@@ -133,7 +133,7 @@ AnimatorStateTransition:
     m_ConditionEvent: onGround
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: IsCastingSkill
+    m_ConditionEvent: isCastingSkill
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: isDashing
@@ -160,7 +160,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: hero_chain_attack_2
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2166695588376808396}
@@ -219,7 +219,7 @@ AnimatorStateTransition:
     m_ConditionEvent: isDashing
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: IsCastingSkill
+    m_ConditionEvent: isCastingSkill
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 873508778475685161}
@@ -243,7 +243,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: hero_chain_attack_3
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -3572932298034860672}
@@ -274,7 +274,7 @@ AnimatorStateTransition:
     m_ConditionEvent: onGround
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: IsCastingSkill
+    m_ConditionEvent: isCastingSkill
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: isDashing
@@ -349,7 +349,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: IsCastingSkill
+  - m_Name: isCastingSkill
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0

@@ -14,14 +14,14 @@ public class AnimationEventHandler : MonoBehaviour
 
     private void CastAttack(AttackConf attackConf)
     {
-        //AttackConf conf = attackConf as AttackConf;
         if (attackConf == null)
         {
             LogUtility.LogWarning($"Skill Name [{attackConf.skName} conf not exist!]");
             return;
         }
 
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position + (Vector3)attackConf.hitPointOffset, attackConf.attackRange, attackConf.hitLayerMask);
+        Vector3 hitPoint = transform.position + ((Vector3)attackConf.hitPointOffset).Multiple(transform.right);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(hitPoint, attackConf.attackRange, attackConf.hitLayerMask);
         foreach (Collider2D collider in colliders)
         {
             collider.GetComponent<Health>().TakeDamage(attackConf.attackDamage);
