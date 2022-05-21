@@ -10,6 +10,7 @@ public class CollisionChecker : MonoBehaviour
 {
     [Header("检测结果")]
     public bool onGround;
+
     public bool onLeftWall;
     public bool onRightWall;
 

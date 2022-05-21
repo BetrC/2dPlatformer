@@ -15,6 +15,16 @@ public class SimpleEnemy : DamageableActor
     private Vector3 leftPoint;
     private Vector3 rightPoint;
 
+
+    // hit
+    [Header("hit player")]
+    public LayerMask whatIsPlayer;
+    public float hitCD = .1f;
+    public Vector2 hitDir = Vector2.one;
+    public float hitForce = 2f;
+
+    private float lastHitTime;
+
     protected override void Awake()
     {
         base.Awake();
@@ -30,5 +40,10 @@ public class SimpleEnemy : DamageableActor
     private void OnDisable()
     {
         transform.DOKill();
+    }
+
+    void HitCheck()
+    {
+        
     }
 }

@@ -17,9 +17,6 @@ public static class AnimationParamString
     // Y方向速度
     public static readonly string FLOAT_SPEEDY = "speedY";
 
-    // 是否在移动
-    public static readonly string BOOL_MOVING = "moving";
-
     // 地面检测，是否在地面上
     public static readonly string BOOL_GROUND = "onGround";
 
@@ -29,10 +26,23 @@ public static class AnimationParamString
 
     public static readonly string BOOL_IS_CASTING_SKILL = "isCastingSkill";
 
-    public static readonly string BOOL_IS_DASHING = "isDashing";
-
     public static readonly string TRIGGER_HIT = "hit";
 
     public static readonly string TRIGGER_DIE = "die";
+
+    public static readonly string BOOL_IDLE = "idle";
+
+    public static readonly string BOOL_RUN = "run";
+
+    public static readonly string BOOL_JUMP = "jump";
+
+    public static readonly string BOOL_DASH = "dash";
+
+    public static readonly string BOOL_ATTACK = "attack";
+
+    public static readonly string BOOL_INAIR = "inAir";
+
+
+
 
 }

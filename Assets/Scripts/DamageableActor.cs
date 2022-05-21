@@ -15,7 +15,7 @@ public class DamageableActor : Actor
     {
         base.Awake();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        health = gameObject.GetComponentInHierarchy<Health>();
+        health = gameObject.GetComponentInChildren<Health>();
 
         health.onHealthUpdated -= OnHealthUpdated;
         health.onHealthUpdated += OnHealthUpdated;
@@ -24,12 +24,12 @@ public class DamageableActor : Actor
         health.onDie += OnDie;
     }
 
-    private void OnDie()
+    protected virtual void OnDie()
     {
         animator.SetTrigger("die");
     }
 
-    private void OnHealthUpdated(float curHealth, float deltaChange)
+    protected virtual void OnHealthUpdated(float curHealth, float deltaChange)
     {
         if (deltaChange < 0)
         {

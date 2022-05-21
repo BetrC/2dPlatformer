@@ -28,7 +28,7 @@ public class Health : MonoBehaviour
     public void TakeDamage(float value)
     {
         HealthValue -= value;
-        //LogUtility.Log($"Object: {gameObject.name}, take {value} damage, Health now is {HealthValue}");
+        LogUtility.Log($"Object: {gameObject.name}, take {value} damage, Health now is {HealthValue}");
         CheckDie();
     }
 
@@ -36,9 +36,9 @@ public class Health : MonoBehaviour
     {
         if (HealthValue <= 0)
         {
-            //LogUtility.Log($"Object {gameObject.name} Die, Destroy Object");
+            LogUtility.Log($"Object {gameObject.name} Die, Destroy Object");
             onDie?.Invoke();
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 

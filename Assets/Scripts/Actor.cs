@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class Actor : MonoBehaviour
 {
-    protected Animator animator;
+    public Animator animator;
 
     protected virtual void Awake()
     {
