@@ -23,6 +23,7 @@ public class Hero : DamageableActor
     public HeroRunState RunState;
     public HeroInAirState InAirState;
     public HeroJumpState JumpState;
+    public HeroDashState DashState;
 
     #endregion
 
@@ -36,6 +37,11 @@ public class Hero : DamageableActor
         Assert.IsNotNull(heroData, "heroData is Null, please check your setting");
     }
 
+    private void Start()
+    {
+        movement.SetGravityScale(heroData.defaultGravityScale);
+    }
+
     private void InitStateMachine()
     {
         stateMachine = new StateMachine();
@@ -43,6 +49,7 @@ public class Hero : DamageableActor
         RunState = new HeroRunState(stateMachine, this, BOOL_RUN);
         InAirState = new HeroInAirState(stateMachine, this, BOOL_INAIR);
         JumpState = new HeroJumpState(stateMachine, this, BOOL_INAIR);
+        DashState = new HeroDashState(stateMachine, this, BOOL_DASH);
         stateMachine.Init(IdleState);
     }
 

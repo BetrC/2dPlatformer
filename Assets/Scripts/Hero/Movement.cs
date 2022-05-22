@@ -10,6 +10,9 @@ public class Movement : MonoBehaviour
     [HideInInspector]
     public Rigidbody2D RB;
 
+    [HideInInspector]
+    public BetterJump betterJump;
+
     public int FacingDirection { get; private set; }
 
     public bool CanSetVelocity { get; set; }
@@ -21,11 +24,10 @@ public class Movement : MonoBehaviour
     /// </summary>
     private Vector2 substitute;
 
-
-
     private void Awake()
     {
         RB = GetComponentInParent<Rigidbody2D>();
+        betterJump = GetComponentInParent<BetterJump>();
         FacingDirection = 1;
         CanSetVelocity = true;
     }
@@ -69,6 +71,7 @@ public class Movement : MonoBehaviour
             return;
 
         RB.velocity = substitute;
+        CurrentVelocity = RB.velocity;
     }
 
 
@@ -84,5 +87,16 @@ public class Movement : MonoBehaviour
     {
         FacingDirection *= -1;
         RB.transform.Rotate(0f, 180f, 0f);
+    }
+
+    public void SetBetterJumpEnable(bool enabled)
+    {
+        if (betterJump != null)
+            betterJump.enabled = enabled;
+    }
+
+    public void SetGravityScale(float gravityScale)
+    {
+        RB.gravityScale = gravityScale;
     }
 }

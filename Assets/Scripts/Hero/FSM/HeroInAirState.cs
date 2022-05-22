@@ -34,13 +34,25 @@ public class HeroInAirState : HeroState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
+
         if (coyoteTime > 0)
         {
             coyoteTime -= Time.deltaTime;
         }
+        if (jumpFallTime > 0)
+        {
+            jumpFallTime -= Time.deltaTime;
+        }
 
         xInput = InputManger.Instance.xInput;
         xNormalInput = InputManger.Instance.XNormalInput;
+
+        // 小跳
+        if (InputManger.Instance.JumpReleased && hero.movement.CurrentVelocity.y > 0)
+        {
+            //CLog.Log($"小跳 : {hero.movement.CurrentVelocity.y}");
+            hero.movement.SetVelocityY(hero.movement.CurrentVelocity.y / 2);
+        }
 
         if (onGround && hero.movement.CurrentVelocity.y < 0.1f)
         {
@@ -49,19 +61,18 @@ public class HeroInAirState : HeroState
         else if (coyoteTime >= 0 && hero.JumpState.IsTriggerJump())
         {
             stateMachine.ChangeState(hero.JumpState);
-        } else if (InputManger.Instance.JumpPressed)
+        }
+        else if (InputManger.Instance.JumpPressed)
         {
             jumpFallTime = heroData.jumpFallThreshould;
+        }
+        else if (hero.DashState.IsTriggerDash())
+        {
+            stateMachine.ChangeState(hero.DashState);
         }
 
         if (isExitingState)
             return;
-
-        // 小跳
-        if (InputManger.Instance.JumpReleased && hero.movement.CurrentVelocity.y > 0)
-        {
-            hero.movement.SetVelocityY(hero.movement.CurrentVelocity.y / 2);
-        }
 
         hero.movement.CheckFlip(xNormalInput);
         hero.movement.SetVelocityX(xNormalInput * heroData.runSpeed);

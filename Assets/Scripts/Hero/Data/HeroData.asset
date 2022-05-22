@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runSpeed: 5
   jumpSpeed: 25
-  jumpThreshold: 0.15
-  fallJumpThreshould: 0.1
-  dashSpeed: 40
-  dashTime: 0.4
-  runParticle: {fileID: 0}
-  jumpParticle: {fileID: 0}
+  coyoteTime: 0.15
+  jumpFallThreshould: 0.1
+  canJumpTime: 1
+  dashSpeed: 30
+  canDashTime: 1
+  defaultGravityScale: 3
+  dashGravityScale: 0
+  runParticle: {fileID: 8990449128265145329, guid: d8c86508f2c2ecb4d8199f71d931457d, type: 3}
+  jumpParticle: {fileID: 2813437094291996281, guid: 7524a634c6229ae4782d5ed85b2de750, type: 3}

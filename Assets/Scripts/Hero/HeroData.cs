@@ -22,9 +22,19 @@ public class HeroData : ScriptableObject
     public int canJumpTime = 1;
 
     [Header("Dash")]
-    public float dashSpeed = 40f;
+    public float dashSpeed = 30f;
 
-    public float dashTime = .4f;
+    public int canDashTime = 1;
+
+    [Header("Gravity")]
+    /// <summary>
+    /// 默认重力
+    /// </summary>
+    public float defaultGravityScale = 3f;
+    /// <summary>
+    /// dash时的重力
+    /// </summary>
+    public float dashGravityScale = 0f;
 
     [Header("Particle")]
     public ParticleSystem runParticle;

@@ -8,7 +8,7 @@ public enum ELogMsgType
     Error,
 }
 
-public static class LogUtility
+public static class CLog
 {
     private const int defaultTextSize = 12;
 

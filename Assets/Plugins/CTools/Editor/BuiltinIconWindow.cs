@@ -44,7 +44,7 @@ public class BuiltinIconWindow : EditorWindow
                 {
                     if (GUILayout.Button(EditorGUIUtility.IconContent(m_Icons[index]), GUILayout.Width(width), GUILayout.Height(30)))
                     {
-                        LogUtility.Log($"Texture Name : {m_Icons[index]} copyed to clipboard");
+                        CLog.Log($"Texture Name : {m_Icons[index]} copyed to clipboard");
                         UnityEngine.GUIUtility.systemCopyBuffer = m_Icons[index];
                     }
                 }

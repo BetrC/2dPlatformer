@@ -16,6 +16,8 @@ public class HeroOnGroundState : HeroState
     {
         base.Enter();
         hero.JumpState.ResetJumpCount();
+        hero.DashState.ResetDashTime();
+
     }
 
     public override void Exit()
@@ -39,6 +41,10 @@ public class HeroOnGroundState : HeroState
         {
             hero.InAirState.ResetGroundTouchTime();
             stateMachine.ChangeState(hero.JumpState);
+        }
+        else if (hero.DashState.IsTriggerDash())
+        {
+            stateMachine.ChangeState(hero.DashState);
         }
         else if(!onGround)
         {

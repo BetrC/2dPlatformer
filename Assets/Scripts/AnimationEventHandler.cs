@@ -16,7 +16,7 @@ public class AnimationEventHandler : MonoBehaviour
     {
         if (attackConf == null)
         {
-            LogUtility.LogWarning($"Skill Name [{attackConf.skName} conf not exist!]");
+            CLog.LogWarning($"Skill Name [{attackConf.skName} conf not exist!]");
             return;
         }
 
