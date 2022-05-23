@@ -13,7 +13,7 @@ public class WeaponAttackConf
     /// <summary>
     /// 攻击伤害
     /// </summary>
-    public float damageNum = 10;
+    public float damageValue = 10;
 
     /// <summary>
     /// 攻击位移
@@ -26,6 +26,8 @@ public class WeaponAttackConf
     public float hitBackStrength = 3f;
 
     public float attackLinkTime = 2f;
+
+    public ParticleSystem hitEffect;
 
     /// <summary>
     /// 击退方向

@@ -1,13 +1,23 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Events;
+
+public class OnHealthUpdated : UnityEvent<float, float> { };
+public class OnDie : UnityEvent { };
+
 public class Health : MonoBehaviour
 {
     private float _healthValue;
     public float maxHalthValue;
 
+    public OnHealthUpdated onHealthUpdated;
+    public OnDie onDie;
+
     private void Awake()
     {
         _healthValue = maxHalthValue;
+        onHealthUpdated = new OnHealthUpdated();
+        onDie = new OnDie();
     }
 
     public float HealthValue
@@ -18,12 +28,9 @@ public class Health : MonoBehaviour
                 return;
             float deltaValue = value - _healthValue;
             _healthValue = value;
-            onHealthUpdated?.Invoke(_healthValue, deltaValue);
+            onHealthUpdated.Invoke(_healthValue, deltaValue);
         }
     }
-
-    public Action<float, float> onHealthUpdated;
-    public Action onDie;
 
     public void TakeDamage(float value)
     {

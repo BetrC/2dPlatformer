@@ -15,7 +15,11 @@ public class Weapon : MonoBehaviour
     protected HeroAttackState state;
 
     protected Animator animator;
-    protected List<IDamageable> damageables;
+
+    /// <summary>
+    /// 潜在击打列表
+    /// </summary>
+    protected List<Collider2D> p_damageList;
 
 
     public virtual void Init(HeroAttackState state)
@@ -27,6 +31,7 @@ public class Weapon : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        p_damageList = new List<Collider2D>();
         gameObject.SetActive(false);
     }
 
@@ -45,16 +50,12 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        IDamageable damageable = collision.GetComponent<IDamageable>();
-        if (damageable != null)
-            damageables.Add(damageable);
+        p_damageList.Add(collision);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        IDamageable damageable = collision.GetComponent<IDamageable>();
-        if (damageable != null)
-            damageables.Remove(damageable);
+        p_damageList.Remove(collision);
     }
 
     protected virtual void CheckAttackCast()

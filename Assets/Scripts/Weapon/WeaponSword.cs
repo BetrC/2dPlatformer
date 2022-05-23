@@ -16,6 +16,7 @@ public class WeaponSword : Weapon
         base.Enter();
         CalculateCurAttackSequence();
         animator.SetInteger(INT_ATTACK_SEQUENCE, lastCastSequence);
+        SetHeroVelocityX();
     }
 
     public override void Exit()
@@ -37,9 +38,28 @@ public class WeaponSword : Weapon
         lastCastTime = curTime;
     }
 
+    public void SetHeroVelocityX()
+    {
+        var conf = weaponData[lastCastSequence];
+        state.SetVelocityX(conf.movementSpeed);
+    }
+
     protected override void CheckAttackCast()
     {
         base.CheckAttackCast();
 
+        WeaponAttackConf conf = weaponData[lastCastSequence];
+        foreach (var obj in p_damageList)
+        {
+            IDamageable damageable = obj.GetComponent<IDamageable>();
+            if (damageable != null)
+            {
+                damageable.TakeDamage(conf.damageValue);
+                if (conf.hitEffect != null)
+                {
+                    Instantiate(conf.hitEffect, obj.transform.position, Quaternion.identity);
+                }
+            }
+        }
     }
 }

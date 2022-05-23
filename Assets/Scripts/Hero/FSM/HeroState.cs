@@ -13,7 +13,6 @@ public class HeroState : State
     private string animatorBoolParam;
 
 
-
     public HeroState(StateMachine stateMachine, Hero hero, string animatorBoolParam) : base(stateMachine)
     {
         this.hero = hero;

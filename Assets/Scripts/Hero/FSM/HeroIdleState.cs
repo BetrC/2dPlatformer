@@ -22,5 +22,4 @@ public class HeroIdleState : HeroOnGroundState
             hero.movement.SetVelocity(Vector2.zero);
         }
     }
-
 }

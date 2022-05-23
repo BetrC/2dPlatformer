@@ -8,8 +8,16 @@ using UnityEngine;
 [RequireComponent(typeof(Health))]
 public class DamageableActor : Actor, IDamageable, IHitBackable
 {
-    protected SpriteRenderer spriteRenderer;
     protected Health health;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        health = GetComponent<Health>();
+
+        health.onHealthUpdated.AddListener(OnHealthUpdated);
+        health.onDie.AddListener(OnDie);
+    }
 
     public void HitBack(Vector2 angle, float strength, float xDir)
     {
@@ -18,20 +26,7 @@ public class DamageableActor : Actor, IDamageable, IHitBackable
 
     public void TakeDamage(float damage)
     {
-
-    }
-
-    protected override void Awake()
-    {
-        base.Awake();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        health = gameObject.GetComponentInChildren<Health>();
-
-        health.onHealthUpdated -= OnHealthUpdated;
-        health.onHealthUpdated += OnHealthUpdated;
-
-        health.onDie -= OnDie;
-        health.onDie += OnDie;
+        health.TakeDamage(damage);
     }
 
     protected virtual void OnDie()

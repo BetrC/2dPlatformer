@@ -17,17 +17,6 @@ public class HeroAttackState : HeroAbilityState
 
     }
 
-    public void SetWeapon(Weapon weapon)
-    {
-        this.weapon = weapon;
-        weapon.Init(this);
-    }
-
-    public override bool TriggeredAbility()
-    {
-        return InputManager.Instance.AttackPressed;
-    }
-
     public override void Enter()
     {
         base.Enter();
@@ -40,4 +29,25 @@ public class HeroAttackState : HeroAbilityState
         weapon.Exit();
     }
 
+    public void SetWeapon(Weapon weapon)
+    {
+        this.weapon = weapon;
+        weapon.Init(this);
+    }
+
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+
+    }
+
+    public void SetVelocityX(float vX)
+    {
+        hero.movement.SetVelocityX(hero.movement.FacingDirection * vX);
+    }
+
+    public override bool TriggeredAbility()
+    {
+        return InputManager.Instance.AttackPressed;
+    }
 }

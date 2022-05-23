@@ -10,6 +10,8 @@ public class HeroInAirState : HeroState
     /// 土狼时间
     /// </summary>
     public float coyoteTime;
+    public bool enableCoyoteTime;
+
     public float jumpFallTime;
 
     public float xInput;
@@ -35,11 +37,14 @@ public class HeroInAirState : HeroState
     {
         base.LogicUpdate();
 
-        if (coyoteTime > 0)
-        {
+        if (coyoteTime >= 0)
             coyoteTime -= Time.deltaTime;
+        if (coyoteTime < 0 && enableCoyoteTime)
+        {
+            enableCoyoteTime = false;
+            hero.JumpState.DecreaseJumpTime();
         }
-        if (jumpFallTime > 0)
+        if (jumpFallTime >= 0)
         {
             jumpFallTime -= Time.deltaTime;
         }
@@ -58,9 +63,10 @@ public class HeroInAirState : HeroState
         {
             stateMachine.ChangeState(hero.IdleState);
         }
-        else if (coyoteTime >= 0 && hero.JumpState.TriggeredAbility())
+        else if (hero.JumpState.TriggeredAbility())
         {
             stateMachine.ChangeState(hero.JumpState);
+            enableCoyoteTime = false;
         }
         else if (InputManager.Instance.JumpPressed)
         {
@@ -90,6 +96,7 @@ public class HeroInAirState : HeroState
     public void SetCoyoteTime()
     {
         coyoteTime = heroData.coyoteTime;
+        enableCoyoteTime = true;
     }
 
     public bool GroundTouchJump()

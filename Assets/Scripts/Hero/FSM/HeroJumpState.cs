@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,7 +33,13 @@ public class HeroJumpState : HeroAbilityState
 
     public override bool TriggeredAbility()
     {
+        //Debug.Log(jumpCountLeft);
         return InputManager.Instance.JumpPressed && CanJump();
+    }
+
+    internal void DecreaseJumpTime()
+    {
+        jumpCountLeft--;
     }
 
     public void ResetJumpCount()
