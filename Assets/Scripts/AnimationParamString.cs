@@ -42,6 +42,8 @@ public static class AnimationParamString
 
     public static readonly string BOOL_INAIR = "inAir";
 
+    public static readonly string INT_ATTACK_SEQUENCE = "attackSeq";
+
 
 
 

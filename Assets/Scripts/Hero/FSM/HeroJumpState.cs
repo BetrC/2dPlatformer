@@ -30,9 +30,9 @@ public class HeroJumpState : HeroAbilityState
     }
 
 
-    public bool IsTriggerJump()
+    public override bool TriggeredAbility()
     {
-        return InputManger.Instance.JumpPressed && CanJump();
+        return InputManager.Instance.JumpPressed && CanJump();
     }
 
     public void ResetJumpCount()

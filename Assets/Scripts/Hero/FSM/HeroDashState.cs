@@ -36,9 +36,9 @@ public class HeroDashState : HeroAbilityState
         hero.movement.SetBetterJumpEnable(true);
     }
 
-    public bool IsTriggerDash()
+    public override bool TriggeredAbility()
     {
-        return InputManger.Instance.DashPressed && CanDash();
+        return InputManager.Instance.DashPressed && CanDash();
     }
 
     private bool CanDash()

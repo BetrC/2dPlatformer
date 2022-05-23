@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 850d44d867058724fb4e7b16c7e230cb, type: 3}
+  m_Name: Sword
+  m_EditorClassIdentifier: 
+  AttackNum: 0
+  WeaponAttackConfs:
+  - attackName: Hit 1
+    damageNum: 2
+    movementSpeed: 3
+    hitBackStrength: 10
+    attackLinkTime: 2
+    hitBackDir: {x: 1, y: 1}
+  - attackName: Hit 2
+    damageNum: 2
+    movementSpeed: 4
+    hitBackStrength: 10
+    attackLinkTime: 2
+    hitBackDir: {x: 1, y: 1}
+  - attackName: Hit 3
+    damageNum: 3
+    movementSpeed: 2
+    hitBackStrength: 10
+    attackLinkTime: 2
+    hitBackDir: {x: 1, y: 1}

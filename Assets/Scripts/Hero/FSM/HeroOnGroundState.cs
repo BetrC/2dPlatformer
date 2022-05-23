@@ -29,11 +29,11 @@ public class HeroOnGroundState : HeroState
     {
         base.LogicUpdate();
 
-        xInput = InputManger.Instance.xInput;
-        xNormalInput = InputManger.Instance.XNormalInput;
+        xInput = InputManager.Instance.xInput;
+        xNormalInput = InputManager.Instance.XNormalInput;
         onGround = hero.collisionChecker.onGround;
 
-        if (hero.JumpState.IsTriggerJump())
+        if (hero.JumpState.TriggeredAbility())
         {
             stateMachine.ChangeState(hero.JumpState);
         }
@@ -42,9 +42,12 @@ public class HeroOnGroundState : HeroState
             hero.InAirState.ResetGroundTouchTime();
             stateMachine.ChangeState(hero.JumpState);
         }
-        else if (hero.DashState.IsTriggerDash())
+        else if (hero.DashState.TriggeredAbility())
         {
             stateMachine.ChangeState(hero.DashState);
+        } else if (hero.AttackState.TriggeredAbility())
+        {
+            stateMachine.ChangeState(hero.AttackState);
         }
         else if(!onGround)
         {

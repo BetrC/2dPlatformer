@@ -17,6 +17,8 @@ public class Hero : DamageableActor
 
     public CollisionChecker collisionChecker;
 
+    public WeaponSword weaponSword;
+
     #region state
 
     public HeroIdleState IdleState;
@@ -24,6 +26,7 @@ public class Hero : DamageableActor
     public HeroInAirState InAirState;
     public HeroJumpState JumpState;
     public HeroDashState DashState;
+    public HeroAttackState AttackState;
 
     #endregion
 
@@ -35,6 +38,7 @@ public class Hero : DamageableActor
         InitStateMachine();
 
         Assert.IsNotNull(heroData, "heroData is Null, please check your setting");
+        Assert.IsNotNull(weaponSword, "weaponSword is Null, please check your setting");
     }
 
     private void Start()
@@ -50,6 +54,9 @@ public class Hero : DamageableActor
         InAirState = new HeroInAirState(stateMachine, this, BOOL_INAIR);
         JumpState = new HeroJumpState(stateMachine, this, BOOL_INAIR);
         DashState = new HeroDashState(stateMachine, this, BOOL_DASH);
+        AttackState = new HeroAttackState(stateMachine, this, BOOL_ATTACK);
+        AttackState.SetWeapon(weaponSword);
+
         stateMachine.Init(IdleState);
     }
 

@@ -25,12 +25,17 @@ public class HeroAbilityState : HeroState
         base.Exit();
     }
 
+    public virtual bool TriggeredAbility()
+    {
+        return false;
+    }
+
     public override void LogicUpdate()
     {
         base.LogicUpdate();
 
-        xInput = InputManger.Instance.xInput;
-        xNormalInput = InputManger.Instance.XNormalInput;
+        xInput = InputManager.Instance.xInput;
+        xNormalInput = InputManager.Instance.XNormalInput;
 
         if (isAbilityDone)
         {

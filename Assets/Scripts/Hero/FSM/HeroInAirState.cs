@@ -44,11 +44,11 @@ public class HeroInAirState : HeroState
             jumpFallTime -= Time.deltaTime;
         }
 
-        xInput = InputManger.Instance.xInput;
-        xNormalInput = InputManger.Instance.XNormalInput;
+        xInput = InputManager.Instance.xInput;
+        xNormalInput = InputManager.Instance.XNormalInput;
 
         // 小跳
-        if (InputManger.Instance.JumpReleased && hero.movement.CurrentVelocity.y > 0)
+        if (InputManager.Instance.JumpReleased && hero.movement.CurrentVelocity.y > 0)
         {
             //CLog.Log($"小跳 : {hero.movement.CurrentVelocity.y}");
             hero.movement.SetVelocityY(hero.movement.CurrentVelocity.y / 2);
@@ -58,17 +58,20 @@ public class HeroInAirState : HeroState
         {
             stateMachine.ChangeState(hero.IdleState);
         }
-        else if (coyoteTime >= 0 && hero.JumpState.IsTriggerJump())
+        else if (coyoteTime >= 0 && hero.JumpState.TriggeredAbility())
         {
             stateMachine.ChangeState(hero.JumpState);
         }
-        else if (InputManger.Instance.JumpPressed)
+        else if (InputManager.Instance.JumpPressed)
         {
             jumpFallTime = heroData.jumpFallThreshould;
         }
-        else if (hero.DashState.IsTriggerDash())
+        else if (hero.DashState.TriggeredAbility())
         {
             stateMachine.ChangeState(hero.DashState);
+        } else if (hero.AttackState.TriggeredAbility())
+        {
+            stateMachine.ChangeState(hero.AttackState);
         }
 
         if (isExitingState)

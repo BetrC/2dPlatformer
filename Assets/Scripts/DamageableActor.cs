@@ -6,10 +6,20 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 [RequireComponent(typeof(Health))]
-public class DamageableActor : Actor
+public class DamageableActor : Actor, IDamageable, IHitBackable
 {
     protected SpriteRenderer spriteRenderer;
     protected Health health;
+
+    public void HitBack(Vector2 angle, float strength, float xDir)
+    {
+        // do nothing
+    }
+
+    public void TakeDamage(float damage)
+    {
+
+    }
 
     protected override void Awake()
     {
@@ -26,15 +36,11 @@ public class DamageableActor : Actor
 
     protected virtual void OnDie()
     {
-        animator.SetTrigger("die");
+
     }
 
     protected virtual void OnHealthUpdated(float curHealth, float deltaChange)
     {
-        if (deltaChange < 0)
-        {
-            // 受到伤害
-            animator.SetTrigger("hit");
-        }
+
     }
 }
