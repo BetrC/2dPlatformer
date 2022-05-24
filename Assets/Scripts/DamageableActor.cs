@@ -14,7 +14,10 @@ public class DamageableActor : Actor, IDamageable, IHitBackable
     {
         base.Awake();
         health = GetComponent<Health>();
+    }
 
+    private void Start()
+    {
         health.onHealthUpdated.AddListener(OnHealthUpdated);
         health.onDie.AddListener(OnDie);
     }

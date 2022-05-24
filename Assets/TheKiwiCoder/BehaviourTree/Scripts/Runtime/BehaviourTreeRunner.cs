@@ -30,13 +30,14 @@ namespace TheKiwiCoder {
         }
 
         private void OnDrawGizmosSelected() {
-            if (!tree) {
+            if (!tree)
+            {
                 return;
             }
 
             BehaviourTree.Traverse(tree.rootNode, (n) => {
                 if (n.drawGizmos) {
-                    n.OnDrawGizmos();
+                    n.DrawGizmos(transform);
                 }
             });
         }

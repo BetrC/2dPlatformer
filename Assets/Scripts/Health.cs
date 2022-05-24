@@ -8,7 +8,7 @@ public class OnDie : UnityEvent { };
 public class Health : MonoBehaviour
 {
     private float _healthValue;
-    public float maxHalthValue;
+    public float maxHalthValue = 20;
 
     public OnHealthUpdated onHealthUpdated;
     public OnDie onDie;
