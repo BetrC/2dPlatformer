@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using static AnimationParamString;
 
 public class WeaponSword : Weapon
@@ -55,11 +56,20 @@ public class WeaponSword : Weapon
             if (damageable != null)
             {
                 damageable.TakeDamage(conf.damageValue);
-                if (conf.hitEffect != null)
-                {
-                    Instantiate(conf.hitEffect, obj.transform.position, Quaternion.identity);
-                }
+                ShowEffect(conf, obj.transform);
             }
+        }
+    }
+
+    private void ShowEffect(WeaponAttackConf conf, Transform transform)
+    {
+        if (conf.hitEffect != null)
+        {
+            Instantiate(conf.hitEffect, transform.position, Quaternion.identity);
+        }
+        if (conf.hitBloodEffect != null)
+        {
+            Instantiate(conf.hitBloodEffect, transform.position, Quaternion.identity);
         }
     }
 }

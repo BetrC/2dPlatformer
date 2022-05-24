@@ -29,6 +29,8 @@ public class WeaponAttackConf
 
     public ParticleSystem hitEffect;
 
+    public ParticleSystem hitBloodEffect;
+
     /// <summary>
     /// 击退方向
     /// </summary>
