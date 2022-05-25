@@ -16,7 +16,7 @@ public class MoveSpeed : ActionNode
     }
 
     protected override State OnUpdate() {
-        context.movement.SetVelocityX(speed * context.movement.FacingDirection);
+        context.movement.SetFacingDirVelocityX(speed);
         return State.Success;
     }
 }

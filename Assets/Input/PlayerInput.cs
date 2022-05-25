@@ -80,13 +80,22 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""GrabWall"",
+                    ""type"": ""Button"",
+                    ""id"": ""c9bc27cc-3276-48c9-a662-c7b99ef22e20"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": ""move"",
                     ""id"": ""700d219e-2d69-4c4f-97ea-34789235bb2f"",
-                    ""path"": ""1DAxis"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -95,7 +104,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
+                    ""name"": ""Up"",
                     ""id"": ""9554db8d-de5f-4620-b05c-eaa0a13d4660"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
@@ -106,7 +115,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
+                    ""name"": ""Down"",
                     ""id"": ""c5f50da9-ba58-4757-a78a-6d8d34111b93"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
@@ -117,9 +126,31 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""1D Axis"",
+                    ""name"": ""Left"",
+                    ""id"": ""2bf2e832-5153-4331-9b4d-d5d31dee14a1"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""keyboard"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Right"",
+                    ""id"": ""f8c780bb-a406-462f-babc-5f216bdd4c21"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""keyboard"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""2D Vector"",
                     ""id"": ""29b9d824-6f52-4b16-9c50-c439f7db276f"",
-                    ""path"": ""1DAxis"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -128,7 +159,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
+                    ""name"": ""Up"",
                     ""id"": ""b2baa218-7665-487b-a4b2-880d50bf647d"",
                     ""path"": ""<Gamepad>/leftStick/left"",
                     ""interactions"": """",
@@ -139,8 +170,30 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
+                    ""name"": ""Down"",
                     ""id"": ""82e8fde4-e9c6-4c9b-aeda-2dcc6bf6e0a3"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""gamepad"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Left"",
+                    ""id"": ""e6cd8061-13ad-43e3-90c0-6e9b48a5f092"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""gamepad"",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Right"",
+                    ""id"": ""75b106e5-5fae-4ce8-a42c-629f1deec5d1"",
                     ""path"": ""<Gamepad>/leftStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -197,7 +250,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""c1fdf191-2743-4740-be85-85026122932e"",
                     ""path"": ""<Keyboard>/l"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""keyboard"",
                     ""action"": ""normalAttack"",
@@ -208,7 +261,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""c2774888-f89f-477b-9f64-9847043b77b8"",
                     ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""gamepad"",
                     ""action"": ""normalAttack"",
@@ -218,8 +271,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""778bdc2a-96a9-46f3-b86e-2177339f26f3"",
-                    ""path"": ""<Keyboard>/o"",
-                    ""interactions"": """",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": ""Hold(duration=0.1)"",
                     ""processors"": """",
                     ""groups"": ""keyboard"",
                     ""action"": ""chargeAttack"",
@@ -230,7 +283,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""c710a974-c6b0-4d1c-82f7-9a48afd8ce45"",
                     ""path"": ""<Gamepad>/buttonNorth"",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold(duration=0.1)"",
                     ""processors"": """",
                     ""groups"": ""gamepad"",
                     ""action"": ""chargeAttack"",
@@ -258,6 +311,28 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d4abd43b-080c-474e-a90d-5b0b226852c7"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""gamepad"",
+                    ""action"": ""GrabWall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f4aad34e-b7b1-4d30-80d2-e422e08c2b99"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""keyboard"",
+                    ""action"": ""GrabWall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -283,6 +358,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_Player_normalAttack = m_Player.FindAction("normalAttack", throwIfNotFound: true);
         m_Player_chargeAttack = m_Player.FindAction("chargeAttack", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
+        m_Player_GrabWall = m_Player.FindAction("GrabWall", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -348,6 +424,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_normalAttack;
     private readonly InputAction m_Player_chargeAttack;
     private readonly InputAction m_Player_Dash;
+    private readonly InputAction m_Player_GrabWall;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
@@ -358,6 +435,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         public InputAction @normalAttack => m_Wrapper.m_Player_normalAttack;
         public InputAction @chargeAttack => m_Wrapper.m_Player_chargeAttack;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
+        public InputAction @GrabWall => m_Wrapper.m_Player_GrabWall;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -385,6 +463,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Dash.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
                 @Dash.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
                 @Dash.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
+                @GrabWall.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGrabWall;
+                @GrabWall.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGrabWall;
+                @GrabWall.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnGrabWall;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -407,6 +488,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @Dash.started += instance.OnDash;
                 @Dash.performed += instance.OnDash;
                 @Dash.canceled += instance.OnDash;
+                @GrabWall.started += instance.OnGrabWall;
+                @GrabWall.performed += instance.OnGrabWall;
+                @GrabWall.canceled += instance.OnGrabWall;
             }
         }
     }
@@ -437,5 +521,6 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnNormalAttack(InputAction.CallbackContext context);
         void OnChargeAttack(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+        void OnGrabWall(InputAction.CallbackContext context);
     }
 }

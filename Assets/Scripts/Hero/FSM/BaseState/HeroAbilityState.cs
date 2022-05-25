@@ -34,7 +34,7 @@ public class HeroAbilityState : HeroState
     {
         base.LogicUpdate();
 
-        xInput = InputManager.Instance.xInput;
+        xInput = InputManager.Instance.XInput;
         xNormalInput = InputManager.Instance.XNormalInput;
 
         if (isAbilityDone)

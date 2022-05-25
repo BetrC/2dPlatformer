@@ -43,7 +43,7 @@ public class HeroAttackState : HeroAbilityState
 
     public void SetVelocityX(float vX)
     {
-        hero.movement.SetVelocityX(hero.movement.FacingDirection * vX);
+        hero.movement.SetFacingDirVelocityX(vX);
     }
 
     public override bool TriggeredAbility()

@@ -59,6 +59,11 @@ public class Movement : MonoBehaviour
         SetVelocity(CurrentVelocity.x, y);
     }
 
+    public void SetFacingDirVelocityX(float x)
+    {
+        SetVelocityX(x * FacingDirection);
+    }
+
     public void SetVelocity(float xVelocity, float yVelocity)
     {
         substitute.Set(xVelocity, yVelocity);

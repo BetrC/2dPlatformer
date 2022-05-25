@@ -114,7 +114,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: landing_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.421, y: 0.327}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71b7a82f581de9b448f9b65ce4857973
+      internalID: 252037860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: landing_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.421, y: 0.327}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68faface4b2ef914a9772094b63515a0
+      internalID: 832742883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: landing_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.421, y: 0.327}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd1d239807e79d744af0b79d7b1050f0
+      internalID: -1135526678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: landing_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 64
+      alignment: 9
+      pivot: {x: 0.421, y: 0.327}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f282a8bceda37b04b93dfb1b2ef90190
+      internalID: 2097014264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -125,7 +209,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      landing_2: -1135526678
+      landing_1: 832742883
+      landing_3: 2097014264
+      landing_0: 252037860
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

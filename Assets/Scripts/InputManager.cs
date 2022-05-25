@@ -21,9 +21,13 @@ public class InputManager : Singleton<InputManager>
         }
     }
 
-    public float xInput => Input.Player.Movement.ReadValue<float>();
+    public float XInput => Input.Player.Movement.ReadValue<Vector2>().x;
 
-    public int XNormalInput => (int)xInput.Normalize();
+    public int XNormalInput => (int)XInput.Normalize();
+
+    public float YInput => Input.Player.Movement.ReadValue<Vector2>().y;
+
+    public float YNormalInput => (int)YInput.Normalize();
 
     public bool JumpPressed => Input.Player.JumpPress.triggered;
 
@@ -34,4 +38,6 @@ public class InputManager : Singleton<InputManager>
     public bool SecondAttackPressed => Input.Player.chargeAttack.triggered;
 
     public bool DashPressed => Input.Player.Dash.triggered;
+
+    public bool GrabWallPressing => Input.Player.GrabWall.inProgress;
 }

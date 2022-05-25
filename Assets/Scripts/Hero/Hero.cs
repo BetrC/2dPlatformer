@@ -27,6 +27,10 @@ public class Hero : DamageableActor
     public HeroJumpState JumpState;
     public HeroDashState DashState;
     public HeroAttackState AttackState;
+    public HeroLandState LandState;
+    public HeroWallClimbState WallClimbState;
+    public HeroWallGrabState WallGrabState;
+    public HeroWallSlideState WallSlideState;
 
     #endregion
 
@@ -56,6 +60,10 @@ public class Hero : DamageableActor
         DashState = new HeroDashState(stateMachine, this, BOOL_DASH);
         AttackState = new HeroAttackState(stateMachine, this, BOOL_ATTACK);
         AttackState.SetWeapon(weaponSword);
+        LandState = new HeroLandState(stateMachine, this, BOOL_LAND);
+        WallClimbState = new HeroWallClimbState(stateMachine, this, BOOL_INAIR);
+        WallGrabState = new HeroWallGrabState(stateMachine, this, BOOL_INAIR);
+        WallSlideState = new HeroWallSlideState(stateMachine, this, BOOL_INAIR);
 
         stateMachine.Init(IdleState);
     }

@@ -25,13 +25,18 @@ public class HeroOnGroundState : HeroState
         base.Exit();
     }
 
+    public override void DoPhysicsCheck()
+    {
+        base.DoPhysicsCheck();
+        onGround = hero.collisionChecker.onGround;
+    }
+
     public override void LogicUpdate()
     {
         base.LogicUpdate();
 
-        xInput = InputManager.Instance.xInput;
+        xInput = InputManager.Instance.XInput;
         xNormalInput = InputManager.Instance.XNormalInput;
-        onGround = hero.collisionChecker.onGround;
 
         if (hero.JumpState.TriggeredAbility())
         {

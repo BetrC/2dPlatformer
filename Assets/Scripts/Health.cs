@@ -45,7 +45,7 @@ public class Health : MonoBehaviour
         {
             CLog.Log($"Object {gameObject.name} Die, Destroy Object");
             onDie?.Invoke();
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 

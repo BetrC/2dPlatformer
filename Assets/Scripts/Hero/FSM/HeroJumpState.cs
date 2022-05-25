@@ -11,7 +11,6 @@ public class HeroJumpState : HeroAbilityState
 
     public HeroJumpState(StateMachine stateMachine, Hero hero, string animatorBoolParam) : base(stateMachine, hero, animatorBoolParam)
     {
-
     }
 
     public override void Enter()
@@ -20,9 +19,8 @@ public class HeroJumpState : HeroAbilityState
         jumpCountLeft --;
         hero.movement.SetVelocityY(heroData.jumpSpeed);
         isAbilityDone = true;
-        if (jumpParticle == null)
-            jumpParticle = GameObject.Instantiate(heroData.jumpParticle, hero.transform);
-        jumpParticle.Play();
+
+        ShowJumpParticle();
     }
 
     public bool CanJump()
@@ -45,5 +43,12 @@ public class HeroJumpState : HeroAbilityState
     public void ResetJumpCount()
     {
         jumpCountLeft = heroData.canJumpTime;
+    }
+
+    public void ShowJumpParticle()
+    {
+        if (jumpParticle == null)
+            jumpParticle = GameObject.Instantiate(heroData.jumpParticle, hero.transform);
+        jumpParticle.Play();
     }
 }

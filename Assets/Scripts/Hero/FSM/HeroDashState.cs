@@ -23,7 +23,7 @@ public class HeroDashState : HeroAbilityState
         if (dashTrail == null)
             dashTrail = GameObject.FindObjectOfType<DashTrail>();
         dashTrail.ShowTrail(hero);
-        hero.movement.SetVelocityX(hero.movement.FacingDirection * heroData.dashSpeed);
+        hero.movement.SetFacingDirVelocityX(heroData.dashSpeed);
         hero.movement.SetGravityScale(heroData.dashGravityScale);
         hero.movement.SetBetterJumpEnable(false);
     }

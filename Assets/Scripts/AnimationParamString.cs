@@ -9,22 +9,9 @@ using System.Threading.Tasks;
 /// </summary>
 public static class AnimationParamString
 {
-    public static readonly string FLOAT_HORIZONTAL_INPUT = "horizontalInput";
-    public static readonly string FLOAT_VERTICAL_INPUT = "verticalInput";
-    // X方向速度
-    public static readonly string FLOAT_SPEEDX = "speedX";
-
-    // Y方向速度
-    public static readonly string FLOAT_SPEEDY = "speedY";
-
-    // 地面检测，是否在地面上
-    public static readonly string BOOL_GROUND = "onGround";
-
     public static readonly string BOOL_WALL_SLIDE = "wallSlide";
 
     public static readonly string BOOL_WALL_GRAB = "wallGrab";
-
-    public static readonly string BOOL_IS_CASTING_SKILL = "isCastingSkill";
 
     public static readonly string TRIGGER_HIT = "hit";
 
@@ -43,6 +30,8 @@ public static class AnimationParamString
     public static readonly string BOOL_INAIR = "inAir";
 
     public static readonly string INT_ATTACK_SEQUENCE = "attackSeq";
+
+    public static readonly string BOOL_LAND = "land";
 
 
 

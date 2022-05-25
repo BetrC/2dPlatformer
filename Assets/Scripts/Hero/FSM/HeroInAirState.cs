@@ -49,7 +49,7 @@ public class HeroInAirState : HeroState
             jumpFallTime -= Time.deltaTime;
         }
 
-        xInput = InputManager.Instance.xInput;
+        xInput = InputManager.Instance.XInput;
         xNormalInput = InputManager.Instance.XNormalInput;
 
         // 小跳
@@ -61,7 +61,7 @@ public class HeroInAirState : HeroState
 
         if (onGround && hero.movement.CurrentVelocity.y < 0.1f)
         {
-            stateMachine.ChangeState(hero.IdleState);
+            stateMachine.ChangeState(hero.LandState);
         }
         else if (hero.JumpState.TriggeredAbility())
         {
@@ -78,7 +78,14 @@ public class HeroInAirState : HeroState
         } else if (hero.AttackState.TriggeredAbility())
         {
             stateMachine.ChangeState(hero.AttackState);
+        } else if (hero.WallGrabState.IsTriggered())
+        {
+            stateMachine.ChangeState(hero.WallGrabState);
+        }else if (hero.WallSlideState.IsTriggered())
+        {
+            stateMachine.ChangeState(hero.WallSlideState);
         }
+
 
         if (isExitingState)
             return;

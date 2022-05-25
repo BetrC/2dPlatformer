@@ -39,6 +39,11 @@ public class State
 
     public virtual void PhysicsUpdate()
     {
+        DoPhysicsCheck();
+    }
+
+    public virtual void DoPhysicsCheck()
+    {
 
     }
 
