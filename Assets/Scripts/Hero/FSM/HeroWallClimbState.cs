@@ -24,7 +24,7 @@ public class HeroWallClimbState : HeroTouchWallState
 
         if (isExitingState)
             return;
-        hero.movement.SetVelocityY(yNormalInput * 2f);
+        hero.movement.SetVelocityY(yNormalInput * heroData.wallClimbSpeed);
     }
 
 

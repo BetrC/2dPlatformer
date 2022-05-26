@@ -23,7 +23,7 @@ public class HeroWallSlideState : HeroTouchWallState
 
         if (isExitingState)
             return;
-        hero.movement.SetVelocityY(-1f);
+        hero.movement.SetVelocityY(heroData.wallSlideSpeed);
     }
 
     public override bool IsTriggered()

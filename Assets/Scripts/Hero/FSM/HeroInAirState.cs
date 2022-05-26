@@ -12,6 +12,9 @@ public class HeroInAirState : HeroState
     public float coyoteTime;
     public bool enableCoyoteTime;
 
+    public float wallJumpCoyoteTime;
+    public bool enableWallJumpCoyoteTime;
+
     public float jumpFallTime;
 
     public float xInput;
@@ -33,10 +36,11 @@ public class HeroInAirState : HeroState
         base.Exit();
     }
 
-    public override void LogicUpdate()
+    /// <summary>
+    /// 跳跃的土狼时间
+    /// </summary>
+    private void UpdateCoyoteTime()
     {
-        base.LogicUpdate();
-
         if (coyoteTime >= 0)
             coyoteTime -= Time.deltaTime;
         if (coyoteTime < 0 && enableCoyoteTime)
@@ -44,6 +48,25 @@ public class HeroInAirState : HeroState
             enableCoyoteTime = false;
             hero.JumpState.DecreaseJumpTime();
         }
+    }
+
+    /// <summary>
+    /// 蹬墙跳的土狼时间
+    /// </summary>
+    private void UpdateWallJumpCoyoteTime()
+    {
+        if (wallJumpCoyoteTime >= 0)
+            wallJumpCoyoteTime -= Time.deltaTime;
+        if (wallJumpCoyoteTime < 0 && enableWallJumpCoyoteTime)
+            enableWallJumpCoyoteTime = false;
+    }
+
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+
+        UpdateCoyoteTime();
+        UpdateWallJumpCoyoteTime();
         if (jumpFallTime >= 0)
         {
             jumpFallTime -= Time.deltaTime;
@@ -62,6 +85,10 @@ public class HeroInAirState : HeroState
         if (onGround && hero.movement.CurrentVelocity.y < 0.1f)
         {
             stateMachine.ChangeState(hero.LandState);
+        } 
+        else if (enableWallJumpCoyoteTime && InputManager.Instance.JumpPressed)
+        {
+            stateMachine.ChangeState(hero.WallJumpState);
         }
         else if (hero.JumpState.TriggeredAbility())
         {
@@ -104,6 +131,12 @@ public class HeroInAirState : HeroState
     {
         coyoteTime = heroData.coyoteTime;
         enableCoyoteTime = true;
+    }
+
+    public void SetWallJumpCoyoteTime()
+    {
+        wallJumpCoyoteTime = heroData.wallJumpCoyoteTime;
+        enableWallJumpCoyoteTime = true;
     }
 
     public bool GroundTouchJump()

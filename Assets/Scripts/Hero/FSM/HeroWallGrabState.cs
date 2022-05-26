@@ -15,6 +15,7 @@ public class HeroWallGrabState : HeroTouchWallState
     public override void Enter()
     {
         base.Enter();
+        wallParticle.Stop();
     }
 
     public override void Exit()

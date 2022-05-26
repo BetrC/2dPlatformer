@@ -15,7 +15,7 @@ public class Flip : ActionNode
     }
 
     protected override State OnUpdate() {
-        context.movement.CheckFlip(-1 * context.movement.FacingDirection);
+        context.movement.Flip();
         return State.Success;
     }
 }

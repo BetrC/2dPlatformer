@@ -50,8 +50,10 @@ public class WeaponSword : Weapon
         base.CheckAttackCast();
 
         WeaponAttackConf conf = weaponData[lastCastSequence];
-        foreach (var obj in p_damageList)
+        // 倒序防止删除时出问题
+        for(int i = p_damageList.Count - 1; i >= 0; i--)
         {
+            var obj = p_damageList[i];
             IDamageable damageable = obj.GetComponent<IDamageable>();
             if (damageable != null)
             {
