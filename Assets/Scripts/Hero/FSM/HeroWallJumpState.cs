@@ -45,11 +45,11 @@ public class HeroWallJumpState : HeroAbilityState
     {
         if (hero.WallGrabState.IsOnWall())
         {
-            JumpDirection = hero.movement.FacingDirection * -1;
+            JumpDirection = FacingDirection * -1;
         }
         else
         {
-            JumpDirection = hero.movement.FacingDirection;
+            JumpDirection = FacingDirection;
         }
     }
 

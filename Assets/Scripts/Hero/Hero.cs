@@ -32,6 +32,7 @@ public class Hero : DamageableActor
     public HeroWallGrabState WallGrabState;
     public HeroWallSlideState WallSlideState;
     public HeroWallJumpState WallJumpState;
+    public HeroLedgeClimbState LedgeClimbState;
 
     #endregion
 
@@ -66,6 +67,7 @@ public class Hero : DamageableActor
         WallGrabState = new HeroWallGrabState(stateMachine, this, BOOL_WALL_GRAB);
         WallSlideState = new HeroWallSlideState(stateMachine, this, BOOL_WALL_SLIDE);
         WallJumpState = new HeroWallJumpState(stateMachine, this, BOOL_INAIR);
+        LedgeClimbState = new HeroLedgeClimbState(stateMachine, this, BOOL_LEDGE_HANG);
 
         stateMachine.Init(IdleState);
     }

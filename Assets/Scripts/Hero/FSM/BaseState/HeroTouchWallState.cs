@@ -43,7 +43,7 @@ public class HeroTouchWallState : HeroState
     public override void DoPhysicsCheck()
     {
         base.DoPhysicsCheck();
-        onGround = hero.collisionChecker.onGround;
+        onGround = hero.collisionChecker.OnGround;
         onWall = IsOnWall();
     }
 
@@ -61,6 +61,10 @@ public class HeroTouchWallState : HeroState
         {
             stateMachine.ChangeState(hero.WallJumpState);
         }
+        else if (hero.LedgeClimbState.IsTriggered())
+        {
+            stateMachine.ChangeState(hero.LedgeClimbState);
+        }
         else if (hero.WallGrabState.IsTriggered())
         {
             if (yNormalInput == 0)
@@ -77,9 +81,9 @@ public class HeroTouchWallState : HeroState
         }
     }
 
-    public bool IsPushingWall() => onWall && hero.movement.FacingDirection == xNormalInput;
+    public bool IsPushingWall() => onWall && FacingDirection == xNormalInput;
 
-    public bool IsOnWall() => hero.collisionChecker.onLeftWall && hero.movement.FacingDirection == -1 || hero.collisionChecker.onRightWall && hero.movement.FacingDirection == 1;
+    public bool IsOnWall() => hero.collisionChecker.OnLeftWall && FacingDirection == -1 || hero.collisionChecker.OnRightWall && FacingDirection == 1;
 
     public virtual bool IsTriggered() { return false; }
 }

@@ -28,7 +28,7 @@ public class HeroWallSlideState : HeroTouchWallState
 
     public override bool IsTriggered()
     {
-        return InputManager.Instance.XNormalInput == hero.movement.FacingDirection && IsOnWall();
+        return InputManager.Instance.XNormalInput == FacingDirection && IsOnWall();
     }
 }
 

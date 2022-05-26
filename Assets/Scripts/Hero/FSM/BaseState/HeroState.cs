@@ -12,6 +12,8 @@ public class HeroState : State
     /// </summary>
     private string animatorBoolParam;
 
+    protected int FacingDirection => hero.movement.FacingDirection;
+
 
     public HeroState(StateMachine stateMachine, Hero hero, string animatorBoolParam) : base(stateMachine)
     {

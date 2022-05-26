@@ -28,7 +28,7 @@ public class HeroOnGroundState : HeroState
     public override void DoPhysicsCheck()
     {
         base.DoPhysicsCheck();
-        onGround = hero.collisionChecker.onGround;
+        onGround = hero.collisionChecker.OnGround;
     }
 
     public override void LogicUpdate()

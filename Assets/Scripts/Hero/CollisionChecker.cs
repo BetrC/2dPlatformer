@@ -9,14 +9,18 @@ using UnityEditor;
 public class CollisionChecker : MonoBehaviour
 {
     [Header("检测结果")]
-    public bool onGround;
+    public bool OnGround;
 
-    public bool onLeftWall;
-    public bool onRightWall;
+    public bool OnLeftWall;
+    public bool OnRightWall;
 
-    public bool lastFrameOnGround;
+    public bool LastFrameOnGround;
 
-    public bool OnWall => onLeftWall || onRightWall;
+    public bool OnWall => OnLeftWall || OnRightWall;
+
+    public bool WallDetected;
+
+    public bool LedgeDetected;
 
     public Action OnGroundTouch;
 
@@ -25,17 +29,36 @@ public class CollisionChecker : MonoBehaviour
     [Header("碰撞盒参数")]
     public float collisionRadius;
     public Vector2 groudCheckOffset, leftWallCheckOffset, rightWallCheckOffset;
-    public LayerMask layerMask;
+
+    public LayerMask whatIsGround;
+
+    [Header("Wall Check")]
+    public Transform wallCheckTransform;
+    public float wallCheckDistance;
+
+    public Transform ledgeCheckTransform;
+    public float ledgeCheckDistance;
+
+    [HideInInspector]
+    public Vector2 WallCheckPosition => wallCheckTransform.position;
+
+    [HideInInspector]
+    public Vector2 LedgeCheckPosition => ledgeCheckTransform.position;
 
     private void Update()
     {
-        onGround = Physics2D.OverlapCircle((Vector2)transform.position + groudCheckOffset, collisionRadius, layerMask);
-        if (onGround && !lastFrameOnGround)
+        OnGround = Physics2D.OverlapCircle((Vector2)transform.position + groudCheckOffset, collisionRadius, whatIsGround);
+        if (OnGround && !LastFrameOnGround)
             OnGroundTouch?.Invoke();
-        lastFrameOnGround = onGround;
+        LastFrameOnGround = OnGround;
 
-        onLeftWall = Physics2D.OverlapCircle((Vector2)transform.position + leftWallCheckOffset, collisionRadius, layerMask);
-        onRightWall = Physics2D.OverlapCircle((Vector2)transform.position + rightWallCheckOffset, collisionRadius, layerMask);
+        OnLeftWall = Physics2D.OverlapCircle((Vector2)transform.position + leftWallCheckOffset, collisionRadius, whatIsGround);
+        OnRightWall = Physics2D.OverlapCircle((Vector2)transform.position + rightWallCheckOffset, collisionRadius, whatIsGround);
+
+        WallDetected = Physics2D.Raycast(WallCheckPosition, transform.right, wallCheckDistance, whatIsGround);
+
+        LedgeDetected = Physics2D.Raycast(LedgeCheckPosition, transform.right, ledgeCheckDistance, whatIsGround);
+
     }
 
     private void OnDrawGizmos()

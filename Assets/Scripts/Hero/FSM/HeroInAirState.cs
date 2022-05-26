@@ -102,17 +102,23 @@ public class HeroInAirState : HeroState
         else if (hero.DashState.TriggeredAbility())
         {
             stateMachine.ChangeState(hero.DashState);
-        } else if (hero.AttackState.TriggeredAbility())
+        } 
+        else if (hero.LedgeClimbState.IsTriggered())
+        {
+            stateMachine.ChangeState(hero.LedgeClimbState);
+        }
+        else if (hero.AttackState.TriggeredAbility())
         {
             stateMachine.ChangeState(hero.AttackState);
-        } else if (hero.WallGrabState.IsTriggered())
+        } 
+        else if (hero.WallGrabState.IsTriggered())
         {
             stateMachine.ChangeState(hero.WallGrabState);
-        }else if (hero.WallSlideState.IsTriggered())
+        }
+        else if (hero.WallSlideState.IsTriggered())
         {
             stateMachine.ChangeState(hero.WallSlideState);
         }
-
 
         if (isExitingState)
             return;
@@ -124,7 +130,7 @@ public class HeroInAirState : HeroState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        onGround = hero.collisionChecker.onGround;
+        onGround = hero.collisionChecker.OnGround;
     }
 
     public void SetCoyoteTime()

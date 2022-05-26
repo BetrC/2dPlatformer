@@ -13,13 +13,17 @@ public class HeroData : ScriptableObject
 
     public float wallJumpTime = .4f;
 
-    public Vector2 wallJumpDir = new Vector2(1, 2);
+    public Vector2 wallJumpDir = new(1, 2);
 
     [Header("Wall")]
     [Range(-10f, -1f)]
     public float wallSlideSpeed = -2f;
 
     public float wallClimbSpeed = 2f;
+
+    public Vector2 ledgeClimbStartPosOffset = new(0.3f, 0.4f);
+
+    public Vector2 ledgeClimbEndPosOffset = new(0.3f, 0.4f);
 
     /// <summary>
     /// 跳跃的土狼时间，使玩家在离开地面后一段时间仍可以起跳

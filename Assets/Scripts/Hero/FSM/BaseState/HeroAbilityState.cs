@@ -53,6 +53,6 @@ public class HeroAbilityState : HeroState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        onGround = hero.collisionChecker.onGround;
+        onGround = hero.collisionChecker.OnGround;
     }
 }

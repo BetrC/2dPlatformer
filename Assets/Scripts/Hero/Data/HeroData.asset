@@ -19,6 +19,8 @@ MonoBehaviour:
   wallJumpDir: {x: 7, y: 8}
   wallSlideSpeed: -2
   wallClimbSpeed: 2
+  ledgeClimbStartPosOffset: {x: 0.27, y: 0.5}
+  ledgeClimbEndPosOffset: {x: 0.32, y: 0.4}
   coyoteTime: 0.15
   wallJumpCoyoteTime: 0.5
   jumpFallThreshould: 0.1
