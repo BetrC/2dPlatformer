@@ -9,9 +9,6 @@ using System.Threading.Tasks;
 /// </summary>
 public static class AnimationParamString
 {
-    public static readonly string BOOL_WALL_SLIDE = "wallSlide";
-
-    public static readonly string BOOL_WALL_GRAB = "wallGrab";
 
     public static readonly string TRIGGER_HIT = "hit";
 
@@ -33,7 +30,12 @@ public static class AnimationParamString
 
     public static readonly string BOOL_LAND = "land";
 
+    public static readonly string BOOL_LEDGE_CLIMB = "ledgeClimb";
 
+    public static readonly string BOOL_WALL_CLIMB = "wallClimb";
 
+    public static readonly string BOOL_WALL_SLIDE = "wallSlide";
+
+    public static readonly string BOOL_WALL_GRAB = "wallGrab";
 
 }

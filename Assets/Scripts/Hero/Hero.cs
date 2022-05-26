@@ -61,9 +61,9 @@ public class Hero : DamageableActor
         AttackState = new HeroAttackState(stateMachine, this, BOOL_ATTACK);
         AttackState.SetWeapon(weaponSword);
         LandState = new HeroLandState(stateMachine, this, BOOL_LAND);
-        WallClimbState = new HeroWallClimbState(stateMachine, this, BOOL_INAIR);
-        WallGrabState = new HeroWallGrabState(stateMachine, this, BOOL_INAIR);
-        WallSlideState = new HeroWallSlideState(stateMachine, this, BOOL_INAIR);
+        WallClimbState = new HeroWallClimbState(stateMachine, this, BOOL_WALL_CLIMB);
+        WallGrabState = new HeroWallGrabState(stateMachine, this, BOOL_WALL_GRAB);
+        WallSlideState = new HeroWallSlideState(stateMachine, this, BOOL_WALL_SLIDE);
 
         stateMachine.Init(IdleState);
     }

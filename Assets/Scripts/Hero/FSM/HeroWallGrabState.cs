@@ -31,8 +31,11 @@ public class HeroWallGrabState : HeroTouchWallState
             stateMachine.ChangeState(hero.WallClimbState);
         }
 
+        if (isExitingState)
+            return;
         // 确保贴墙
         hero.movement.SetFacingDirVelocityX(6f);
+        hero.movement.SetVelocityY(0f);
     }
 
     public override bool IsTriggered()

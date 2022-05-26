@@ -49,7 +49,8 @@ public class HeroTouchWallState : HeroState
 
         if (hero.WallGrabState.IsTriggered())
         {
-            stateMachine.ChangeState(hero.WallGrabState);
+            if (yNormalInput == 0)
+                stateMachine.ChangeState(hero.WallGrabState);
         }
         else if (onGround)
         {
