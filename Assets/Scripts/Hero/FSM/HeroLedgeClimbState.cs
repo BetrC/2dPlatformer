@@ -84,8 +84,7 @@ public class HeroLedgeClimbState : HeroState
         {
             stateMachine.ChangeState(hero.WallJumpState);
         }
-
-        if (isHanging && !isClimbing && (xNormalInput == FacingDirection || yNormalInput == 1))
+        else if (isHanging && !isClimbing && (xNormalInput == FacingDirection || yNormalInput == 1))
         {
             isClimbing = true;
             hero.animator.SetBool(BOOL_LEDGE_CLIMB, true);

@@ -8,60 +8,67 @@ using UnityEditor;
 
 public class CollisionChecker : MonoBehaviour
 {
-    [Header("检测结果")]
-    public bool OnGround;
 
-    public bool OnLeftWall;
-    public bool OnRightWall;
-
-    public bool LastFrameOnGround;
-
-    public bool OnWall => OnLeftWall || OnRightWall;
-
-    public bool WallDetected;
-
-    public bool LedgeDetected;
-
-    public Action OnGroundTouch;
-
-    [Space]
-
-    [Header("碰撞盒参数")]
+    [Header("碰撞检测参数")]
     public float collisionRadius;
     public Vector2 groudCheckOffset, leftWallCheckOffset, rightWallCheckOffset;
 
+    /// <summary>
+    /// 地面的layer
+    /// </summary>
     public LayerMask whatIsGround;
 
-    [Header("Wall Check")]
+    [Header("墙体检测参数")]
     public Transform wallCheckTransform;
     public float wallCheckDistance;
 
     public Transform ledgeCheckTransform;
     public float ledgeCheckDistance;
 
-    [HideInInspector]
+
+    /// <summary>
+    /// （身体中央）墙体的位置
+    /// </summary>
     public Vector2 WallCheckPosition => wallCheckTransform.position;
 
-    [HideInInspector]
+    /// <summary>
+    /// 检测头是否超过墙体的位置
+    /// </summary>
     public Vector2 LedgeCheckPosition => ledgeCheckTransform.position;
 
-    private void Update()
-    {
-        OnGround = Physics2D.OverlapCircle((Vector2)transform.position + groudCheckOffset, collisionRadius, whatIsGround);
-        if (OnGround && !LastFrameOnGround)
-            OnGroundTouch?.Invoke();
-        LastFrameOnGround = OnGround;
+    /// <summary>
+    /// 是否站在地上
+    /// </summary>
+    public bool OnGround => Physics2D.OverlapCircle((Vector2)transform.position + groudCheckOffset, collisionRadius, whatIsGround);
 
-        OnLeftWall = Physics2D.OverlapCircle((Vector2)transform.position + leftWallCheckOffset, collisionRadius, whatIsGround);
-        OnRightWall = Physics2D.OverlapCircle((Vector2)transform.position + rightWallCheckOffset, collisionRadius, whatIsGround);
+    /// <summary>
+    /// 左侧是否与墙体碰撞
+    /// </summary>
+    public bool OnLeftWall => Physics2D.OverlapCircle((Vector2)transform.position + leftWallCheckOffset, collisionRadius, whatIsGround);
 
-        WallDetected = Physics2D.Raycast(WallCheckPosition, transform.right, wallCheckDistance, whatIsGround);
+    /// <summary>
+    /// 右侧是否与墙体碰撞
+    /// </summary>
+    public bool OnRightWall => Physics2D.OverlapCircle((Vector2)transform.position + rightWallCheckOffset, collisionRadius, whatIsGround);
 
-        LedgeDetected = Physics2D.Raycast(LedgeCheckPosition, transform.right, ledgeCheckDistance, whatIsGround);
+    /// <summary>
+    /// 是否与墙体发生碰撞（左侧或右侧）
+    /// </summary>
+    public bool OnWall => OnLeftWall || OnRightWall;
 
-    }
+    /// <summary>
+    /// 身体射线检测到墙体
+    /// </summary>
+    public bool WallDetected => Physics2D.Raycast(WallCheckPosition, transform.right, wallCheckDistance, whatIsGround);
 
-    private void OnDrawGizmos()
+    /// <summary>
+    /// 头部射线检测到墙体
+    /// </summary>
+    public bool LedgeDetected => Physics2D.Raycast(LedgeCheckPosition, transform.right, ledgeCheckDistance, whatIsGround);
+
+
+
+    void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere((Vector2)transform.position + groudCheckOffset, collisionRadius);
         Gizmos.DrawWireSphere((Vector2)transform.position + leftWallCheckOffset, collisionRadius);
