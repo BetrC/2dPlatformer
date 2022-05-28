@@ -57,7 +57,12 @@ public class HeroTouchWallState : HeroState
         yNormalInput = InputManager.Instance.YNormalInput;
 
        
-        if (hero.WallJumpState.TriggeredAbility())
+        if (hero.DashState.TriggeredAbility())
+        {
+            hero.movement.Flip();
+            stateMachine.ChangeState(hero.DashState);
+        }
+        else if (hero.WallJumpState.TriggeredAbility())
         {
             stateMachine.ChangeState(hero.WallJumpState);
         }

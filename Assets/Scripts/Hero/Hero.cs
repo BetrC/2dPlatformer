@@ -16,6 +16,9 @@ public class Hero : DamageableActor
 
     public CollisionChecker collisionChecker;
 
+    [HideInInspector]
+    public bool IsHitable;
+
     #region state
 
     public HeroIdleState IdleState;
@@ -44,11 +47,14 @@ public class Hero : DamageableActor
     protected override void Awake()
     {
         base.Awake();
+
         movement = GetComponentInChildren<Movement>();
         collisionChecker = GetComponentInChildren<CollisionChecker>();
+        hitProtectionTime = heroData.hitProtectionTime;
 
         Assert.IsNotNull(primaryWeaponInfo.prefab, "primary weapon prefab is Null, please check your setting");
         Assert.IsNotNull(secondaryWeaponInfo.prefab, "secondry weapon prefab is Null, please check your setting");
+
         // init weapon
         primaryWeaponInfo.Init(transform.Find("WeaponRoot"));
         secondaryWeaponInfo.Init(transform.Find("WeaponRoot"));
@@ -59,8 +65,10 @@ public class Hero : DamageableActor
         Assert.IsNotNull(heroData, "heroData is Null, please check your setting");
     }
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+
         movement.SetGravityScale(heroData.defaultGravityScale);
     }
 
@@ -86,8 +94,9 @@ public class Hero : DamageableActor
         stateMachine.Init(IdleState);
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
         movement.LogicUpdate();
         stateMachine.currentState.LogicUpdate();
     }

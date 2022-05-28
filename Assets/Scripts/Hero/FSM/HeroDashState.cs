@@ -36,6 +36,15 @@ public class HeroDashState : HeroAbilityState
         hero.movement.SetBetterJumpEnable(true);
     }
 
+    public override void LogicUpdate()
+    {
+        base.LogicUpdate();
+        if (hero.WallSlideState.IsOnWall())
+        {
+            stateMachine.ChangeState(hero.WallSlideState);
+        }
+    }
+
     public override bool TriggeredAbility()
     {
         return InputManager.Instance.DashPressed && CanDash();

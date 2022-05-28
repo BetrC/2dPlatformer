@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 850d44d867058724fb4e7b16c7e230cb, type: 3}
   m_Name: ChargeSword
   m_EditorClassIdentifier: 
-  AttackNum: 3
   WeaponAttackConfs:
   - attackName: Charge Hit
-    damageValue: 10
+    damageValue: 20
     movementSpeed: 0
     hitBackStrength: 2
     attackLinkTime: 0

@@ -48,7 +48,7 @@ public class WeaponSword : Weapon
             IDamageable damageable = obj.GetComponent<IDamageable>();
             if (damageable != null)
             {
-                damageable.TakeDamage(conf.damageValue);
+                damageable.TakeDamage(conf.damageValue, conf.HitBackNormalDir, conf.hitBackStrength, (obj.transform.position.x - transform.position.x).Normalize());
                 ShowEffect(conf, obj.transform);
             }
         }
@@ -66,10 +66,6 @@ public class WeaponSword : Weapon
         if (conf.hitEffect != null)
         {
             Instantiate(conf.hitEffect, transform.position, Quaternion.identity);
-        }
-        if (conf.hitBloodEffect != null)
-        {
-            Instantiate(conf.hitBloodEffect, transform.position, Quaternion.identity);
         }
     }
 }

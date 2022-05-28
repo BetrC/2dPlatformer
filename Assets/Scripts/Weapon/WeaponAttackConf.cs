@@ -29,11 +29,11 @@ public class WeaponAttackConf
 
     public ParticleSystem hitEffect;
 
-    public ParticleSystem hitBloodEffect;
-
     /// <summary>
     /// 击退方向
     /// </summary>
     public Vector2 hitBackDir = Vector2.one;
+
+    public Vector2 HitBackNormalDir => hitBackDir.normalized;
 }
 

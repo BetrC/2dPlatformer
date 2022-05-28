@@ -17,7 +17,7 @@ public class HeroLandState : HeroOnGroundState
     {
         base.Enter();
         isAnimFinish = false;
-        hero.JumpState.ShowJumpParticle();
+        //hero.JumpState.ShowJumpParticle();
     }
 
     public override void LogicUpdate()
