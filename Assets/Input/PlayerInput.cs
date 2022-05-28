@@ -55,7 +55,7 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""normalAttack"",
+                    ""name"": ""Attack"",
                     ""type"": ""Button"",
                     ""id"": ""a0a7b34d-e612-4b33-8ec0-d9fab4b8234b"",
                     ""expectedControlType"": ""Button"",
@@ -64,9 +64,9 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""chargeAttack"",
+                    ""name"": ""SecondAttack"",
                     ""type"": ""Button"",
-                    ""id"": ""af0f1710-1f00-4d38-b8d4-9b870e10d619"",
+                    ""id"": ""8cd9e20f-a278-4669-9ad3-95549f61f344"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -250,10 +250,10 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""c1fdf191-2743-4740-be85-85026122932e"",
                     ""path"": ""<Keyboard>/l"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""keyboard"",
-                    ""action"": ""normalAttack"",
+                    ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -261,32 +261,10 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""c2774888-f89f-477b-9f64-9847043b77b8"",
                     ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""gamepad"",
-                    ""action"": ""normalAttack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""778bdc2a-96a9-46f3-b86e-2177339f26f3"",
-                    ""path"": ""<Keyboard>/l"",
-                    ""interactions"": ""Hold(duration=0.1)"",
-                    ""processors"": """",
-                    ""groups"": ""keyboard"",
-                    ""action"": ""chargeAttack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c710a974-c6b0-4d1c-82f7-9a48afd8ce45"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
-                    ""interactions"": ""Hold(duration=0.1)"",
-                    ""processors"": """",
-                    ""groups"": ""gamepad"",
-                    ""action"": ""chargeAttack"",
+                    ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -333,6 +311,28 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                     ""action"": ""GrabWall"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""100e6791-9fa3-459d-aa9b-12cedb59e002"",
+                    ""path"": ""<Keyboard>/o"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""keyboard"",
+                    ""action"": ""SecondAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0d43f490-0717-4f6c-90ed-2b3c801a4618"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""gamepad"",
+                    ""action"": ""SecondAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -355,8 +355,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_JumpPress = m_Player.FindAction("JumpPress", throwIfNotFound: true);
         m_Player_JumpRelease = m_Player.FindAction("JumpRelease", throwIfNotFound: true);
-        m_Player_normalAttack = m_Player.FindAction("normalAttack", throwIfNotFound: true);
-        m_Player_chargeAttack = m_Player.FindAction("chargeAttack", throwIfNotFound: true);
+        m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
+        m_Player_SecondAttack = m_Player.FindAction("SecondAttack", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_GrabWall = m_Player.FindAction("GrabWall", throwIfNotFound: true);
     }
@@ -421,8 +421,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_JumpPress;
     private readonly InputAction m_Player_JumpRelease;
-    private readonly InputAction m_Player_normalAttack;
-    private readonly InputAction m_Player_chargeAttack;
+    private readonly InputAction m_Player_Attack;
+    private readonly InputAction m_Player_SecondAttack;
     private readonly InputAction m_Player_Dash;
     private readonly InputAction m_Player_GrabWall;
     public struct PlayerActions
@@ -432,8 +432,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @JumpPress => m_Wrapper.m_Player_JumpPress;
         public InputAction @JumpRelease => m_Wrapper.m_Player_JumpRelease;
-        public InputAction @normalAttack => m_Wrapper.m_Player_normalAttack;
-        public InputAction @chargeAttack => m_Wrapper.m_Player_chargeAttack;
+        public InputAction @Attack => m_Wrapper.m_Player_Attack;
+        public InputAction @SecondAttack => m_Wrapper.m_Player_SecondAttack;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputAction @GrabWall => m_Wrapper.m_Player_GrabWall;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
@@ -454,12 +454,12 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @JumpRelease.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJumpRelease;
                 @JumpRelease.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJumpRelease;
                 @JumpRelease.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJumpRelease;
-                @normalAttack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNormalAttack;
-                @normalAttack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNormalAttack;
-                @normalAttack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNormalAttack;
-                @chargeAttack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChargeAttack;
-                @chargeAttack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChargeAttack;
-                @chargeAttack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnChargeAttack;
+                @Attack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
+                @Attack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
+                @Attack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
+                @SecondAttack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSecondAttack;
+                @SecondAttack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSecondAttack;
+                @SecondAttack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSecondAttack;
                 @Dash.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
                 @Dash.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
                 @Dash.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
@@ -479,12 +479,12 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
                 @JumpRelease.started += instance.OnJumpRelease;
                 @JumpRelease.performed += instance.OnJumpRelease;
                 @JumpRelease.canceled += instance.OnJumpRelease;
-                @normalAttack.started += instance.OnNormalAttack;
-                @normalAttack.performed += instance.OnNormalAttack;
-                @normalAttack.canceled += instance.OnNormalAttack;
-                @chargeAttack.started += instance.OnChargeAttack;
-                @chargeAttack.performed += instance.OnChargeAttack;
-                @chargeAttack.canceled += instance.OnChargeAttack;
+                @Attack.started += instance.OnAttack;
+                @Attack.performed += instance.OnAttack;
+                @Attack.canceled += instance.OnAttack;
+                @SecondAttack.started += instance.OnSecondAttack;
+                @SecondAttack.performed += instance.OnSecondAttack;
+                @SecondAttack.canceled += instance.OnSecondAttack;
                 @Dash.started += instance.OnDash;
                 @Dash.performed += instance.OnDash;
                 @Dash.canceled += instance.OnDash;
@@ -518,8 +518,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnJumpPress(InputAction.CallbackContext context);
         void OnJumpRelease(InputAction.CallbackContext context);
-        void OnNormalAttack(InputAction.CallbackContext context);
-        void OnChargeAttack(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
+        void OnSecondAttack(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnGrabWall(InputAction.CallbackContext context);
     }

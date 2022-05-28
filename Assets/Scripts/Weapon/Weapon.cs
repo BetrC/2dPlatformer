@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 using UnityEngine;
 using static AnimationParamString;
 
-public class Weapon : MonoBehaviour
+public abstract class Weapon : MonoBehaviour
 {
 
-    public float lastCastTime;
-    public int lastCastSequence;
+    protected float lastCastTime;
+    protected int lastCastSequence;
 
     protected HeroAttackState state;
-
     protected Animator animator;
 
     /// <summary>
@@ -47,6 +46,12 @@ public class Weapon : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    public virtual void LogicUpdate() { }
+
+    protected abstract void SetHeroMovementVelocity();
+
+    protected abstract void CheckAttackCast();
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -58,18 +63,62 @@ public class Weapon : MonoBehaviour
         p_damageList.Remove(collision);
     }
 
-    protected virtual void CheckAttackCast()
-    {
+    #region 动画回调
 
+    /// <summary>
+    /// 自定义动画回调
+    /// </summary>
+    public virtual void AnimationTrigger()
+    {
     }
 
-    public virtual void AnimationCastTrigger()
+    /// <summary>
+    /// 动画打击点回调
+    /// </summary>
+    public void AnimationCastTrigger()
     {
         CheckAttackCast();
     }
 
-    public void AnimationFinishTrigger()
+    /// <summary>
+    /// 动画结束点回调
+    /// </summary>
+    public virtual void AnimationFinishTrigger()
     {
         state.isAbilityDone = true;
     }
+
+    /// <summary>
+    /// 应用攻击位移
+    /// </summary>
+    public void AnimationStartMovementTrigger()
+    {
+        SetHeroMovementVelocity();
+    }
+
+    /// <summary>
+    /// 停止攻击位移
+    /// </summary>
+    public void AnimationStopMovementTrigger()
+    {
+        state.SetVelocityX(0);
+    }
+
+    /// <summary>
+    /// 开启检测角色转向
+    /// </summary>
+    public void AnimationTurnOffFlipTrigger()
+    {
+        state.SetFlipCheck(false);
+    }
+
+    /// <summary>
+    /// 关闭角色转向
+    /// </summary>
+    public void AnimationTurnOnFlipTigger()
+    {
+        state.SetFlipCheck(true);
+    }
+
+    #endregion
 }

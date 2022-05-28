@@ -33,11 +33,11 @@ public class InputManager : Singleton<InputManager>
 
     public bool JumpReleased => Input.Player.JumpRelease.triggered;
 
-    public bool AttackPressed => Input.Player.normalAttack.triggered;
+    public bool PrimaryAttackPressed => Input.Player.Attack.triggered;
 
-    public bool SecondAttackPressed => Input.Player.chargeAttack.triggered;
+    public bool SecondryAttackHolding => Input.Player.SecondAttack.IsPressed();
 
     public bool DashPressed => Input.Player.Dash.triggered;
 
-    public bool GrabWallPressing => Input.Player.GrabWall.inProgress;
+    public bool GrabWallHolding => Input.Player.GrabWall.IsPressed();
 }

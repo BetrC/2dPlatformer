@@ -26,8 +26,12 @@ public class HeroWallGrabState : HeroTouchWallState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        
-        if (yNormalInput != 0)
+
+        if (!InputManager.Instance.GrabWallHolding && IsPushingWall())
+        {
+            stateMachine.ChangeState(hero.WallSlideState);
+        }
+        else if (yNormalInput != 0)
         {
             stateMachine.ChangeState(hero.WallClimbState);
         }
@@ -41,7 +45,7 @@ public class HeroWallGrabState : HeroTouchWallState
 
     public override bool IsTriggered()
     {
-        return InputManager.Instance.GrabWallPressing && IsOnWall();
+        return InputManager.Instance.GrabWallHolding && IsOnWall();
     }
 }
 

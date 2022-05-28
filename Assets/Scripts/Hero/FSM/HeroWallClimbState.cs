@@ -21,6 +21,10 @@ public class HeroWallClimbState : HeroTouchWallState
     {
         base.LogicUpdate();
 
+        if (!InputManager.Instance.GrabWallHolding && IsPushingWall())
+        {
+            stateMachine.ChangeState(hero.WallSlideState);
+        }
 
         if (isExitingState)
             return;

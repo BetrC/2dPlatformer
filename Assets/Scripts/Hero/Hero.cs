@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,8 +15,6 @@ public class Hero : DamageableActor
     public StateMachine stateMachine;
 
     public CollisionChecker collisionChecker;
-
-    public WeaponSword weaponSword;
 
     #region state
 
@@ -36,15 +33,30 @@ public class Hero : DamageableActor
 
     #endregion
 
+    #region weapon
+
+    public RuntimeWeaponInfo primaryWeaponInfo;
+
+    public RuntimeWeaponInfo secondaryWeaponInfo;
+
+    #endregion
+
     protected override void Awake()
     {
         base.Awake();
         movement = GetComponentInChildren<Movement>();
         collisionChecker = GetComponentInChildren<CollisionChecker>();
+
+        Assert.IsNotNull(primaryWeaponInfo.prefab, "primary weapon prefab is Null, please check your setting");
+        Assert.IsNotNull(secondaryWeaponInfo.prefab, "secondry weapon prefab is Null, please check your setting");
+        // init weapon
+        primaryWeaponInfo.Init(transform.Find("WeaponRoot"));
+        secondaryWeaponInfo.Init(transform.Find("WeaponRoot"));
+
+        // init state
         InitStateMachine();
 
         Assert.IsNotNull(heroData, "heroData is Null, please check your setting");
-        Assert.IsNotNull(weaponSword, "weaponSword is Null, please check your setting");
     }
 
     private void Start()
@@ -60,8 +72,10 @@ public class Hero : DamageableActor
         InAirState = new HeroInAirState(stateMachine, this, BOOL_INAIR);
         JumpState = new HeroJumpState(stateMachine, this, BOOL_INAIR);
         DashState = new HeroDashState(stateMachine, this, BOOL_DASH);
+
         AttackState = new HeroAttackState(stateMachine, this, BOOL_ATTACK);
-        AttackState.SetWeapon(weaponSword);
+        AttackState.SetWeapon(primaryWeaponInfo.weapon);
+
         LandState = new HeroLandState(stateMachine, this, BOOL_LAND);
         WallClimbState = new HeroWallClimbState(stateMachine, this, BOOL_WALL_CLIMB);
         WallGrabState = new HeroWallGrabState(stateMachine, this, BOOL_WALL_GRAB);

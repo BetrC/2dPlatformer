@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "normalAttack",
+                    "name": "Attack",
                     "type": "Button",
                     "id": "a0a7b34d-e612-4b33-8ec0-d9fab4b8234b",
                     "expectedControlType": "Button",
@@ -42,9 +42,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "chargeAttack",
+                    "name": "SecondAttack",
                     "type": "Button",
-                    "id": "af0f1710-1f00-4d38-b8d4-9b870e10d619",
+                    "id": "8cd9e20f-a278-4669-9ad3-95549f61f344",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -228,10 +228,10 @@
                     "name": "",
                     "id": "c1fdf191-2743-4740-be85-85026122932e",
                     "path": "<Keyboard>/l",
-                    "interactions": "Press",
+                    "interactions": "",
                     "processors": "",
                     "groups": "keyboard",
-                    "action": "normalAttack",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -239,32 +239,10 @@
                     "name": "",
                     "id": "c2774888-f89f-477b-9f64-9847043b77b8",
                     "path": "<Gamepad>/buttonWest",
-                    "interactions": "Press",
+                    "interactions": "",
                     "processors": "",
                     "groups": "gamepad",
-                    "action": "normalAttack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "778bdc2a-96a9-46f3-b86e-2177339f26f3",
-                    "path": "<Keyboard>/l",
-                    "interactions": "Hold(duration=0.1)",
-                    "processors": "",
-                    "groups": "keyboard",
-                    "action": "chargeAttack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c710a974-c6b0-4d1c-82f7-9a48afd8ce45",
-                    "path": "<Gamepad>/buttonNorth",
-                    "interactions": "Hold(duration=0.1)",
-                    "processors": "",
-                    "groups": "gamepad",
-                    "action": "chargeAttack",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -309,6 +287,28 @@
                     "processors": "",
                     "groups": "keyboard",
                     "action": "GrabWall",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "100e6791-9fa3-459d-aa9b-12cedb59e002",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "keyboard",
+                    "action": "SecondAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0d43f490-0717-4f6c-90ed-2b3c801a4618",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "gamepad",
+                    "action": "SecondAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

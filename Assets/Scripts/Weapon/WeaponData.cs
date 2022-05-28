@@ -5,15 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Data/Weapon/WeaponData")]
 public class WeaponData : ScriptableObject
 {
-    [HideInInspector]
-    public int AttackNum;
+    public int AttackNum => WeaponAttackConfs.Length;
 
     public WeaponAttackConf[] WeaponAttackConfs;
 
     public WeaponAttackConf this [int index] => WeaponAttackConfs[index];
 
-    private void Awake()
-    {
-        AttackNum = WeaponAttackConfs.Length;
-    }
 }

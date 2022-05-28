@@ -50,11 +50,12 @@ public class HeroOnGroundState : HeroState
         else if (hero.DashState.TriggeredAbility())
         {
             stateMachine.ChangeState(hero.DashState);
-        } else if (hero.AttackState.TriggeredAbility())
+        }
+        else if (hero.AttackState.TriggeredAbility())
         {
             stateMachine.ChangeState(hero.AttackState);
         }
-        else if(!onGround)
+        else if (!onGround)
         {
             stateMachine.ChangeState(hero.InAirState);
             hero.InAirState.SetCoyoteTime();
