@@ -12,10 +12,10 @@ public static class MathUtility
     /// </summary>
     /// <param name="value"></param>
     /// <returns></returns>
-    public static float Normalize(this float value)
+    public static int Normalize(this float value)
     {
         if (value == 0) return 0;
-        return Mathf.Sign(value);
+        return (int)Mathf.Sign(value);
     }
 
     /// <summary>

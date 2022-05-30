@@ -44,6 +44,10 @@ public class WeaponSword : Weapon
         // 倒序防止删除时出问题
         for(int i = p_damageList.Count - 1; i >= 0; i--)
         {
+            if (i >= p_damageList.Count)
+            {
+                continue;
+            }
             var obj = p_damageList[i];
             IDamageable damageable = obj.GetComponent<IDamageable>();
             if (damageable != null)

@@ -16,9 +16,6 @@ public class Hero : DamageableActor
 
     public CollisionChecker collisionChecker;
 
-    [HideInInspector]
-    public bool IsHitable;
-
     #region state
 
     public HeroIdleState IdleState;
@@ -33,6 +30,9 @@ public class Hero : DamageableActor
     public HeroWallSlideState WallSlideState;
     public HeroWallJumpState WallJumpState;
     public HeroLedgeClimbState LedgeClimbState;
+    public HeroHitBackState HitBackState;
+
+    public HeroState CurrentState => stateMachine.currentState as HeroState;
 
     #endregion
 
@@ -91,6 +91,8 @@ public class Hero : DamageableActor
         WallJumpState = new HeroWallJumpState(stateMachine, this, BOOL_INAIR);
         LedgeClimbState = new HeroLedgeClimbState(stateMachine, this, BOOL_LEDGE_HANG);
 
+        HitBackState = new HeroHitBackState(stateMachine, this, BOOL_HIT_BACK);
+
         stateMachine.Init(IdleState);
     }
 
@@ -98,21 +100,33 @@ public class Hero : DamageableActor
     {
         base.Update();
         movement.LogicUpdate();
-        stateMachine.currentState.LogicUpdate();
+        CurrentState.LogicUpdate();
     }
 
     private void FixedUpdate()
     {
-        stateMachine.currentState.PhysicsUpdate();
+        CurrentState.PhysicsUpdate();
     }
 
+    public override bool IsHittable()
+    {
+        return base.IsHittable() && CurrentState.CanReceiveHit;
+    }
+
+    protected override void OnTakeDamage(float damage, Vector2 angle = default, float strength = 0, float xDir = 0)
+    {
+        base.OnTakeDamage(damage, angle, strength, xDir);
+        angle.x *= xDir;
+        angle = angle.normalized * strength;
+        CurrentState.OnReceiveHit(damage, angle);
+    }
 
     public virtual void AnimationTrigger() {
-        stateMachine.currentState.AnimationTrigger();
+        CurrentState.AnimationTrigger();
     }
 
     public virtual void AnimationFinishTrigger()
     {
-        stateMachine.currentState.AnimationFinishTrigger();
+        CurrentState.AnimationFinishTrigger();
     }
 }

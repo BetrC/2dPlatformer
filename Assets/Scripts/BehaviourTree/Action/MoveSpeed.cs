@@ -5,7 +5,7 @@ using TheKiwiCoder;
 
 public class MoveSpeed : ActionNode
 {
-    public float speed = 4f;
+    public float speedX = 4f;
 
     protected override void OnStart() {
 
@@ -16,7 +16,7 @@ public class MoveSpeed : ActionNode
     }
 
     protected override State OnUpdate() {
-        context.movement.SetFacingDirVelocityX(speed);
+        context.movement.SetFacingDirVelocityX(speedX);
         return State.Success;
     }
 }

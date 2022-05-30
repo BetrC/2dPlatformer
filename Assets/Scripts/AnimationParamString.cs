@@ -40,4 +40,6 @@ public static class AnimationParamString
 
     public static readonly string BOOL_WALL_GRAB = "wallGrab";
 
+    public static readonly string BOOL_HIT_BACK = "hitBack";
+
 }

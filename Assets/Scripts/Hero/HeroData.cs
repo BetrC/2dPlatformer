@@ -54,8 +54,9 @@ public class HeroData : ScriptableObject
     /// </summary>
     public float dashGravityScale = 0f;
 
-    [Header("受击保护时间")]
+    [Header("受击")]
     public float hitProtectionTime = 1f;
+    public float hitBackSpeed = 6f;
 
     [Header("Particle")]
     public ParticleSystem runParticle;

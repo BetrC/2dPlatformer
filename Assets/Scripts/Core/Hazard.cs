@@ -21,10 +21,11 @@ public class Hazard : MonoBehaviour
         if (collider.layer != LayerMask.NameToLayer("Player"))
             return;
         Hero hero = collider.GetComponent<Hero>();
-        if (hero == null || !hero.IsHittable)
+        if (hero == null || !hero.IsHittable())
             return;
-
+        
+        // 反冲方向
         Vector2 recoilDirection = (collider.transform.position - transform.position).normalized;
-        hero.TakeDamage(damage, recoilDirection, 2f, 1);
+        hero.TakeDamage(damage, recoilDirection, hero.heroData.hitBackSpeed, 1);
     }
 }

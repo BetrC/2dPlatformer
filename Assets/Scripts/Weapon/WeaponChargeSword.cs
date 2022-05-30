@@ -9,10 +9,27 @@ public class WeaponChargeSword : WeaponSword
 {
     private bool isCharging;
 
+    public float animationXOffset = -0.825f;
+
     public override void Enter()
     {
         base.Enter();
         isCharging = true;
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+        CheckSetPositionOffset();
+    }
+
+    private void CheckSetPositionOffset()
+    {
+        if (isAnimationEnd)
+        {
+            state.SetHeroPositionByXOffset(animationXOffset);
+        }
+
     }
 
     public override void LogicUpdate()

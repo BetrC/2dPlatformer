@@ -19,6 +19,8 @@ public class Movement : MonoBehaviour
 
     public Vector2 CurrentVelocity { get; private set; }
 
+    public LayerMask whatIsGround;
+
     /// <summary>
     /// RB 速度的替身，临时变量，最终将使用该变量来设置RB velocity
     /// </summary>
@@ -79,6 +81,29 @@ public class Movement : MonoBehaviour
         CurrentVelocity = RB.velocity;
     }
 
+
+
+    /// <summary>
+    /// 设置Actor的坐标，同时需要检测是否卡入墙内
+    /// </summary>
+    /// <param name="offset"></param>
+    /// <param name="actorWidth"></param>
+    public void SetPositionByXOffset(float offset, float actorWidth = 0f)
+    {
+        substitute.Set(offset * FacingDirection, 0);
+        substitute.Normalize();
+        RaycastHit2D hit = Physics2D.Raycast(RB.transform.position, substitute, Mathf.Abs(offset), whatIsGround);
+        if (hit.collider != null)
+        {
+            substitute.Set(hit.point.x + (actorWidth / 2 * (RB.position.x - hit.point.x).Normalize()),
+                           RB.position.y);
+        }
+        else
+        {
+            substitute.Set(RB.position.x + offset * FacingDirection, RB.position.y);
+        }
+        RB.position = substitute;
+    }
 
     public void CheckFlip(int xNormalInput)
     {

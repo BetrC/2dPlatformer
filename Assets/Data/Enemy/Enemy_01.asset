@@ -41,7 +41,7 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
-  speed: 0
+  speedX: 0
 --- !u!114 &-8454304632476528528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   drawGizmos: 0
-  speed: 3
+  speedX: 4
 --- !u!114 &-8163442208479042710
 MonoBehaviour:
   m_ObjectHideFlags: 0

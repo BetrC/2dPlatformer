@@ -402,7 +402,6 @@ MonoBehaviour:
   heroData: {fileID: 11400000, guid: be14aa16d5ff7044ca5aa5b1fe84a6fd, type: 2}
   movement: {fileID: 0}
   collisionChecker: {fileID: 0}
-  IsHitable: 0
   primaryWeaponInfo:
     prefab: {fileID: 7563254026784665460, guid: cf77f81fb91ab314e927db775ebe6fed, type: 3}
     runtimeObj: {fileID: 0}
@@ -437,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16bee903391a59b4e93f24fe59fc4bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHalthValue: 20
+  maxHalthValue: 1000
 --- !u!1 &208081596
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +536,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RB: {fileID: 0}
   betterJump: {fileID: 0}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &406539115
 GameObject:
   m_ObjectHideFlags: 0
@@ -4599,6 +4601,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RB: {fileID: 0}
   betterJump: {fileID: 0}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &2032327631
 GameObject:
   m_ObjectHideFlags: 0

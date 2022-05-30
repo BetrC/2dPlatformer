@@ -29,6 +29,8 @@ MonoBehaviour:
   canDashTime: 1
   defaultGravityScale: 3
   dashGravityScale: 0
+  hitProtectionTime: 1
+  hitBackSpeed: 8
   runParticle: {fileID: 8990449128265145329, guid: d8c86508f2c2ecb4d8199f71d931457d, type: 3}
   jumpParticle: {fileID: 2813437094291996281, guid: 7524a634c6229ae4782d5ed85b2de750, type: 3}
   wallSideParticle: {fileID: 3183666236689144087, guid: d2d42ea65ffe86c4aa4491c1513678f3, type: 3}

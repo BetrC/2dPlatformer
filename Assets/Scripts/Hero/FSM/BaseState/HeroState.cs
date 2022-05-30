@@ -14,12 +14,14 @@ public class HeroState : State
 
     protected int FacingDirection => hero.movement.FacingDirection;
 
+    public bool CanReceiveHit;
 
     public HeroState(StateMachine stateMachine, Hero hero, string animatorBoolParam) : base(stateMachine)
     {
         this.hero = hero;
         this.animatorBoolParam = animatorBoolParam;
         heroData = hero.heroData;
+        CanReceiveHit = true;
     }
 
     public override void Enter()
@@ -34,6 +36,14 @@ public class HeroState : State
         base.Exit();
         if (animatorBoolParam != "")
             hero.animator.SetBool(animatorBoolParam, false);
+    }
+
+    public virtual void OnReceiveHit(float damage, Vector2 hitBackVelocity)
+    {
+        if (!CanReceiveHit)
+            return;
+        hero.HitBackState.SetHitBackVelocity(hitBackVelocity);
+        stateMachine.ChangeState(hero.HitBackState);
     }
 
     public override void LogicUpdate()

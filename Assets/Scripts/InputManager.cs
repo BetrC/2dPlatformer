@@ -23,11 +23,11 @@ public class InputManager : Singleton<InputManager>
 
     public float XInput => Input.Player.Movement.ReadValue<Vector2>().x;
 
-    public int XNormalInput => (int)XInput.Normalize();
+    public int XNormalInput => XInput.Normalize();
 
     public float YInput => Input.Player.Movement.ReadValue<Vector2>().y;
 
-    public float YNormalInput => (int)YInput.Normalize();
+    public float YNormalInput => YInput.Normalize();
 
     public bool JumpPressed => Input.Player.JumpPress.triggered;
 

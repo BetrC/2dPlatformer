@@ -15,6 +15,8 @@ public abstract class Weapon : MonoBehaviour
     protected HeroAttackState state;
     protected Animator animator;
 
+    protected bool isAnimationEnd;
+
     /// <summary>
     /// 潜在击打列表
     /// </summary>
@@ -36,6 +38,7 @@ public abstract class Weapon : MonoBehaviour
 
     public virtual void Enter()
     {
+        isAnimationEnd = false;
         gameObject.SetActive(true);
         animator.SetBool(BOOL_ATTACK, true);
     }
@@ -85,6 +88,7 @@ public abstract class Weapon : MonoBehaviour
     /// </summary>
     public virtual void AnimationFinishTrigger()
     {
+        isAnimationEnd = true;
         state.isAbilityDone = true;
     }
 

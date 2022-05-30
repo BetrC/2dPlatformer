@@ -7,7 +7,5 @@ using UnityEngine;
 
 public interface IDamageable
 {
-    void TakeDamage(float damage);
-
-    void TakeDamage(float damage, Vector2 angle = default, float strength = 0, float xDir = 0);
+    void TakeDamage(float damage, Vector2 angle = default, float strength = 0, int xDir = 0);
 }

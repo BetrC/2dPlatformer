@@ -72,4 +72,9 @@ public class HeroAttackState : HeroAbilityState
     {
         shouldCheckFlip = check;
     }
+
+    public void SetHeroPositionByXOffset(float offset)
+    {
+        hero.movement.SetPositionByXOffset(offset, hero.Width);
+    }
 }

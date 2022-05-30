@@ -18,13 +18,25 @@ public class DamageableActor : Actor, IDamageable
 
     [HideInInspector]
     public float hitProtectionTimeLeft;
-    public bool IsHittable => hitProtectionTimeLeft <= 0;
+
+    public float Width
+    {
+        get
+        {
+            if (boxCollider == null)
+                return 0f;
+            return boxCollider.size.x;
+        }
+    }
+
+    private BoxCollider2D boxCollider;
 
     protected override void Awake()
     {
         hitProtectionTimeLeft = 0;
         base.Awake();
         health = GetComponent<Health>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     protected virtual void Start()
@@ -44,28 +56,23 @@ public class DamageableActor : Actor, IDamageable
         hitProtectionTimeLeft = hitProtectionTime;
     }
 
-    public void HitBack(Vector2 angle, float strength, float xDir)
-    {
-        // do nothing
-    }
+    public virtual bool IsHittable() => hitProtectionTimeLeft <= 0;
 
-    public void TakeDamage(float damage)
+
+    public void TakeDamage(float damage, Vector2 angle = default, float strength = 0, int xDir = 0)
     {
-        if (damage <= 0 || IsHittable)
+        if (damage <= 0 || IsHittable())
         {
             health.TakeDamage(damage);
             if (damage > 0)
-                SetHitProtection();
+                OnTakeDamage(damage, angle, strength, xDir);
         }
     }
 
-    public void TakeDamage(float damage, Vector2 angle = default, float strength = 0, float xDir = 0)
+
+    protected virtual void OnTakeDamage(float damage, Vector2 angle = default, float strength = 0, float xDir = 0)
     {
-        TakeDamage(damage);
-        if (IsHittable && damage > 0)
-        {
-            // Hit back
-        }
+        SetHitProtection();
     }
 
     protected virtual void OnDie()
