@@ -16,6 +16,7 @@ namespace TheKiwiCoder {
         public Rigidbody2D physics;
         public BoxCollider boxCollider;
         public Movement movement;
+        public Enemy enemy;
 
         // Add other game specific systems here
 
@@ -28,6 +29,7 @@ namespace TheKiwiCoder {
             context.physics = gameObject.GetComponent<Rigidbody2D>();
             context.boxCollider = gameObject.GetComponent<BoxCollider>();
             context.movement = gameObject.GetComponentInChildren<Movement>();
+            context.enemy = gameObject.GetComponentInChildren<Enemy>();
             
             // Add whatever else you need here...
 

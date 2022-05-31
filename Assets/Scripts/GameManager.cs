@@ -3,6 +3,12 @@ using UnityEngine;
 
 public class GameManager : MonoSingleton<GameManager>
 {
+
+
+    public void HitFreezeTime()
+    {
+        FreezeTime(0.01f);
+    }
     public void FreezeTime(float duration)
     {
         Time.timeScale = 0.1f;

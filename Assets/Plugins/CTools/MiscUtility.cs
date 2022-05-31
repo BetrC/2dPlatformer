@@ -22,4 +22,35 @@ public static class MiscUtility
         return new DateTimeOffset(DateTime.Now).ToUnixTimeMilliseconds();
         
     }
+
+    /// <summary>
+    /// 获取某一动画的长度
+    /// </summary>
+    /// <param name="animator"></param>
+    /// <param name="clipName"></param>
+    /// <returns></returns>
+    public static float GetAnimationClipLength(this Animator animator, string clipName)
+    {
+        
+        AnimationClip clip = animator.runtimeAnimatorController.animationClips.FirstOrDefault(x => x.name == clipName);
+        if (clip == null) 
+            return 0;
+        return clip.length;
+    }
+
+    /// <summary>
+    /// 重置Animator的trigger参数状态
+    /// </summary>
+    /// <param name="animator"></param>
+    public static void ResetAllTrigger(this Animator animator)
+    {
+        foreach (AnimatorControllerParameter param in animator.parameters)
+        {
+            if (param.type == AnimatorControllerParameterType.Trigger && animator.GetBool(param.name))
+            {
+                animator.ResetTrigger(param.name);
+            }
+        }
+    }
+
 }

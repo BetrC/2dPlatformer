@@ -7,6 +7,8 @@ public class AnimatorSetTrigger : ActionNode
 {
     public string triggerName;
 
+    public bool resetAllTrigger = true;
+
     protected override void OnStart() {
 
     }
@@ -16,7 +18,16 @@ public class AnimatorSetTrigger : ActionNode
     }
 
     protected override State OnUpdate() {
-        context.animator.SetTrigger(triggerName);
+
+        if (resetAllTrigger)
+        {
+            context.animator.ResetAllTrigger();
+        }
+
+        if (triggerName != "")
+        {
+            context.animator.SetTrigger(triggerName);
+        }
         return State.Success;
     }
 }
