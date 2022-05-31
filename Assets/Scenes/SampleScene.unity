@@ -1879,6 +1879,9 @@ MonoBehaviour:
   animator: {fileID: 0}
   hitProtectionTime: 0
   hitProtectionTimeLeft: 0
+  hitBox: {fileID: 0}
+  hazard: {fileID: 0}
+  movement: {fileID: 0}
 --- !u!114 &1468705345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1891,7 +1894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16bee903391a59b4e93f24fe59fc4bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHalthValue: 20
+  maxHalthValue: 1000
 --- !u!1 &1514241136
 GameObject:
   m_ObjectHideFlags: 0

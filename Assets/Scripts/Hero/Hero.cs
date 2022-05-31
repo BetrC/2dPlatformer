@@ -116,9 +116,10 @@ public class Hero : DamageableActor
     protected override void OnTakeDamage(float damage, Vector2 angle = default, float strength = 0, float xDir = 0)
     {
         base.OnTakeDamage(damage, angle, strength, xDir);
-        angle.x *= xDir;
-        angle = angle.normalized * strength;
-        CurrentState.OnReceiveHit(damage, angle);
+        substitute.Set(angle.x * xDir, angle.y);
+        substitute.Normalize();
+        substitute *= strength;
+        CurrentState.OnReceiveHit(damage, substitute);
     }
 
     public virtual void AnimationTrigger() {

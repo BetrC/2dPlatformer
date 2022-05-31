@@ -1,15 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using TheKiwiCoder;
 
-
 namespace BT
 {
-    public class MoveSpeed : ActionNode
+    public class IsBeingHit : ActionNode
     {
-        public float speedX = 4f;
-
         protected override void OnStart()
         {
 
@@ -22,8 +18,7 @@ namespace BT
 
         protected override State OnUpdate()
         {
-            context.movement.SetFacingDirVelocityX(speedX);
-            return State.Success;
+            return blackboard.BeHit ? State.Success : State.Failure;
         }
     }
 }

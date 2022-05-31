@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 850d44d867058724fb4e7b16c7e230cb, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
-  AttackNum: 3
   WeaponAttackConfs:
   - attackName: Hit 1
     damageValue: 10
@@ -20,21 +19,18 @@ MonoBehaviour:
     hitBackStrength: 2
     attackLinkTime: 2
     hitEffect: {fileID: 8409589130232027777, guid: cf5aa10249db1504dabadc5689d66756, type: 3}
-    hitBloodEffect: {fileID: 2307275857683747542, guid: 16a437aff39888e489b5de7c0169d414, type: 3}
-    hitBackDir: {x: 1, y: 1}
+    hitBackDir: {x: 2, y: 1}
   - attackName: Hit 2
     damageValue: 10
     movementSpeed: 1
-    hitBackStrength: 2
+    hitBackStrength: 3
     attackLinkTime: 2
     hitEffect: {fileID: 8409589130232027777, guid: cf5aa10249db1504dabadc5689d66756, type: 3}
-    hitBloodEffect: {fileID: 2307275857683747542, guid: 16a437aff39888e489b5de7c0169d414, type: 3}
-    hitBackDir: {x: 1, y: 1}
+    hitBackDir: {x: 2, y: 1}
   - attackName: Hit 3
     damageValue: 10
     movementSpeed: 1
-    hitBackStrength: 2
+    hitBackStrength: 5
     attackLinkTime: 2
     hitEffect: {fileID: 8409589130232027777, guid: cf5aa10249db1504dabadc5689d66756, type: 3}
-    hitBloodEffect: {fileID: 2307275857683747542, guid: 16a437aff39888e489b5de7c0169d414, type: 3}
-    hitBackDir: {x: 1, y: 1}
+    hitBackDir: {x: 2, y: 1}

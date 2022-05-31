@@ -1,5 +1,31 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8886128451419311139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7bf77e26564daa41815cba042a730aa, type: 3}
+  m_Name: InterruptSelector
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: a91fba0aba634b748897ca2d52485654
+  position: {x: -264.66687, y: -91.04161}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: 2604048690599203366}
+  - {fileID: 3866697455447638562}
 --- !u!114 &-8772655356900889199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,10 +41,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: b4f4b3a63031a6f49a1977aa439bc8fe
-  position: {x: 794.57666, y: 418.47757}
+  position: {x: 460.33337, y: 792.00006}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   duration: 1
@@ -37,10 +65,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 2d8fbe010d901d542971cb66b1e88f99
-  position: {x: 371.2433, y: 418.47757}
+  position: {x: 239.99442, y: 792}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   speedX: 0
@@ -59,10 +89,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 8214756d77b5b104da8fbafe0ba5423e
-  position: {x: 719.2434, y: 245.14417}
+  position: {x: 719.3331, y: 634}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   speedX: 4
@@ -81,16 +113,47 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 73cb40930ca7614489080c25482c4086
-  position: {x: -927.9574, y: 8.666718}
+  position: {x: -1055.6775, y: 531.33325}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
   - {fileID: 6148760176021661839}
   - {fileID: 1158533485618713369}
   - {fileID: 1592952687300029388}
+--- !u!114 &-5229682268938356518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
+  m_Name: Sequencer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 8019f937685e3174baf831238d756349
+  position: {x: 239.99442, y: 610.00006}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: 3440792101559892345}
+  - {fileID: 408804755492474741}
+  - {fileID: -8606241831719335809}
+  - {fileID: -8772655356900889199}
+  - {fileID: 404433727853067797}
 --- !u!114 &-4613345489707878890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,10 +169,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 4d384c9d1f3b16c4dbca9bef3afa7f39
-  position: {x: -1367.2908, y: 344.66663}
+  position: {x: -1495.0109, y: 867.33325}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   speedX: 0
@@ -132,6 +197,8 @@ MonoBehaviour:
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   child: {fileID: -678696639746219579}
@@ -150,10 +217,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 26494a49182e9ab4aa5a66423d17a563
-  position: {x: -777.9574, y: 383.33337}
+  position: {x: -905.6775, y: 905.9999}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   healthCheckType: 1
@@ -177,9 +246,11 @@ MonoBehaviour:
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 0
-  child: {fileID: 3866697455447638562}
+  child: {fileID: -8886128451419311139}
   restartOnSuccess: 1
   restartOnFailure: 0
 --- !u!114 &-392975465634472440
@@ -197,10 +268,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: affa063b4e3856d4a8ece096995d0ade
-  position: {x: -1584.624, y: 344.66663}
+  position: {x: -1712.3441, y: 867.33325}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   whatIsPlayer:
@@ -223,10 +296,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 3c07cba63370b9b40a3ee314ff5815c6
-  position: {x: -1777.9575, y: 344.66663}
+  position: {x: -1905.6775, y: 867.33325}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   healthCheckType: 1
@@ -251,7 +326,6 @@ MonoBehaviour:
   - {fileID: 8464602903424172197}
   - {fileID: 3866697455447638562}
   - {fileID: 1744346723821349740}
-  - {fileID: 3359506902404025634}
   - {fileID: 404433727853067797}
   - {fileID: 408804755492474741}
   - {fileID: -8772655356900889199}
@@ -275,9 +349,18 @@ MonoBehaviour:
   - {fileID: 6440992341173408890}
   - {fileID: -1634416032234402900}
   - {fileID: -8296069332975443926}
+  - {fileID: 1056951808934561643}
+  - {fileID: 2394129852180544109}
+  - {fileID: -8886128451419311139}
+  - {fileID: 2604048690599203366}
+  - {fileID: 9049260273935968951}
+  - {fileID: -5229682268938356518}
+  - {fileID: 8863473901090803397}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
 --- !u!114 &404433727853067797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,10 +376,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 355626ede792ddc4c8893e1ee6bba629
-  position: {x: 610.5767, y: 418.47757}
+  position: {x: 673.3385, y: 792.00006}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 0
 --- !u!114 &408804755492474741
@@ -314,14 +399,39 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 90edfa622d0f7b340969937afc2ea2b6
-  position: {x: 133.24335, y: 418.47757}
+  position: {x: 70.66106, y: 792}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   triggerName: idle
   resetAllTrigger: 1
+--- !u!114 &1056951808934561643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a4246ce3158ce4c823c42b2cff30c1, type: 3}
+  m_Name: IsBeingHit
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 227f4e02175c81a47809977bb6d348ad
+  position: {x: -1047.6667, y: 179.4144}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
 --- !u!114 &1158533485618713369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,10 +447,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 9ae8376d97ad80c418c3ef638b9e7929
-  position: {x: -951.9574, y: 343.33337}
+  position: {x: -1079.6775, y: 865.9999}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: <size=15>Attack 2</size>
   drawGizmos: 0
   children:
@@ -363,10 +475,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 37f8d7bcc61de1040a862d20ef8a9890
-  position: {x: -518.62415, y: 200.6667}
+  position: {x: -646.3442, y: 723.3331}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: <size=15>Attack 3</size>
   drawGizmos: 0
   children:
@@ -389,19 +503,73 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 57e83c573d3749e4bae3cc1cb6d35b3a
-  position: {x: -71.42337, y: 530.47754}
+  position: {x: -130.67229, y: 904.6667}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 1
   edgeCheckPositionOffset: {x: 0, y: 0}
   edgeCheckDistance: 0.6
   ledgeCheckPositionOffset: {x: 0.5, y: 0}
-  ledgeCheckDistance: 0.6
+  ledgeCheckDistance: 0.5
   whatIsGround:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &2394129852180544109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f64ac99ea9900f946bf0db8da07d3c4e, type: 3}
+  m_Name: HitBack
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 06ccdbea0e21f944fa6ecd9ab48c7203
+  position: {x: -498.33344, y: 179.4144}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  HitBackTime: 0.3
+--- !u!114 &2604048690599203366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
+  m_Name: Sequencer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: c3f1d97f8b808b24ba5de98b56e5b09e
+  position: {x: -831.00006, y: 37.414425}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: 1056951808934561643}
+  - {fileID: 9049260273935968951}
+  - {fileID: 8863473901090803397}
+  - {fileID: 2394129852180544109}
 --- !u!114 &3174424174969509881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,41 +585,16 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 1ab241f892d044048bf5ecd95f4ce61f
-  position: {x: 535.2433, y: 245.14417}
+  position: {x: 535.3329, y: 634}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   triggerName: run
   resetAllTrigger: 1
---- !u!114 &3359506902404025634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
-  m_Name: Sequencer
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: f2f853cd47d5f03498a0ba264c236867
-  position: {x: 296.5766, y: 288.47754}
-  blackboard:
-    CurHealth: 0
-    MaxHealth: 0
-  description: 
-  drawGizmos: 0
-  children:
-  - {fileID: 3440792101559892345}
-  - {fileID: 408804755492474741}
-  - {fileID: -8606241831719335809}
-  - {fileID: 404433727853067797}
-  - {fileID: -8772655356900889199}
 --- !u!114 &3373288427519076304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,10 +610,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 469757fcf8da4f449867ae1c7e79469c
-  position: {x: -431.2907, y: 383.33337}
+  position: {x: -559.01074, y: 905.9999}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   speedX: 0
@@ -489,10 +634,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: ecff9ed78cde003428cf113983a1a50d
-  position: {x: -71.42337, y: 418.47757}
+  position: {x: -130.67229, y: 792.66675}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   child: {fileID: 1744346723821349740}
@@ -511,15 +658,17 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: ca10c5b1724e0a44184459c7eb1b07cf
-  position: {x: -264.6665, y: -186.00006}
+  position: {x: -264.66684, y: 202.66673}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
   - {fileID: -8296069332975443926}
-  - {fileID: 3359506902404025634}
+  - {fileID: -5229682268938356518}
   - {fileID: 8464602903424172197}
 --- !u!114 &4965834569751275941
 MonoBehaviour:
@@ -536,10 +685,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: b877d07bcde701a48964e1b5fcdd5a9b
-  position: {x: -611.9575, y: 383.33337}
+  position: {x: -739.67755, y: 905.9999}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   whatIsPlayer:
@@ -562,15 +713,18 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 07bfe486e4abf8147a5598dfc638802d
-  position: {x: -239.95737, y: 383.33337}
+  position: {x: -367.6775, y: 905.9999}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   attackClipName: enmey_01_attack3
   damage: 3
   damageInterval: 0.1
+  cd: 4
 --- !u!114 &5786294116789371014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,15 +740,18 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: af878b7590658be49a84d18f878e55da
-  position: {x: -655.2907, y: 516}
+  position: {x: -783.0108, y: 1038.6665}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   attackClipName: enmey_01_attack2
   damage: 2
   damageInterval: 0.1
+  cd: 4
 --- !u!114 &6148760176021661839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,10 +767,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: a1b070dbc45193f439d047b1f5affb58
-  position: {x: -1476.624, y: 200.6667}
+  position: {x: -1604.3441, y: 723.3331}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: <size=15>Attack 1</size>
   drawGizmos: 0
   children:
@@ -636,15 +795,18 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: af37869124bae8f4faeb0b01c2f46694
-  position: {x: -1180.624, y: 344.66663}
+  position: {x: -1308.3442, y: 867.33325}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   attackClipName: enmey_01_attack1
   damage: 2
   damageInterval: 0.1
+  cd: 4
 --- !u!114 &6440992341173408890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,10 +822,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 4c1b9c50fcfe0dd4f9b8e2258d76a735
-  position: {x: -1251.9575, y: 516}
+  position: {x: -1379.6775, y: 1038.6665}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   healthCheckType: 1
@@ -683,10 +847,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: f9834efdf7bd67d498c31d1a40386595
-  position: {x: -835.95734, y: 516}
+  position: {x: -963.6775, y: 1038.6665}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   speedX: 0
@@ -705,15 +871,40 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: ab0595aec2b4c354baebcded501200f1
-  position: {x: 654.57666, y: 97.81086}
+  position: {x: 654.66626, y: 486.66666}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 0
   children:
   - {fileID: 3174424174969509881}
   - {fileID: -8454304632476528528}
+--- !u!114 &8863473901090803397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49935a494dc20004ea3814bf5580564e, type: 3}
+  m_Name: FaceHero
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 3ad59e8accaa9d44f9d81395a8f13de2
+  position: {x: -672.3334, y: 179.4144}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
 --- !u!114 &8962048939120786792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -729,10 +920,12 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 9f966c326e5fcda44a0dda6d406b26dd
-  position: {x: -1057.2908, y: 516}
+  position: {x: -1185.0107, y: 1038.6665}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
   description: 
   drawGizmos: 1
   whatIsPlayer:
@@ -740,3 +933,28 @@ MonoBehaviour:
     m_Bits: 64
   detectType: 0
   detectDistance: 2
+--- !u!114 &9049260273935968951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff43cf4c69894d4ea3aff299824a22e, type: 3}
+  m_Name: AnimatorSetTrigger
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 491323f7402a5d4449578b716281e535
+  position: {x: -875.00006, y: 179.4144}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+  description: 
+  drawGizmos: 0
+  triggerName: hit
+  resetAllTrigger: 1

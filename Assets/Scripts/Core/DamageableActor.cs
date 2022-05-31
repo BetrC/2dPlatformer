@@ -19,6 +19,8 @@ public class DamageableActor : Actor, IDamageable
     [HideInInspector]
     public float hitProtectionTimeLeft;
 
+    protected Vector2 substitute;
+
     public float Width
     {
         get

@@ -9,7 +9,14 @@ namespace TheKiwiCoder {
     // Add other properties here that make sense for your specific use case.
     [System.Serializable]
     public class Blackboard {
+
+        [Header("血量信息")]
         public float CurHealth;
         public float MaxHealth;
+
+        [Header("受击信息")]
+        public bool BeHit = false;
+        public Vector2 HitBackVelocity;
+
     }
 }
