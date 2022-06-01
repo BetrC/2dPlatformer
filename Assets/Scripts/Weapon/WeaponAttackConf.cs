@@ -21,6 +21,11 @@ public class WeaponAttackConf
     public float movementSpeed = 3f;
 
     /// <summary>
+    /// 攻击同一对象的间隔时间(同一对象在该时间内不会受到同一攻击多次)
+    /// </summary>
+    public float hitSameObjectInterval = .2f;
+
+    /// <summary>
     /// 击退
     /// </summary>
     public float hitBackStrength = 3f;

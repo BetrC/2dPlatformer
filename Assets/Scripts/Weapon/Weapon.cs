@@ -17,22 +17,18 @@ public abstract class Weapon : MonoBehaviour
 
     protected bool isAnimationEnd;
 
-    /// <summary>
-    /// 潜在击打列表
-    /// </summary>
-    protected List<Collider2D> p_damageList;
-
+    protected Dictionary<int, float> damagablesHitTimeDic;
 
     public virtual void Init(HeroAttackState state)
     {
         this.state = state;
         lastCastTime = 0;
+        damagablesHitTimeDic = new Dictionary<int, float>();
     }
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        p_damageList = new List<Collider2D>();
         gameObject.SetActive(false);
     }
 
@@ -47,23 +43,18 @@ public abstract class Weapon : MonoBehaviour
     {
         animator.SetBool(BOOL_ATTACK, false);
         gameObject.SetActive(false);
+        damagablesHitTimeDic.Clear();
     }
 
     public virtual void LogicUpdate() { }
 
     protected abstract void SetHeroMovementVelocity();
 
-    protected abstract void CheckAttackCast();
+    protected abstract void CheckAttackCast(Collider2D collision);
 
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        p_damageList.Add(collision);
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        p_damageList.Remove(collision);
+        CheckAttackCast(collision);
     }
 
     #region 动画回调
@@ -73,14 +64,6 @@ public abstract class Weapon : MonoBehaviour
     /// </summary>
     public virtual void AnimationTrigger()
     {
-    }
-
-    /// <summary>
-    /// 动画打击点回调
-    /// </summary>
-    public void AnimationCastTrigger()
-    {
-        CheckAttackCast();
     }
 
     /// <summary>

@@ -43,6 +43,9 @@ public class WeaponChargeSword : WeaponSword
     }
 
 
+    /// <summary>
+    /// 这个触发器表示蓄力完成
+    /// </summary>
     public override void AnimationTrigger()
     {
         base.AnimationTrigger();

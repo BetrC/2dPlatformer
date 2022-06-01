@@ -38,24 +38,33 @@ public class WeaponSword : Weapon
         lastCastTime = curTime;
     }
 
-    protected override void CheckAttackCast()
+    protected override void CheckAttackCast(Collider2D collision)
     {
+        // only handle object implement IDamageable
+        IDamageable damageable = collision.GetComponent<IDamageable>();
+        if (damageable == null)
+            return;
+
         WeaponAttackConf conf = weaponData[lastCastSequence];
-        // 倒序防止删除时出问题
-        for(int i = p_damageList.Count - 1; i >= 0; i--)
+
+        CLog.Log($"{conf.attackName} do attack");
+
+        // we check this object is being attacked or not in this attack session
+        int instanceId = collision.gameObject.GetInstanceID();
+        float nowTime = Time.time;
+        if (damagablesHitTimeDic.TryGetValue(instanceId, out float lastTime))
         {
-            if (i >= p_damageList.Count)
+            if (nowTime < lastTime + conf.hitSameObjectInterval)
             {
-                continue;
-            }
-            var obj = p_damageList[i];
-            IDamageable damageable = obj.GetComponent<IDamageable>();
-            if (damageable != null)
-            {
-                damageable.TakeDamage(conf.damageValue, conf.HitBackNormalDir, conf.hitBackStrength, (obj.transform.position.x - transform.position.x).Normalize());
-                ShowEffect(conf, obj.transform);
+                CLog.Log("ignore");
+                return;
             }
         }
+
+        GameManager.Instance.HitFreezeTime();
+        damageable.TakeDamage(conf.damageValue, conf.HitBackNormalDir, conf.hitBackStrength, (collision.transform.position.x - transform.position.x).Normalize());
+        damagablesHitTimeDic[instanceId] = nowTime;
+        ShowEffect(conf, collision.transform);
     }
 
     protected override void SetHeroMovementVelocity()
