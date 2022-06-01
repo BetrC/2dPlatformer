@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 public class HeroLandState : HeroOnGroundState
 {
     public bool isAnimFinish;
+
     
     public HeroLandState(StateMachine stateMachine, Hero hero, string animatorBoolParam) : base(stateMachine, hero, animatorBoolParam)
     {
@@ -22,17 +23,18 @@ public class HeroLandState : HeroOnGroundState
 
     public override void LogicUpdate()
     {
-        base.LogicUpdate();
-
         if (isExitingState)
             return;
 
-        if (xInput != 0)
-        {
-            stateMachine.ChangeState(hero.RunState);
-        }else if (isAnimFinish)
+        base.LogicUpdate();
+
+        if (isAnimFinish)
         {
             stateMachine.ChangeState(hero.IdleState);
+        }
+        else if (xInput != 0)
+        {
+            stateMachine.ChangeState(hero.RunState);
         }
     }
 

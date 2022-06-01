@@ -38,6 +38,8 @@ public class HeroOnGroundState : HeroState
         xInput = InputManager.Instance.XInput;
         xNormalInput = InputManager.Instance.XNormalInput;
 
+        onGround = hero.collisionChecker.OnGround;
+
         if (hero.JumpState.TriggeredAbility())
         {
             stateMachine.ChangeState(hero.JumpState);

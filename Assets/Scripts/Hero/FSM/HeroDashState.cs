@@ -26,6 +26,7 @@ public class HeroDashState : HeroAbilityState
         hero.movement.SetFacingDirVelocityX(heroData.dashSpeed);
         hero.movement.SetGravityScale(heroData.dashGravityScale);
         hero.movement.SetBetterJumpEnable(false);
+        SoundManager.Instance.PlaySound("hero_dash");
         CanReceiveHit = false;
     }
 

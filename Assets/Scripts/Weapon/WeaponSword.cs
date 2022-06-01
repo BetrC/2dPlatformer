@@ -47,8 +47,6 @@ public class WeaponSword : Weapon
 
         WeaponAttackConf conf = weaponData[lastCastSequence];
 
-        CLog.Log($"{conf.attackName} do attack");
-
         // we check this object is being attacked or not in this attack session
         int instanceId = collision.gameObject.GetInstanceID();
         float nowTime = Time.time;
@@ -56,12 +54,13 @@ public class WeaponSword : Weapon
         {
             if (nowTime < lastTime + conf.hitSameObjectInterval)
             {
-                CLog.Log("ignore");
                 return;
             }
         }
 
+        CameraManager.Instance.ShakeCamera(3, .1f);
         GameManager.Instance.HitFreezeTime();
+        SoundManager.Instance.PlaySound(conf.hitSound);
         damageable.TakeDamage(conf.damageValue, conf.HitBackNormalDir, conf.hitBackStrength, (collision.transform.position.x - transform.position.x).Normalize());
         damagablesHitTimeDic[instanceId] = nowTime;
         ShowEffect(conf, collision.transform);

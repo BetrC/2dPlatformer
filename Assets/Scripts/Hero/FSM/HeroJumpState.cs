@@ -21,6 +21,7 @@ public class HeroJumpState : HeroAbilityState
         isAbilityDone = true;
 
         ShowJumpParticle();
+        SoundManager.Instance.PlaySound("hero_jump");
     }
 
     public bool CanJump()

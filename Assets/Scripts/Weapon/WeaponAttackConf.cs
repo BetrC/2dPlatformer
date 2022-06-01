@@ -34,6 +34,8 @@ public class WeaponAttackConf
 
     public ParticleSystem hitEffect;
 
+    public string hitSound;
+
     /// <summary>
     /// 击退方向
     /// </summary>

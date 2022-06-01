@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class GameManager : MonoSingleton<GameManager>
 {
-
+    public float hitFreezeTime = .2f;
 
     public void HitFreezeTime()
     {
-        FreezeTime(0.01f);
+        FreezeTime(hitFreezeTime / 10);
     }
     public void FreezeTime(float duration)
     {
