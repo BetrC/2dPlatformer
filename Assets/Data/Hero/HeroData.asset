@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f72ac8b0497f649b2b62e02d051574, type: 3}
   m_Name: HeroData
   m_EditorClassIdentifier: 
-  runSpeed: 5
-  jumpSpeed: 25
-  wallJumpSpeed: 20
+  runSpeed: 8
+  jumpSpeed: 30
+  wallJumpSpeed: 25
   wallJumpTime: 0.2
   wallJumpDir: {x: 7, y: 8}
-  wallSlideSpeed: -2
+  wallSlideSpeed: -3
   wallClimbSpeed: 2
   ledgeClimbStartPosOffset: {x: 0.27, y: 0.5}
   ledgeClimbEndPosOffset: {x: 0.32, y: 0.4}
@@ -25,7 +25,7 @@ MonoBehaviour:
   wallJumpCoyoteTime: 0.5
   jumpFallThreshould: 0.1
   canJumpTime: 2
-  dashSpeed: 30
+  dashSpeed: 40
   canDashTime: 1
   defaultGravityScale: 3
   dashGravityScale: 0
