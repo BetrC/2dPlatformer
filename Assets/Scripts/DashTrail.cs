@@ -9,6 +9,11 @@ public class DashTrail : MonoBehaviour
     public Color fadeColor;
     public float fadeTime = .5f;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
+
     public void ShowTrail(DamageableActor actor)
     {
         var actorSprite = actor.GetComponent<SpriteRenderer>();

@@ -5,6 +5,11 @@ public class GameManager : MonoSingleton<GameManager>
 {
     public float hitFreezeTime = .2f;
 
+    private void Start()
+    {
+        SoundManager.Instance.PlaySound("bgm");
+    }
+
     public void HitFreezeTime()
     {
         FreezeTime(hitFreezeTime / 10);
