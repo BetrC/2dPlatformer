@@ -7,9 +7,11 @@ public class SoundManager : MonoSingleton<SoundManager>
 {
     public Sound[] sounds;
 
-    public AudioSource tempSource;
-    private void Awake()
+    private AudioSource tempSource;
+
+    protected override void Init()
     {
+        base.Init();
         foreach (var sound in sounds)
         {
             AudioSource source = gameObject.AddComponent<AudioSource>();

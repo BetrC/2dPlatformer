@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Cinemachine;
 using DG.Tweening;
 
@@ -9,9 +10,9 @@ public class CameraManager : MonoSingleton<CameraManager>
     [HideInInspector]
     public CinemachineBasicMultiChannelPerlin channelPerlin;
 
-
-    private void Awake()
+    protected override void Init()
     {
+        base.Init();
         channelPerlin = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
 

@@ -9,10 +9,14 @@ public class GameManager : MonoSingleton<GameManager>
 
     public Transform respawnTransform;
 
-    private void Awake()
+    public Hero hero;
+
+    protected override void Init()
     {
+        base.Init();
         SceneManager.sceneLoaded += OnSceneLoaded;
         RecordRespawnPoint(FindObjectOfType<SceneInitPlayerPoint>().transform);
+        hero = FindObjectOfType<Hero>();
     }
 
     private void Start()
@@ -23,6 +27,7 @@ public class GameManager : MonoSingleton<GameManager>
     private void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
     {
         RecordRespawnPoint(FindObjectOfType<SceneInitPlayerPoint>().transform);
+        hero.transform.position = respawnTransform.position;
     }
 
     public void HitFreezeTime()
