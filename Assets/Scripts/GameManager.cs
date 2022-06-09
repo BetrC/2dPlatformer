@@ -1,18 +1,33 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoSingleton<GameManager>
 {
     public float hitFreezeTime = .2f;
+
+    public Transform respawnTransform;
+
+    private void Awake()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        RecordRespawnPoint(FindObjectOfType<SceneInitPlayerPoint>().transform);
+    }
 
     private void Start()
     {
         SoundManager.Instance.PlaySound("bgm");
     }
 
+    private void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
+    {
+        RecordRespawnPoint(FindObjectOfType<SceneInitPlayerPoint>().transform);
+    }
+
     public void HitFreezeTime()
     {
-        FreezeTime(hitFreezeTime / 10);
+        // FreezeTime(hitFreezeTime / 10);
     }
     public void FreezeTime(float duration)
     {
@@ -24,6 +39,11 @@ public class GameManager : MonoSingleton<GameManager>
     {
         yield return new WaitForSeconds(duration);
         Time.timeScale = 1.0f;
+    }
+
+    public void RecordRespawnPoint(Transform transform)
+    {
+        respawnTransform = transform;
     }
 }
 

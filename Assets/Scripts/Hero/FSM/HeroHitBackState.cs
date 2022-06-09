@@ -18,8 +18,8 @@ public class HeroHitBackState : HeroAbilityState
     {
         base.Enter();
         hero.movement.SetVelocity(hitBackVelocity);
+        SoundManager.Instance.PlaySound("hero_hit");
     }
-
 
     public override void Exit()
     {

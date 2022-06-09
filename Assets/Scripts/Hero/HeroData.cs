@@ -65,6 +65,8 @@ public class HeroData : ScriptableObject
     /// 依附墙上的粒子特效
     /// </summary>
     public ParticleSystem wallSideParticle;
+
+    public ParticleSystem deathParticle;
     /// <summary>
     /// 墙体粒子特效的X位移
     /// </summary>

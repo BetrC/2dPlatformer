@@ -57,7 +57,7 @@ public class Enemy : DamageableActor
     }
 
     /// <summary>
-    /// Ä³Ò»¹¥»÷µÄÉËº¦ÊıÖµ
+    /// æŸä¸€æ”»å‡»çš„ä¼¤å®³æ•°å€¼
     /// </summary>
     /// <param name="damage"></param>
     /// <param name="damageInterval"></param>
@@ -74,6 +74,7 @@ public class Enemy : DamageableActor
     {
         base.OnDie();
         PlayDeathParticle();
+        Destroy(gameObject);
     }
 
 

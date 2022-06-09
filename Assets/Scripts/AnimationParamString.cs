@@ -42,4 +42,6 @@ public static class AnimationParamString
 
     public static readonly string BOOL_HIT_BACK = "hitBack";
 
+    public static readonly string BOOL_DEAD = "dead";
+
 }

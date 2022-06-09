@@ -31,6 +31,7 @@ public class Hero : DamageableActor
     public HeroWallJumpState WallJumpState;
     public HeroLedgeClimbState LedgeClimbState;
     public HeroHitBackState HitBackState;
+    public HeroDieState DieState;
 
     public HeroState CurrentState => stateMachine.currentState as HeroState;
 
@@ -92,6 +93,8 @@ public class Hero : DamageableActor
         LedgeClimbState = new HeroLedgeClimbState(stateMachine, this, BOOL_LEDGE_HANG);
 
         HitBackState = new HeroHitBackState(stateMachine, this, BOOL_HIT_BACK);
+        DieState = new HeroDieState(stateMachine, this, BOOL_DEAD);
+        
 
         stateMachine.Init(IdleState);
     }
@@ -122,6 +125,12 @@ public class Hero : DamageableActor
         CurrentState.OnReceiveHit(damage, substitute);
     }
 
+    protected override void OnDie()
+    {
+        base.OnDie();
+        stateMachine.ChangeState(DieState);
+    }
+
     public virtual void AnimationTrigger() {
         CurrentState.AnimationTrigger();
     }
@@ -129,5 +138,14 @@ public class Hero : DamageableActor
     public virtual void AnimationFinishTrigger()
     {
         CurrentState.AnimationFinishTrigger();
+    }
+
+    public void Respawn()
+    {
+        transform.position = GameManager.Instance.respawnTransform.position;
+        health.Reset();
+        gameObject.SetActive(true);
+        stateMachine.ChangeState(IdleState);
+
     }
 }

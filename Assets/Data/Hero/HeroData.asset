@@ -34,4 +34,5 @@ MonoBehaviour:
   runParticle: {fileID: 8990449128265145329, guid: d8c86508f2c2ecb4d8199f71d931457d, type: 3}
   jumpParticle: {fileID: 2813437094291996281, guid: 7524a634c6229ae4782d5ed85b2de750, type: 3}
   wallSideParticle: {fileID: 3183666236689144087, guid: d2d42ea65ffe86c4aa4491c1513678f3, type: 3}
+  deathParticle: {fileID: 1342278251023977775, guid: b1e6c86e3d4e0264f914aa028a3a0cb2, type: 3}
   wallSideParticleOffsetX: 0.3

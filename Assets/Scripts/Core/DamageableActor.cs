@@ -71,6 +71,14 @@ public class DamageableActor : Actor, IDamageable
         }
     }
 
+    /// <summary>
+    /// 即死
+    /// </summary>
+    public void DieDirectly()
+    {
+        health.TakeDamage(health.maxHalthValue);
+    }
+
 
     protected virtual void OnTakeDamage(float damage, Vector2 angle = default, float strength = 0, float xDir = 0)
     {
@@ -79,7 +87,6 @@ public class DamageableActor : Actor, IDamageable
 
     protected virtual void OnDie()
     {
-
     }
 
     protected virtual void OnHealthUpdated(float curHealth, float deltaChange)

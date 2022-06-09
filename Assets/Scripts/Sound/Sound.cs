@@ -1,4 +1,5 @@
 ﻿using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -27,5 +28,12 @@ public class Sound
         source.volume = volume;
         source.pitch = pitch;
         audioSource = source;
+    }
+
+    public static Sound CreateFromAudioClip(AudioClip clip)
+    {
+        Sound sound = new Sound();
+        sound.clip = clip;
+        return sound;
     }
 }
