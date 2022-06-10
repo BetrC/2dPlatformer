@@ -10,12 +10,17 @@ namespace BT
 
         public float HitBackTime = .3f;
 
+        public bool HitBackDirZero = false;
+
         private float startTime;
 
         protected override void OnStart()
         {
             startTime = Time.time;
-            context.movement.SetVelocity(blackboard.HitBackVelocity);
+            if (!HitBackDirZero)
+            {
+                context.movement.SetVelocity(blackboard.HitBackVelocity);   
+            }
         }
 
         protected override void OnStop()

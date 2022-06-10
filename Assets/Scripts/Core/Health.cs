@@ -13,14 +13,14 @@ public class Health : MonoBehaviour
     public OnHealthUpdated onHealthUpdated;
     public OnDie onDie;
     
-    public bool IsDead = false;
+    private bool isDead = false;
 
     private void Awake()
     {
         _healthValue = maxHalthValue;
         onHealthUpdated = new OnHealthUpdated();
         onDie = new OnDie();
-        IsDead = false;
+        isDead = false;
     }
 
     public float HealthValue
@@ -37,7 +37,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float value)
     {
-        if (IsDead)
+        if (isDead)
             return;
         HealthValue -= value;
         CLog.Log($"Object: {gameObject.name}, take {value} damage, Health now is {HealthValue}");
@@ -49,14 +49,14 @@ public class Health : MonoBehaviour
         if (HealthValue <= 0)
         {
             CLog.Log($"Object {gameObject.name} Die");
-            IsDead = true;
+            isDead = true;
             onDie?.Invoke();
         }
     }
 
     public void Reset()
     {
-        IsDead = false;
+        isDead = false;
         HealthValue = maxHalthValue;
     }
 }

@@ -18,8 +18,11 @@ namespace BT
 
         public DetectType detectType;
 
+        public Vector2 detectOffset;
         public float detectDistance = 4f;
 
+        private Vector2 start => (Vector2)context.transform.position + detectOffset;
+        
         protected override void OnStart()
         {
 
@@ -34,11 +37,11 @@ namespace BT
             bool hit = false;
             if (detectType == DetectType.StrightLine)
             {
-                hit = Physics2D.Raycast(context.transform.position, context.transform.right, detectDistance, whatIsPlayer);
+                hit = Physics2D.Raycast(start, context.transform.right, detectDistance, whatIsPlayer);
             }
             else if (detectType == DetectType.Circle)
             {
-                hit = Physics2D.OverlapCircle(context.transform.position, detectDistance, whatIsPlayer);
+                hit = Physics2D.OverlapCircle(start, detectDistance, whatIsPlayer);
             }
             return hit ? State.Success : State.Failure;
         }
@@ -46,13 +49,14 @@ namespace BT
         public override void DrawGizmos(Transform transform)
         {
             Gizmos.color = Color.yellow;
+            Vector2 begin = (Vector2)transform.position + detectOffset;
             if (detectType == DetectType.StrightLine)
             {
-                Gizmos.DrawLine(transform.position, transform.position + transform.right * detectDistance);
+                Gizmos.DrawLine(begin, begin + detectDistance * (Vector2)transform.right);
             }
             else if (detectType == DetectType.Circle)
             {
-                Gizmos.DrawWireSphere(transform.position, detectDistance);
+                Gizmos.DrawWireSphere(begin, detectDistance);
             }
         }
     }

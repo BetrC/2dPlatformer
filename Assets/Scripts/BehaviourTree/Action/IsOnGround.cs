@@ -8,12 +8,12 @@ namespace BT
     public class IsOnGround : ActionNode
     {
 
-        public float groundCheckDistance = 0.5f;
+        private float groundCheckDistance;
         public LayerMask whatIsGround;
 
         protected override void OnStart()
         {
-
+            groundCheckDistance = context.boxCollider.size.y / 2 + .8f;
         }
 
         protected override void OnStop()

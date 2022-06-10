@@ -15,8 +15,6 @@ public class Enemy : DamageableActor
     [HideInInspector]
     public Movement movement;
 
-    public ParticleSystem deathParticle;
-
     public Blackboard Blackboard => runner.tree.blackboard;
 
     private BehaviourTreeRunner runner;
@@ -73,16 +71,6 @@ public class Enemy : DamageableActor
     protected override void OnDie()
     {
         base.OnDie();
-        PlayDeathParticle();
-        Destroy(gameObject);
-    }
-
-
-    private void PlayDeathParticle()
-    {
-        if (deathParticle != null)
-        {
-            Instantiate(deathParticle, transform.position, Quaternion.identity);
-        }
+        Blackboard.Dead = true;
     }
 }

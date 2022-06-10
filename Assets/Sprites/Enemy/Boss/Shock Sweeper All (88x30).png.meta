@@ -1,0 +1,1322 @@
+fileFormatVersion: 2
+guid: 531054f960948dc46886ec89684e8e5a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 4
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 264
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd1d42f2cbb52e448946e2b8338dd2e9
+      internalID: -442835429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_1
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 264
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7126697fd7d3e4468057e87e97949d5
+      internalID: 291949494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_2
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 264
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffdcc85f847192b42aa5924472f65284
+      internalID: -1396325986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_3
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 264
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eea64e837fc31ef41bfde8f68de852bd
+      internalID: -495542156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_4
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 264
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55d5c8dd1a69dca49a782d8b79f62aaa
+      internalID: -736517806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_5
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 264
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2a1495ceaba5c6499d73a074a5739d3
+      internalID: -994416866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 231
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0cc993268171c74d8fc109978e1344d
+      internalID: 1574950878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_7
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 231
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff1b96cbbedc12145a2a2a8e22dc0cb7
+      internalID: -1726517285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_8
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 231
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4de8f9cbfd148fb43906b25d880755f6
+      internalID: -2142539436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_9
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 231
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13cabf41738960243ba663013782f84f
+      internalID: 1856818126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_10
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 231
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d10c73e48645db4d8715784e6e97b0a
+      internalID: -81980050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_11
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 231
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53070cff6c2ecde4a8e9cf92b36d4e79
+      internalID: 131285814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_12
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 231
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a710d016b94aba40bf102faec74720d
+      internalID: 652153675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_13
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 231
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58b131e64d75d1740aa53433f71b4ef1
+      internalID: -335362046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 198
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0425769331b44f47981f3bd9e92b680
+      internalID: -1182737011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_15
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 198
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 203752cad70d6a140ab8997fb223c6fe
+      internalID: 1252751860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_16
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 198
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58d92ed06fafb6949b303dfe222519fa
+      internalID: 1835575784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 165
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b98c9d3964235a543b0503228c006d74
+      internalID: 1513483830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_18
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 165
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c83df1c94dd699b4caa720ebdd1b4ec4
+      internalID: 1689095273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_19
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 165
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59988ba64f6107845a37e7aa6cdc4c35
+      internalID: 1652156274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 132
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13053e652f5afe446a118e423eed12a9
+      internalID: -103185982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_21
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 132
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4163cff8ca32204f8cca025aee7f1dd
+      internalID: 1400403280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_22
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 132
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 759f4855e2cdf0b4eb32493fc5fd6465
+      internalID: -1161942033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_23
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 132
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4551c1456e6f853489459b26e29a57e5
+      internalID: 1786317332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_24
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 132
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a875f98559d28f74cbbc736fad5c91f4
+      internalID: 2013296369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_25
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 132
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c98f2e98b11ec04e8635ac7ab8faba4
+      internalID: -931236081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_26
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 132
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c957235b3e38a84a8fc8671fb72701e
+      internalID: -1283497152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_27
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 132
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e17a7eca13c0c64197fa367774d59c3
+      internalID: 115524509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_28
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 132
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfa5f3dac68979c4783c4dd0ab0bf5be
+      internalID: -225529535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_29
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 132
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a32960dd8be1e4489bf4d17ba2915c
+      internalID: -1452184909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 99
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a5daa66b0cdda14c98d078c9655ead9
+      internalID: 1617575530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_31
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 99
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 319b71d1f40a7d14d981ce806aaedf6c
+      internalID: -2047428185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_32
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 99
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ccb1953891006b4aa1857020a7573d2
+      internalID: 2130506633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_33
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 99
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10cc1800fb18c4c459a80ce56af60137
+      internalID: 575105205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_34
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 99
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 065a260a053f605439f771fc0f25fb35
+      internalID: -399109001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_35
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 99
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60433f0ec6dbee446a6c1b1847cce601
+      internalID: -749811432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_36
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 99
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cc209f9ea6e9be4bab0cd84e14cb998
+      internalID: 2001822360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_37
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 99
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 022dbb5191c1e3349907d738e2888860
+      internalID: -318571166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 66
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dfd6e53b5dc6484db9bc4a742b67da0
+      internalID: 1919362199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_39
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 66
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d26abacdf9e163a4f936770c89a6737e
+      internalID: 65085141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_40
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 66
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 196784fa49921c3408f32ca267aa0067
+      internalID: -1669114425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_41
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 66
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3d313c99d10b7c4488e9e622e37f37a
+      internalID: -567947520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_42
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 66
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9e2e21f842422b43be782940d1c6c94
+      internalID: -2083900995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_43
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 66
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e10e84eda66387041a02ac82d71a5000
+      internalID: -1626664892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_44
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 66
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68677d9b04b78af449e02b645233d631
+      internalID: -1544565729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_45
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 66
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff1c0c807bf1e874e910edb14dd0aafe
+      internalID: -598573386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_46
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 66
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f35183c59a120af43aa1b9a48f479a6d
+      internalID: 1189675589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_47
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 33
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 957e7bd40f57bbb41b5d5f0047a0ebdd
+      internalID: -1012268236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_48
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 33
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a0a8dd59f9d3924d9f0349948fddc33
+      internalID: 827068224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_49
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2fecff071374c8428e3fa3c9e1fa706
+      internalID: -150663810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_50
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 0
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1294b71561fed31429a5f544b4da5856
+      internalID: 1406518978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_51
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d4120d73034c404e8bf979ad777fa74
+      internalID: 2652632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_52
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 0
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cdb9904b683d5e4392245f7daccc697
+      internalID: -209368281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shock Sweeper All (88x30)_53
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 88
+        height: 33
+      alignment: 9
+      pivot: {x: 0.32, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44abd15e5811b304787ea84bedd15772
+      internalID: 949449772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Shock Sweeper All (88x30)_37: -318571166
+      Shock Sweeper All (88x30)_20: -103185982
+      Shock Sweeper All (88x30)_5: -994416866
+      Shock Sweeper All (88x30)_3: -495542156
+      Shock Sweeper All (88x30)_22: -1161942033
+      Shock Sweeper All (88x30)_47: -1012268236
+      Shock Sweeper All (88x30)_33: 575105205
+      Shock Sweeper All (88x30)_27: 115524509
+      Shock Sweeper All (88x30)_31: -2047428185
+      Shock Sweeper All (88x30)_53: 949449772
+      Shock Sweeper All (88x30)_26: -1283497152
+      Shock Sweeper All (88x30)_14: -1182737011
+      Shock Sweeper All (88x30)_28: -225529535
+      Shock Sweeper All (88x30)_39: 65085141
+      Shock Sweeper All (88x30)_4: -736517806
+      Shock Sweeper All (88x30)_21: 1400403280
+      Shock Sweeper All (88x30)_29: -1452184909
+      Shock Sweeper All (88x30)_17: 1513483830
+      Shock Sweeper All (88x30)_44: -1544565729
+      Shock Sweeper All (88x30)_41: -567947520
+      Shock Sweeper All (88x30)_9: 1856818126
+      Shock Sweeper All (88x30)_7: -1726517285
+      Shock Sweeper All (88x30)_1: 291949494
+      Shock Sweeper All (88x30)_30: 1617575530
+      Shock Sweeper All (88x30)_32: 2130506633
+      Shock Sweeper All (88x30)_52: -209368281
+      Shock Sweeper All (88x30)_48: 827068224
+      Shock Sweeper All (88x30)_8: -2142539436
+      Shock Sweeper All (88x30)_25: -931236081
+      Shock Sweeper All (88x30)_35: -749811432
+      Shock Sweeper All (88x30)_51: 2652632
+      Shock Sweeper All (88x30)_46: 1189675589
+      Shock Sweeper All (88x30)_10: -81980050
+      Shock Sweeper All (88x30)_50: 1406518978
+      Shock Sweeper All (88x30)_43: -1626664892
+      Shock Sweeper All (88x30)_38: 1919362199
+      Shock Sweeper All (88x30)_6: 1574950878
+      Shock Sweeper All (88x30)_40: -1669114425
+      Shock Sweeper All (88x30)_42: -2083900995
+      Shock Sweeper All (88x30)_36: 2001822360
+      Shock Sweeper All (88x30)_24: 2013296369
+      Shock Sweeper All (88x30)_45: -598573386
+      Shock Sweeper All (88x30)_23: 1786317332
+      Shock Sweeper All (88x30)_18: 1689095273
+      Shock Sweeper All (88x30)_19: 1652156274
+      Shock Sweeper All (88x30)_49: -150663810
+      Shock Sweeper All (88x30)_11: 131285814
+      Shock Sweeper All (88x30)_2: -1396325986
+      Shock Sweeper All (88x30)_12: 652153675
+      Shock Sweeper All (88x30)_15: 1252751860
+      Shock Sweeper All (88x30)_16: 1835575784
+      Shock Sweeper All (88x30)_34: -399109001
+      Shock Sweeper All (88x30)_0: -442835429
+      Shock Sweeper All (88x30)_13: -335362046
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

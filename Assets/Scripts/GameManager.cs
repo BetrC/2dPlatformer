@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoSingleton<GameManager>
 {
-    public float hitFreezeTime = .2f;
+    public float hitFreezeTime = .1f;
 
     public Transform respawnTransform;
 
@@ -32,7 +32,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void HitFreezeTime()
     {
-        // FreezeTime(hitFreezeTime / 10);
+        FreezeTime(hitFreezeTime / 10);
     }
     public void FreezeTime(float duration)
     {

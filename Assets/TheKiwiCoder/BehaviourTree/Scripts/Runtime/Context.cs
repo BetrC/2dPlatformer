@@ -14,7 +14,8 @@ namespace TheKiwiCoder {
         public Transform transform;
         public Animator animator;
         public Rigidbody2D physics;
-        public BoxCollider boxCollider;
+        public BoxCollider2D boxCollider;
+        public BoxCollider2D triggerCollider;
         public Movement movement;
         public Enemy enemy;
 
@@ -27,9 +28,10 @@ namespace TheKiwiCoder {
             context.transform = gameObject.transform;
             context.animator = gameObject.GetComponent<Animator>();
             context.physics = gameObject.GetComponent<Rigidbody2D>();
-            context.boxCollider = gameObject.GetComponent<BoxCollider>();
+            context.boxCollider = gameObject.GetComponent<BoxCollider2D>();
             context.movement = gameObject.GetComponentInChildren<Movement>();
             context.enemy = gameObject.GetComponentInChildren<Enemy>();
+            context.triggerCollider = gameObject.transform.Find("ColliderBox").GetComponent<BoxCollider2D>();
             
             // Add whatever else you need here...
 

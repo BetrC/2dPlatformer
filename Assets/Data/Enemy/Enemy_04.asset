@@ -1,0 +1,1100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8886128451419311139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7bf77e26564daa41815cba042a730aa, type: 3}
+  m_Name: InterruptSelector
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: a91fba0aba634b748897ca2d52485654
+  position: {x: -264.66687, y: -91.04161}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: -6718869470864214766}
+  - {fileID: 2604048690599203366}
+  - {fileID: 3866697455447638562}
+--- !u!114 &-8772655356900889199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5134d9de14153468b48928d3e7359a, type: 3}
+  m_Name: Wait
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: b4f4b3a63031a6f49a1977aa439bc8fe
+  position: {x: 969.33307, y: 1049.9998}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  duration: 1
+--- !u!114 &-8606241831719335809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6cb1d402bb659468a0d8f8bedc8026, type: 3}
+  m_Name: MoveSpeed
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 2d8fbe010d901d542971cb66b1e88f99
+  position: {x: 748.66644, y: 1049.9998}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  speedX: 0
+--- !u!114 &-8454304632476528528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6cb1d402bb659468a0d8f8bedc8026, type: 3}
+  m_Name: MoveSpeed
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 8214756d77b5b104da8fbafe0ba5423e
+  position: {x: 1670.3141, y: 1015.3332}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  speedX: 2
+--- !u!114 &-8296069332975443926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee64948bda9e2fe4fb5ad88265395141, type: 3}
+  m_Name: RandomSelector
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 73cb40930ca7614489080c25482c4086
+  position: {x: -42.532593, y: 765.41504}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: 6148760176021661839}
+  - {fileID: -1053789085338558811}
+--- !u!114 &-6926890415959974983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff43cf4c69894d4ea3aff299824a22e, type: 3}
+  m_Name: AnimatorSetTrigger
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 6946a0f09205ddf4da107a84979d135d
+  position: {x: -1953.3705, y: 615.3334}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: die
+  drawGizmos: 0
+  triggerName: die
+  resetAllTrigger: 1
+--- !u!114 &-6745357082860497203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4228b706e1053c648b7b47e2febd9bb1, type: 3}
+  m_Name: IsOnGround
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: d5fa68be24e9f1247bceaeb9fd5656eb
+  position: {x: -132.84732, y: 636.6667}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 1
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!114 &-6718869470864214766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
+  m_Name: Sequencer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 229b6a3b8e39cb34aa3135c1f99546c1
+  position: {x: -1748.0372, y: 357.99994}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: 2553313867701935331}
+  - {fileID: -6926890415959974983}
+  - {fileID: 7407206398157304930}
+  - {fileID: -4619541131701064210}
+  - {fileID: 3316838813604601714}
+--- !u!114 &-5229682268938356518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
+  m_Name: Sequencer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 8019f937685e3174baf831238d756349
+  position: {x: 748.66644, y: 867.9999}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: 8902491042095749742}
+  - {fileID: 408804755492474741}
+  - {fileID: -8606241831719335809}
+  - {fileID: -8772655356900889199}
+  - {fileID: 404433727853067797}
+--- !u!114 &-4619541131701064210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc42c5e74414f94b4ac2daaabac0b97, type: 3}
+  m_Name: PlayParticle
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 5adb048fa16a44b4db3a2222f9cb8144
+  position: {x: -1559.3705, y: 615.3334}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  particle: {fileID: 4322493931549498828, guid: 4e460576e35f12746a140c7d852fa5d7, type: 3}
+--- !u!114 &-4613345489707878890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6cb1d402bb659468a0d8f8bedc8026, type: 3}
+  m_Name: MoveSpeed
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 4d384c9d1f3b16c4dbca9bef3afa7f39
+  position: {x: -789.99097, y: 1073}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  speedX: 0
+--- !u!114 &-4580645846863517746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163c147d123e4a945b688eddc64e3ea5, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 276c3128610c7294e8165b796cc8d884
+  position: {x: -264.66666, y: -604.67804}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  child: {fileID: -678696639746219579}
+--- !u!114 &-3879714293262501636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5b93ede956649d9a1c6b1eaaf46f6d3, type: 3}
+  m_Name: WallDetect
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 90da7b94b33cb984e86d82444fda9385
+  position: {x: 264.95255, y: 1189.3333}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  wallCheckPositionOffset: {x: 0, y: 0}
+  wallCheckDistance: 0
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
+--- !u!114 &-1380462703771190553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6cb1d402bb659468a0d8f8bedc8026, type: 3}
+  m_Name: MoveSpeed
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 93823b6abc8cd5348b2dd186046694d9
+  position: {x: -181.66658, y: 1080}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  speedX: 0
+--- !u!114 &-1053789085338558811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
+  m_Name: Sequencer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 2dfd6143ab4058b429473e8fb0e07091
+  position: {x: -207.6666, y: 909.9999}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: 1858266634980342800}
+  - {fileID: -1380462703771190553}
+  - {fileID: 3063890259913414673}
+--- !u!114 &-678696639746219579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb5496e8cd973748a10b3e3ef436ebd, type: 3}
+  m_Name: Repeat
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: c36abb993f5bca04f9fe979af0a00f9c
+  position: {x: -264.66666, y: -415.9999}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  child: {fileID: -8886128451419311139}
+  restartOnSuccess: 1
+  restartOnFailure: 0
+--- !u!114 &-555850691416934474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff43cf4c69894d4ea3aff299824a22e, type: 3}
+  m_Name: AnimatorSetTrigger
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 5c31ed191d351a2418cd5e497827b081
+  position: {x: -316.66678, y: 511.6317}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  triggerName: idle
+  resetAllTrigger: 1
+--- !u!114 &-392975465634472440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e61ea58ea94a35349ae2ba7911fde11f, type: 3}
+  m_Name: PlayerDetect
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: affa063b4e3856d4a8ece096995d0ade
+  position: {x: -1011.99084, y: 1073}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 1
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 64
+  detectType: 0
+  detectOffset: {x: 0, y: 0}
+  detectDistance: 3
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d285eb63c2cdd74180de7cfceaa96ad, type: 3}
+  m_Name: Enemy_04
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: -4580645846863517746}
+  treeState: 0
+  nodes:
+  - {fileID: -4580645846863517746}
+  - {fileID: -678696639746219579}
+  - {fileID: 8464602903424172197}
+  - {fileID: 3866697455447638562}
+  - {fileID: 1744346723821349740}
+  - {fileID: 404433727853067797}
+  - {fileID: 408804755492474741}
+  - {fileID: -8772655356900889199}
+  - {fileID: -8454304632476528528}
+  - {fileID: -8606241831719335809}
+  - {fileID: 3174424174969509881}
+  - {fileID: 3440792101559892345}
+  - {fileID: 6148760176021661839}
+  - {fileID: -392975465634472440}
+  - {fileID: -4613345489707878890}
+  - {fileID: 6223481438165719420}
+  - {fileID: -8296069332975443926}
+  - {fileID: 1056951808934561643}
+  - {fileID: 2394129852180544109}
+  - {fileID: -8886128451419311139}
+  - {fileID: 2604048690599203366}
+  - {fileID: 9049260273935968951}
+  - {fileID: -5229682268938356518}
+  - {fileID: 8863473901090803397}
+  - {fileID: 4970901029360993671}
+  - {fileID: -6745357082860497203}
+  - {fileID: -555850691416934474}
+  - {fileID: -6718869470864214766}
+  - {fileID: 2553313867701935331}
+  - {fileID: -6926890415959974983}
+  - {fileID: 7407206398157304930}
+  - {fileID: -4619541131701064210}
+  - {fileID: 3316838813604601714}
+  - {fileID: 8902491042095749742}
+  - {fileID: -3879714293262501636}
+  - {fileID: -1053789085338558811}
+  - {fileID: 1858266634980342800}
+  - {fileID: -1380462703771190553}
+  - {fileID: 3063890259913414673}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+--- !u!114 &404433727853067797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a4b17d41a5e854d8430aed09663592, type: 3}
+  m_Name: Flip
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 355626ede792ddc4c8893e1ee6bba629
+  position: {x: 1181.9998, y: 1049.9998}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+--- !u!114 &408804755492474741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff43cf4c69894d4ea3aff299824a22e, type: 3}
+  m_Name: AnimatorSetTrigger
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 90edfa622d0f7b340969937afc2ea2b6
+  position: {x: 579.3332, y: 1049.9998}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  triggerName: idle
+  resetAllTrigger: 1
+--- !u!114 &1056951808934561643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9a4246ce3158ce4c823c42b2cff30c1, type: 3}
+  m_Name: IsBeingHit
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 227f4e02175c81a47809977bb6d348ad
+  position: {x: -1036.6667, y: 511.6317}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+--- !u!114 &1744346723821349740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b330a42f55ef86478e8ca10f35e76d0, type: 3}
+  m_Name: RoadDetect
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 57e83c573d3749e4bae3cc1cb6d35b3a
+  position: {x: 508.95248, y: 1301.3333}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 1
+  ledgeCheckPositionOffset: {x: 1, y: 0}
+  ledgeCheckDistance: 0
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!114 &1858266634980342800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e61ea58ea94a35349ae2ba7911fde11f, type: 3}
+  m_Name: PlayerDetect
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 767b9b96fab09c54cb0e49cc418047de
+  position: {x: -357.66663, y: 1080}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 64
+  detectType: 0
+  detectOffset: {x: 0, y: 0}
+  detectDistance: 5
+--- !u!114 &2394129852180544109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f64ac99ea9900f946bf0db8da07d3c4e, type: 3}
+  m_Name: HitBack
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 06ccdbea0e21f944fa6ecd9ab48c7203
+  position: {x: -477.3334, y: 511.6317}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  HitBackTime: 0.2
+  HitBackDirZero: 0
+--- !u!114 &2553313867701935331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1078e3847e61489cbe6ab4e202063c74, type: 3}
+  m_Name: EnemyIsDead
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 0ef3a76936ce624449091cefcb039e24
+  position: {x: -2166.7039, y: 615.3334}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+--- !u!114 &2604048690599203366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
+  m_Name: Sequencer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: c3f1d97f8b808b24ba5de98b56e5b09e
+  position: {x: -591.3335, y: 358.29834}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: 1056951808934561643}
+  - {fileID: 9049260273935968951}
+  - {fileID: 8863473901090803397}
+  - {fileID: 2394129852180544109}
+  - {fileID: -555850691416934474}
+  - {fileID: 4970901029360993671}
+--- !u!114 &3063890259913414673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efe59e935146c1c49bd51ee07887b2fe, type: 3}
+  m_Name: EnemyAttack
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 4c313211cb2c0ff47aea3db9aa783fc1
+  position: {x: 0.9999542, y: 1080}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  attackClipName: enemy_04_attack2
+  damage: 4
+  damageInterval: 0.1
+  cd: 3
+--- !u!114 &3174424174969509881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff43cf4c69894d4ea3aff299824a22e, type: 3}
+  m_Name: AnimatorSetTrigger
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 1ab241f892d044048bf5ecd95f4ce61f
+  position: {x: 1486.3142, y: 1015.3332}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  triggerName: run
+  resetAllTrigger: 1
+--- !u!114 &3316838813604601714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b2a686930c44f1836d539256e62823, type: 3}
+  m_Name: DestroyEnemy
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 24783063c6f38a340801254484d4f38f
+  position: {x: -1343.5833, y: 615.3334}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+--- !u!114 &3440792101559892345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e658b1bd308bc5c429f5a9b404a04943, type: 3}
+  m_Name: Inverter
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: ecff9ed78cde003428cf113983a1a50d
+  position: {x: 508.95248, y: 1189.3333}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  child: {fileID: 1744346723821349740}
+--- !u!114 &3866697455447638562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460be9e34c566ea45b9e282b1adcb028, type: 3}
+  m_Name: Selector
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: ca10c5b1724e0a44184459c7eb1b07cf
+  position: {x: 748.8009, y: 436.74844}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: -8296069332975443926}
+  - {fileID: -5229682268938356518}
+  - {fileID: 8464602903424172197}
+--- !u!114 &4970901029360993671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eb718786ccbfcd4fabb060633ef6130, type: 3}
+  m_Name: WaitUntil
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: d6069bab6cb972d40b0d4496290adf3d
+  position: {x: -132.84732, y: 511.33337}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  child: {fileID: -6745357082860497203}
+--- !u!114 &6148760176021661839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
+  m_Name: Sequencer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: a1b070dbc45193f439d047b1f5affb58
+  position: {x: -789.99097, y: 909.6665}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: <size=15>Attack 1</size>
+  drawGizmos: 0
+  children:
+  - {fileID: -392975465634472440}
+  - {fileID: -4613345489707878890}
+  - {fileID: 6223481438165719420}
+--- !u!114 &6223481438165719420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efe59e935146c1c49bd51ee07887b2fe, type: 3}
+  m_Name: EnemyAttack
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: af37869124bae8f4faeb0b01c2f46694
+  position: {x: -562.6576, y: 1073}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  attackClipName: enemy_04_attack1
+  damage: 3
+  damageInterval: 0.1
+  cd: 2
+--- !u!114 &7407206398157304930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5134d9de14153468b48928d3e7359a, type: 3}
+  m_Name: Wait
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 92ac78116b29d8f4986a8722bd629640
+  position: {x: -1748.0372, y: 615.3334}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  duration: 0.2
+--- !u!114 &8464602903424172197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61431bba79d7d7843b82bf1de71703f5, type: 3}
+  m_Name: Sequencer
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: ab0595aec2b4c354baebcded501200f1
+  position: {x: 1605.6476, y: 867.9999}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: 3174424174969509881}
+  - {fileID: -8454304632476528528}
+--- !u!114 &8863473901090803397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49935a494dc20004ea3814bf5580564e, type: 3}
+  m_Name: FaceHero
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 3ad59e8accaa9d44f9d81395a8f13de2
+  position: {x: -658.66675, y: 511.6317}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+--- !u!114 &8902491042095749742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460be9e34c566ea45b9e282b1adcb028, type: 3}
+  m_Name: Selector
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 1879a2320f458b4459415db3b49f6a28
+  position: {x: 414.95248, y: 1050}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  children:
+  - {fileID: -3879714293262501636}
+  - {fileID: 3440792101559892345}
+--- !u!114 &9049260273935968951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ff43cf4c69894d4ea3aff299824a22e, type: 3}
+  m_Name: AnimatorSetTrigger
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 491323f7402a5d4449578b716281e535
+  position: {x: -836.0001, y: 511.6317}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+  description: 
+  drawGizmos: 0
+  triggerName: hit
+  resetAllTrigger: 1

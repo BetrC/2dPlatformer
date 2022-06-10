@@ -18,5 +18,7 @@ namespace TheKiwiCoder {
         public bool BeHit = false;
         public Vector2 HitBackVelocity;
 
+        public bool Dead = false;
+
     }
 }
