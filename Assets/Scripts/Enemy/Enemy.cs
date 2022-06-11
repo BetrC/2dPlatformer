@@ -29,6 +29,12 @@ public class Enemy : DamageableActor
         movement = GetComponentInChildren<Movement>();
     }
 
+    protected override void Start()
+    {
+        base.Start();
+        Bind(UIHealthManager.Instance.GetHealthBarFromPool());
+    }
+
     protected override void Update()
     {
         base.Update();

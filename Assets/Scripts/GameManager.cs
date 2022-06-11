@@ -17,7 +17,7 @@ public class GameManager : MonoSingleton<GameManager>
         SceneManager.sceneLoaded += OnSceneLoaded;
         RecordRespawnPoint(FindObjectOfType<SceneInitPlayerPoint>().transform);
         hero = FindObjectOfType<Hero>();
-    }
+    } 
 
     private void Start()
     {
@@ -28,6 +28,7 @@ public class GameManager : MonoSingleton<GameManager>
     {
         RecordRespawnPoint(FindObjectOfType<SceneInitPlayerPoint>().transform);
         hero.transform.position = respawnTransform.position;
+        UIHealthManager.Instance.Reset();
     }
 
     public void HitFreezeTime()

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class OnHealthUpdated : UnityEvent<float, float> { };
+public class OnHealthUpdated : UnityEvent<float, float, float> { };
 public class OnDie : UnityEvent { };
 
 public class Health : MonoBehaviour
@@ -31,7 +31,7 @@ public class Health : MonoBehaviour
                 return;
             float deltaValue = value - _healthValue;
             _healthValue = value;
-            onHealthUpdated.Invoke(_healthValue, deltaValue);
+            onHealthUpdated.Invoke(_healthValue, maxHalthValue, deltaValue);
         }
     }
 

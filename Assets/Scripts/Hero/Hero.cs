@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UI;
 using UnityEngine;
 using UnityEngine.Assertions;
 using static AnimationParamString;
@@ -71,6 +72,7 @@ public class Hero : DamageableActor
         base.Start();
 
         movement.SetGravityScale(heroData.defaultGravityScale);
+        Bind(GameObject.Find("HeroHealthBar").GetComponent<HealthBar>());
     }
 
     private void InitStateMachine()
