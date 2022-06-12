@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UI;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Assertions;
 using static AnimationParamString;
 
@@ -72,7 +67,7 @@ public class Hero : DamageableActor
         base.Start();
 
         movement.SetGravityScale(heroData.defaultGravityScale);
-        Bind(GameObject.Find("HeroHealthBar").GetComponent<HealthBar>());
+        BindHealthBar();
     }
 
     private void InitStateMachine()
@@ -147,7 +142,16 @@ public class Hero : DamageableActor
         transform.position = GameManager.Instance.respawnTransform.position;
         health.Reset();
         gameObject.SetActive(true);
+        BindHealthBar();
         stateMachine.ChangeState(IdleState);
+    }
 
+
+    private void BindHealthBar()
+    {
+        if (healthBar == null)
+            Bind(GameObject.Find("HeroHealthBar").GetComponent<HealthBar>(), false);
+        else
+            Bind(healthBar, false);
     }
 }

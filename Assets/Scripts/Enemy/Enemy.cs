@@ -54,7 +54,7 @@ public class Enemy : DamageableActor
     }
 
 
-    private void SetBlackBoradValue()
+    protected virtual void SetBlackBoradValue()
     {
         Blackboard.CurHealth = health.HealthValue;
         Blackboard.MaxHealth = health.maxHalthValue;

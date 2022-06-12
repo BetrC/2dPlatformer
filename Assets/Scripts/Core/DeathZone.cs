@@ -17,7 +17,8 @@ public class DeathZone : MonoBehaviour
     private void CheckCollision(GameObject collider)
     {
         DamageableActor actor = collider.GetComponent<DamageableActor>();
-        actor.DieDirectly();
+        if (actor != null)
+            actor.DieDirectly();
     }
 
 

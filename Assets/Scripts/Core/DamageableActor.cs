@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TreeEditor;
-using UI;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Health))]
 public class DamageableActor : Actor, IDamageable
@@ -25,7 +18,7 @@ public class DamageableActor : Actor, IDamageable
 
     protected Vector2 substitute;
 
-    private HealthBar healthBar;
+    protected HealthBar healthBar;
 
     public float Width
     {
@@ -65,15 +58,15 @@ public class DamageableActor : Actor, IDamageable
         hitProtectionTimeLeft = hitProtectionTime;
     }
 
-    public virtual bool IsHittable() => hitProtectionTimeLeft <= 0;
+    public virtual bool IsHittable() => hitProtectionTimeLeft <= 0 && !health.Dead;
 
     public void TakeDamage(float damage, Vector2 angle = default, float strength = 0, int xDir = 0)
     {
         if (damage <= 0 || IsHittable())
         {
-            health.TakeDamage(damage);
             if (damage > 0)
                 OnTakeDamage(damage, angle, strength, xDir);
+            health.TakeDamage(damage);
         }
     }
     
@@ -90,10 +83,10 @@ public class DamageableActor : Actor, IDamageable
         return boneHead.transform.position;
     }
 
-    public void Bind(HealthBar healthBar)
+    public void Bind(HealthBar healthBar, bool followTarget = true)
     {
         this.healthBar = healthBar;
-        this.healthBar.Bind(this);
+        this.healthBar.Bind(this, followTarget);
         this.healthBar.OnHealthUpdated(health.HealthValue, health.maxHalthValue, 0);
     }
 

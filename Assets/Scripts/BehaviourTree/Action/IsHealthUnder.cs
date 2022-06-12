@@ -4,13 +4,6 @@ using TheKiwiCoder;
 
 namespace BT
 {
-
-    public enum HealthCheckType
-    {
-        Value,
-        Percent,
-    }
-
     public class IsHealthUnder : ActionNode
     {
         public HealthCheckType healthCheckType = HealthCheckType.Percent;

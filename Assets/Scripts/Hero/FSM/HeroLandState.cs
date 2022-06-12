@@ -9,7 +9,7 @@ public class HeroLandState : HeroOnGroundState
 {
     public bool isAnimFinish;
 
-    
+
     public HeroLandState(StateMachine stateMachine, Hero hero, string animatorBoolParam) : base(stateMachine, hero, animatorBoolParam)
     {
     }

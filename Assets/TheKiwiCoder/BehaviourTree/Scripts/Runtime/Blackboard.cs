@@ -19,6 +19,8 @@ namespace TheKiwiCoder {
         public Vector2 HitBackVelocity;
 
         public bool Dead = false;
-
+        
+        public bool Intro = false;
+        public bool Introed = false;
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using UI;
 using UnityEngine;
 
 public class UIHealthManager : MonoSingleton<UIHealthManager>

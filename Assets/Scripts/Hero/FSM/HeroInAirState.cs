@@ -85,7 +85,7 @@ public class HeroInAirState : HeroState
         if (onGround && hero.movement.CurrentVelocity.y < 0.1f)
         {
             stateMachine.ChangeState(hero.LandState);
-        } 
+        }
         else if (enableWallJumpCoyoteTime && InputManager.Instance.JumpPressed)
         {
             stateMachine.ChangeState(hero.WallJumpState);
@@ -102,7 +102,7 @@ public class HeroInAirState : HeroState
         else if (hero.DashState.TriggeredAbility())
         {
             stateMachine.ChangeState(hero.DashState);
-        } 
+        }
         else if (hero.LedgeClimbState.IsTriggered())
         {
             stateMachine.ChangeState(hero.LedgeClimbState);
@@ -110,7 +110,7 @@ public class HeroInAirState : HeroState
         else if (hero.AttackState.TriggeredAbility())
         {
             stateMachine.ChangeState(hero.AttackState);
-        } 
+        }
         else if (hero.WallGrabState.IsTriggered())
         {
             stateMachine.ChangeState(hero.WallGrabState);

@@ -11,14 +11,20 @@ public class HeroDieState : HeroState
 
     public HeroDieState(StateMachine stateMachine, Hero hero, string animatorBoolParam) : base(stateMachine, hero, animatorBoolParam)
     {
-        
+
     }
 
     public override void Enter()
     {
         base.Enter();
         isAnimFinish = false;
+        CanReceiveHit = false;
         SoundManager.Instance.PlaySound("hero_die");
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
     }
 
     IEnumerator Respawn()
@@ -36,7 +42,7 @@ public class HeroDieState : HeroState
             deathParticle = GameObject.Instantiate(heroData.deathParticle);
         if (deathParticle == null)
             return;
-        
+
         deathParticle.transform.position = hero.transform.position;
         deathParticle.Play();
     }
@@ -45,6 +51,6 @@ public class HeroDieState : HeroState
     {
         base.AnimationFinishTrigger();
         isAnimFinish = true;
-        DelegateCoroutine.Instance.StartCoroutine(Respawn());
+        GlobalCoroutine.Instance.StartCoroutine(Respawn());
     }
 }

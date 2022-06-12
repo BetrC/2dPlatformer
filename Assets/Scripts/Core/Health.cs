@@ -15,6 +15,8 @@ public class Health : MonoBehaviour
     
     private bool isDead = false;
 
+    public bool Dead => isDead;
+
     private void Awake()
     {
         _healthValue = maxHalthValue;

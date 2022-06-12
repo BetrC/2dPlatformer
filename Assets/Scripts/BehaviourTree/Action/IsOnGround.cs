@@ -13,7 +13,7 @@ namespace BT
 
         protected override void OnStart()
         {
-            groundCheckDistance = context.boxCollider.size.y / 2 + .8f;
+            groundCheckDistance = context.boxCollider.size.y / 2 - context.boxCollider.offset.y + .4f;
         }
 
         protected override void OnStop()
@@ -27,6 +27,13 @@ namespace BT
             if (onGround)
                 return State.Success;
             return State.Failure;
+        }
+
+        public override void DrawGizmos(Transform transform)
+        {
+            Gizmos.color = Color.white;
+            Gizmos.DrawLine(transform.position, transform.position + Vector3.down * groundCheckDistance);
+
         }
     }
 }

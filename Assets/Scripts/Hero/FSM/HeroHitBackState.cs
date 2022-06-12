@@ -9,7 +9,7 @@ public class HeroHitBackState : HeroAbilityState
     //public bool hitTime;
 
     public Vector2 hitBackVelocity;
-    
+
     public HeroHitBackState(StateMachine stateMachine, Hero hero, string animatorBoolParam) : base(stateMachine, hero, animatorBoolParam)
     {
     }

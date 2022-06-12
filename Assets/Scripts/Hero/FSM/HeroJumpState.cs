@@ -16,7 +16,7 @@ public class HeroJumpState : HeroAbilityState
     public override void Enter()
     {
         base.Enter();
-        jumpCountLeft --;
+        jumpCountLeft--;
         hero.movement.SetVelocityY(heroData.jumpSpeed);
         isAbilityDone = true;
 

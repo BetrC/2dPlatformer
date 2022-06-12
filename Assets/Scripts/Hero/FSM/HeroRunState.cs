@@ -40,6 +40,6 @@ public class HeroRunState : HeroOnGroundState
             return;
 
         hero.movement.CheckFlip(xNormalInput);
-        hero.movement.SetVelocityX( xNormalInput * heroData.runSpeed );
+        hero.movement.SetVelocityX(xNormalInput * heroData.runSpeed);
     }
 }

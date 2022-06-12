@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 public class HeroWallClimbState : HeroTouchWallState
 {
-    
+
     public HeroWallClimbState(StateMachine stateMachine, Hero hero, string animatorBoolParam) : base(stateMachine, hero, animatorBoolParam)
     {
     }

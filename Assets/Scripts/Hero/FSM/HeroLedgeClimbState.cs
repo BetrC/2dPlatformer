@@ -26,7 +26,7 @@ public class HeroLedgeClimbState : HeroState
     private Vector2 endPos;
 
     public Vector2 cornerPos;
-    
+
     public HeroLedgeClimbState(StateMachine stateMachine, Hero hero, string animatorBoolParam) : base(stateMachine, hero, animatorBoolParam)
     {
     }
