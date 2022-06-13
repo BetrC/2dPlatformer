@@ -54,7 +54,7 @@ public class HeroDashState : HeroAbilityState
 
     private bool CanDash()
     {
-        return dashTime > 0;
+        return dashTime > 0 && AbilityManager.Instance.IsAbilityActive(Ability.Dash);
     }
 
     public void ResetDashTime()

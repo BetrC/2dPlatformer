@@ -30,14 +30,12 @@ public class HeroData : ScriptableObject
     /// </summary>
     public float coyoteTime = .15f;
 
-    public float wallJumpCoyoteTime = .2f;
+    public float wallJumpCoyoteTime = .3f;
 
     /// <summary>
     /// 落下的输入检测时间，若玩家在即将落地前键入跳跃，在落地后会自动起跳
     /// </summary>
     public float jumpFallThreshould = .1f;
-
-    public int canJumpTime = 1;
 
     [Header("Dash")]
     public float dashSpeed = 30f;

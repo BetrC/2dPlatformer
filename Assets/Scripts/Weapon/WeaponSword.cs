@@ -80,4 +80,9 @@ public class WeaponSword : Weapon
             Instantiate(conf.hitEffect, transform.position, Quaternion.identity);
         }
     }
+
+    public override bool IsTriggerWeapon()
+    {
+        return InputManager.Instance.PrimaryAttackPressed;
+    }
 }

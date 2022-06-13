@@ -1,8 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class HeroAttackState : HeroAbilityState
 {
     public Weapon weapon;
@@ -25,10 +20,10 @@ public class HeroAttackState : HeroAbilityState
 
     public void CheckInputUsingWeapon()
     {
-        Weapon useWeapon = hero.primaryWeaponInfo.weapon;
-        if (InputManager.Instance.SecondryAttackHolding)
+        Weapon useWeapon = hero.primaryWeapon.weapon;
+        if (hero.secondaryWeapon.IsTriggered())
         {
-            useWeapon = hero.secondaryWeaponInfo.weapon;
+            useWeapon = hero.secondaryWeapon.weapon;
         }
 
         if (weapon != useWeapon)
@@ -65,7 +60,8 @@ public class HeroAttackState : HeroAbilityState
 
     public override bool TriggeredAbility()
     {
-        return InputManager.Instance.PrimaryAttackPressed || InputManager.Instance.SecondryAttackHolding;
+        return hero.primaryWeapon.IsTriggered() ||
+            hero.secondaryWeapon.IsTriggered();
     }
 
     public void SetFlipCheck(bool check)

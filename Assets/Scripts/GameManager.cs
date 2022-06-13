@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+
+public class OnStrawBerryNumUpdate : UnityEvent<int> { };
 
 public class GameManager : MonoSingleton<GameManager>
 {
@@ -11,13 +14,25 @@ public class GameManager : MonoSingleton<GameManager>
 
     public Hero hero;
 
+    public int strawberryCount = 0;
+
+    public OnStrawBerryNumUpdate StrawBerryNumUpdate;
+
     protected override void Init()
     {
         base.Init();
+        StrawBerryNumUpdate = new OnStrawBerryNumUpdate();
+
         SceneManager.sceneLoaded += OnSceneLoaded;
         RecordRespawnPoint(FindObjectOfType<SceneInitPlayerPoint>().transform);
         hero = FindObjectOfType<Hero>();
-    } 
+    }
+
+    public void GetStrawberry(int useParam)
+    {
+        strawberryCount++;
+        StrawBerryNumUpdate.Invoke(strawberryCount);
+    }
 
     private void Start()
     {
@@ -50,6 +65,11 @@ public class GameManager : MonoSingleton<GameManager>
     public void RecordRespawnPoint(Transform transform)
     {
         respawnTransform = transform;
+    }
+
+    public void Reset()
+    {
+
     }
 }
 

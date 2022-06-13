@@ -57,6 +57,9 @@ public abstract class Weapon : MonoBehaviour
         CheckAttackCast(collision);
     }
 
+    public abstract bool IsTriggerWeapon();
+
+
     #region 动画回调
 
     /// <summary>

@@ -42,6 +42,11 @@ public class WeaponChargeSword : WeaponSword
         }
     }
 
+    public override bool IsTriggerWeapon()
+    {
+        return InputManager.Instance.SecondryAttackHolding && AbilityManager.Instance.IsAbilityActive(Ability.SecondAttack);
+    }
+
 
     /// <summary>
     /// 这个触发器表示蓄力完成

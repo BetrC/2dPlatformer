@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Assertions;
 using static AnimationParamString;
 
@@ -15,6 +16,7 @@ public class Hero : DamageableActor
     #region state
 
     public HeroIdleState IdleState;
+
     public HeroRunState RunState;
     public HeroInAirState InAirState;
     public HeroJumpState JumpState;
@@ -35,9 +37,9 @@ public class Hero : DamageableActor
 
     #region weapon
 
-    public RuntimeWeaponInfo primaryWeaponInfo;
+    public RuntimeWeaponInfo primaryWeapon;
 
-    public RuntimeWeaponInfo secondaryWeaponInfo;
+    public RuntimeWeaponInfo secondaryWeapon;
 
     #endregion
 
@@ -49,12 +51,12 @@ public class Hero : DamageableActor
         collisionChecker = GetComponentInChildren<CollisionChecker>();
         hitProtectionTime = heroData.hitProtectionTime;
 
-        Assert.IsNotNull(primaryWeaponInfo.prefab, "primary weapon prefab is Null, please check your setting");
-        Assert.IsNotNull(secondaryWeaponInfo.prefab, "secondry weapon prefab is Null, please check your setting");
+        Assert.IsNotNull(primaryWeapon.prefab, "primary weapon prefab is Null, please check your setting");
+        Assert.IsNotNull(secondaryWeapon.prefab, "secondry weapon prefab is Null, please check your setting");
 
         // init weapon
-        primaryWeaponInfo.Init(transform.Find("WeaponRoot"));
-        secondaryWeaponInfo.Init(transform.Find("WeaponRoot"));
+        primaryWeapon.Init(transform.Find("WeaponRoot"));
+        secondaryWeapon.Init(transform.Find("WeaponRoot"));
 
         // init state
         InitStateMachine();
@@ -67,7 +69,6 @@ public class Hero : DamageableActor
         base.Start();
 
         movement.SetGravityScale(heroData.defaultGravityScale);
-        BindHealthBar();
     }
 
     private void InitStateMachine()
@@ -80,7 +81,7 @@ public class Hero : DamageableActor
         DashState = new HeroDashState(stateMachine, this, BOOL_DASH);
 
         AttackState = new HeroAttackState(stateMachine, this, BOOL_ATTACK);
-        AttackState.SetWeapon(primaryWeaponInfo.weapon);
+        AttackState.SetWeapon(primaryWeapon.weapon);
 
         LandState = new HeroLandState(stateMachine, this, BOOL_LAND);
         WallClimbState = new HeroWallClimbState(stateMachine, this, BOOL_WALL_CLIMB);
@@ -147,11 +148,20 @@ public class Hero : DamageableActor
     }
 
 
-    private void BindHealthBar()
+    protected override void BindHealthBar()
     {
         if (healthBar == null)
             Bind(GameObject.Find("HeroHealthBar").GetComponent<HealthBar>(), false);
         else
             Bind(healthBar, false);
+    }
+
+    protected override void OnHealthUpdated(float curHealth, float maxHealth, float deltaChange)
+    {
+        base.OnHealthUpdated(curHealth, maxHealth, deltaChange);
+        if (deltaChange < 0)
+        {
+            FightNumberManager.Instance.ShowFightNumber(-deltaChange, boneHead, FightNumType.HeroHit);
+        }
     }
 }

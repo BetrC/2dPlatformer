@@ -795,7 +795,7 @@ MonoBehaviour:
   attackClipName: boss_attack2
   damage: 2
   damageInterval: 0.1
-  cd: 3
+  cd: 10
 --- !u!114 &-3261775984493614819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1010,7 +1010,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 5c31ed191d351a2418cd5e497827b081
-  position: {x: -159.66713, y: 377.3333}
+  position: {x: -158.99988, y: 377.3333}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
@@ -1707,7 +1707,7 @@ MonoBehaviour:
   attackClipName: boss_attack3
   damage: 2
   damageInterval: 0.1
-  cd: 3
+  cd: 10
 --- !u!114 &2732408830314239533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1769,7 +1769,7 @@ MonoBehaviour:
   attackClipName: boss_attack2
   damage: 4
   damageInterval: 0.1
-  cd: 3
+  cd: 6
 --- !u!114 &3174424174969509881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2081,7 +2081,7 @@ MonoBehaviour:
   attackClipName: boss_attack1
   damage: 3
   damageInterval: 0.1
-  cd: 2
+  cd: 6
 --- !u!114 &6575886032614481106
 MonoBehaviour:
   m_ObjectHideFlags: 0

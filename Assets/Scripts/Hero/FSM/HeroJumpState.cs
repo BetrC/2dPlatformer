@@ -43,7 +43,7 @@ public class HeroJumpState : HeroAbilityState
 
     public void ResetJumpCount()
     {
-        jumpCountLeft = heroData.canJumpTime;
+        jumpCountLeft = AbilityManager.Instance.IsAbilityActive(Ability.SecondJump) ? 2 : 1;
     }
 
     public void ShowJumpParticle()

@@ -3,18 +3,16 @@
 [RequireComponent(typeof(Health))]
 public class DamageableActor : Actor, IDamageable
 {
-    protected Health health;
+    public Health health;
     
     /// <summary>
     /// 受击保护
     /// </summary>
     public float hitProtectionTime = 0f;
 
-    [HideInInspector]
-    public float hitProtectionTimeLeft;
+    private float hitProtectionTimeLeft;
 
-    [HideInInspector]
-    private Transform boneHead;
+    protected Transform boneHead;
 
     protected Vector2 substitute;
 
@@ -45,6 +43,12 @@ public class DamageableActor : Actor, IDamageable
     {
         health.onHealthUpdated.AddListener(OnHealthUpdated);
         health.onDie.AddListener(OnDie);
+        BindHealthBar();
+    }
+
+    protected virtual void BindHealthBar()
+    {
+        Bind(UIHealthManager.Instance.GetHealthBarFromPool());
     }
 
     protected virtual void Update()

@@ -40,4 +40,6 @@ public class InputManager : Singleton<InputManager>
     public bool DashPressed => Input.Player.Dash.triggered;
 
     public bool GrabWallHolding => Input.Player.GrabWall.IsPressed();
+
+    public bool ShootHolding => Input.Player.Shoot.IsPressed();
 }

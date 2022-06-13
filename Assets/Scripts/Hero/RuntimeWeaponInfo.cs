@@ -32,4 +32,11 @@ public class RuntimeWeaponInfo
         runtimeObj = go;
         weapon = runtimeObj.GetComponent<Weapon>();
     }
+
+    public bool IsTriggered()
+    {
+        if (weapon == null)
+            return false;
+        return weapon.IsTriggerWeapon();
+    }
 }

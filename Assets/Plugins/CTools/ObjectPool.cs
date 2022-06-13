@@ -1,10 +1,7 @@
-﻿
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class ObjectPool : MonoBehaviour
+public class ObjectPool : MonoBehaviour 
 {
     public List<GameObject> poolObjects;
     public GameObject objectToPool;

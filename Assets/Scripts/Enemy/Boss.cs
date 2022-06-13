@@ -7,11 +7,10 @@ public class Boss : Enemy
     protected override void Start()
     {
         base.Start();
-        BindHealthBar();
     }
 
 
-    private void BindHealthBar()
+    protected override void BindHealthBar()
     {
         if (healthBar == null)
             Bind(GameObject.Find("BossHealthBar").GetComponent<HealthBar>(), false);

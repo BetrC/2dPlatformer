@@ -32,7 +32,6 @@ public class Enemy : DamageableActor
     protected override void Start()
     {
         base.Start();
-        Bind(UIHealthManager.Instance.GetHealthBarFromPool());
     }
 
     protected override void Update()
@@ -71,6 +70,15 @@ public class Enemy : DamageableActor
         {
             hazard.damage = damage;
             hazard.damageInterval = damageInterval;
+        }
+    }
+
+    protected override void OnHealthUpdated(float curHealth, float maxHealth, float deltaChange)
+    {
+        base.OnHealthUpdated(curHealth, maxHealth, deltaChange);
+        if (deltaChange < 0)
+        {
+            FightNumberManager.Instance.ShowFightNumber(-deltaChange, boneHead, FightNumType.EnemyHit);
         }
     }
 
