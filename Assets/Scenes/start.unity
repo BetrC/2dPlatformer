@@ -1578,22 +1578,22 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 854794393}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1308613060}
   - {fileID: 547613119}
   - {fileID: 874045290}
-  m_Father: {fileID: 1164393061}
-  m_RootOrder: 4
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 960, y: 540}
-  m_SizeDelta: {x: 1920, y: 1080}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!95 &854794398
 Animator:
   serializedVersion: 4
@@ -1879,6 +1879,7 @@ GameObject:
   - component: {fileID: 894248385}
   - component: {fileID: 894248387}
   - component: {fileID: 894248386}
+  - component: {fileID: 894248389}
   - component: {fileID: 894248388}
   m_Layer: 0
   m_Name: UICamera
@@ -1978,7 +1979,15 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &894248388
+--- !u!81 &894248388
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894248384}
+  m_Enabled: 1
+--- !u!114 &894248389
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1987,7 +1996,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 894248384}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73a6b1b63cd9d67429bfa3fbaf05d2dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b0c780fd6d66f648ac10434e8147103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1091567140
@@ -2186,9 +2195,8 @@ RectTransform:
   - {fileID: 1785024577}
   - {fileID: 1091567144}
   - {fileID: 742738352}
-  - {fileID: 854794397}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2210,7 +2218,7 @@ MonoBehaviour:
   menuCanvas: {fileID: 1091567140}
   abilityDetail: {fileID: 742738356}
   TipsUI: {fileID: 1965119972}
-  FinishUI: {fileID: 0}
+  FinishUI: {fileID: 1785024581}
 --- !u!1 &1244519060
 GameObject:
   m_ObjectHideFlags: 0
@@ -2298,7 +2306,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Press
+  m_Text: You Are Absolutely An Animal!!
 --- !u!222 &1244519064
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2548,7 +2556,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1976380366691203842, guid: 5d086ed6418ebc8428058b1046ee6265, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1976380366691203842, guid: 5d086ed6418ebc8428058b1046ee6265, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4726,7 +4734,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5142041476262749978, guid: 31388251a1b571e4cbc6e06578124435, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5142041476262749978, guid: 31388251a1b571e4cbc6e06578124435, type: 3}
       propertyPath: m_LocalPosition.x

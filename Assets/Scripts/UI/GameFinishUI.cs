@@ -39,9 +39,9 @@ public class GameFinishUI : MonoBehaviour
 
         yield return new WaitForSeconds(.2f);
         int count = 0;
-        while(count < GameManager.Instance.strawberryCount)
+        while(count <= GameManager.Instance.strawberryCount)
         {
-            strawBerryNum.text = $"{count}/{GameManager.maxStrawberryCount}";
+            strawBerryNum.text = $"{count++}/{GameManager.maxStrawberryCount}";
             yield return new WaitForSeconds(.1f);
         }
 
