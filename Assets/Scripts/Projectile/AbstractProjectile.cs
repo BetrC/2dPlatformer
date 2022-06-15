@@ -7,6 +7,8 @@ public abstract class AbstractProjectile : MonoBehaviour
 
     public ParticleSystem explosionEffect;
 
+    public string sound;
+
     public GameObject Shooter { get; set; }
 
     protected Vector2 force;
@@ -15,9 +17,22 @@ public abstract class AbstractProjectile : MonoBehaviour
 
     public abstract void SetForce(Vector2 force);
 
+    protected abstract bool HitDestroySelf();
+
     protected void DestroyProjectile()
     {
         OnProjectileDestroyed?.Invoke(this);
+
+        if (explosionEffect != null)
+            EffectManager.Instance.PlayOneShot(explosionEffect, transform.position);
+        if (sound != "")
+            SoundManager.Instance.PlaySound(sound);
+
+        DestroyImp();
+    }
+
+    protected virtual void DestroyImp()
+    {
         Destroy(gameObject);
     }
 
@@ -34,6 +49,7 @@ public abstract class AbstractProjectile : MonoBehaviour
             damageable.TakeDamage(damage, Vector2.zero, 0);
         }
 
-        DestroyProjectile();
+        if (HitDestroySelf())
+            DestroyProjectile();
     }
 }

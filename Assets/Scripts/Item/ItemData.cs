@@ -20,6 +20,9 @@ public class ItemData : ScriptableObject
 
     public int useParam;
 
+    [TextArea]
+    public string description;
+
     public string sound = "hero_get_ability";
 
     public ParticleSystem particle;

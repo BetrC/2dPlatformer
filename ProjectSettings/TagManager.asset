@@ -15,9 +15,9 @@ TagManager:
   - Ground
   - Enemy
   - Trigger
-  - 
-  - 
-  - 
+  - CheckPoint
+  - Bullet
+  - Item
   - 
   - 
   - 

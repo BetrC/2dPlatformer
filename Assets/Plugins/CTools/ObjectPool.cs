@@ -34,7 +34,7 @@ public class ObjectPool : MonoBehaviour
         poolItem.SetActive(false);
     }
 
-    public void Reset()
+    public void ResetPool()
     {
         foreach (var poolObject in poolObjects)
         {

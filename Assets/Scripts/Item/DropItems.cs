@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
+using DG.Tweening;
+using System;
 
+[Serializable]
 public class DropData
 {
     public GameObject item;
@@ -18,24 +21,37 @@ public class DropItems : MonoBehaviour
 {
     public DropData[] drops;
 
+
+    [Range(1, 10)]
+    public float xOffsetMax = 3;
+
+    [Range(1, 10)]
+    public float yOffsetMax = 3;
+
     private void Start()
     {
         GetComponent<DamageableActor>().health.onDie.AddListener(DropItem);
     }
 
-
     public void DropItem()
     {
         foreach(DropData data in drops)
         {
-            float rate = Random.Range(0f, 1f);
-            if (rate < data.dropRate)
+            float rate = UnityEngine.Random.Range(0f, 1f);
+            if (rate > data.dropRate)
                 continue;
-            int count = Random.Range(data.minNum, data.maxNum);
+
+            int count = UnityEngine.Random.Range(data.minNum, data.maxNum);
             for (int i = 1; i <= count; i++)
             {
                 GameObject obj = Instantiate(data.item, transform.position, Quaternion.identity);
-                obj.GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0, 10), ForceMode2D.Impulse);
+
+                float xOffset = UnityEngine.Random.Range(-xOffsetMax, xOffsetMax);
+                // 只向下drop
+                float yOffset = -UnityEngine.Random.Range(0, yOffsetMax);
+
+                Vector3 targetPos = transform.position + new Vector3(xOffset, yOffset, 0);
+                obj.transform.DOPath(new Vector3[] {transform.position, targetPos}, 1f, PathType.CatmullRom);
             }
         }
     }

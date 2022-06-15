@@ -41,6 +41,8 @@ public class Hero : DamageableActor
 
     public RuntimeWeaponInfo secondaryWeapon;
 
+    public RuntimeWeaponInfo shootWeapon;
+
     #endregion
 
     protected override void Awake()
@@ -53,10 +55,12 @@ public class Hero : DamageableActor
 
         Assert.IsNotNull(primaryWeapon.prefab, "primary weapon prefab is Null, please check your setting");
         Assert.IsNotNull(secondaryWeapon.prefab, "secondry weapon prefab is Null, please check your setting");
+        Assert.IsNotNull(shootWeapon.prefab, "shoot weapon prefab is Null, please check your setting");
 
         // init weapon
         primaryWeapon.Init(transform.Find("WeaponRoot"));
         secondaryWeapon.Init(transform.Find("WeaponRoot"));
+        shootWeapon.Init(transform.Find("WeaponRoot"));
 
         // init state
         InitStateMachine();
@@ -163,5 +167,14 @@ public class Hero : DamageableActor
         {
             FightNumberManager.Instance.ShowFightNumber(-deltaChange, boneHead, FightNumType.HeroHit);
         }
+        if (deltaChange > 0)
+        {
+            FightNumberManager.Instance.ShowFightNumber(-deltaChange, boneHead, FightNumType.HeroCure);
+        }
+    }
+
+    public void Dispose()
+    {
+        Unbind(healthBar);
     }
 }

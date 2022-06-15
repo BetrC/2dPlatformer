@@ -14,8 +14,17 @@ public class CameraManager : MonoSingleton<CameraManager>
     {
         base.Init();
         channelPerlin = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+
+        if (GameManager.Instance.hero == null)
+            GameManager.Instance.OnHeroCreated.AddListener(FollowHero);
+        else
+            virtualCamera.Follow = GameManager.Instance.hero.transform;
     }
 
+    void FollowHero()
+    {
+        virtualCamera.Follow = GameManager.Instance.hero.transform;
+    }
 
     public void ShakeCamera(float intesity, float time)
     {

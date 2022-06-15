@@ -85,7 +85,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1909678741
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -194,17 +194,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  health: {fileID: 0}
   hitProtectionTime: 0
-  hitProtectionTimeLeft: 0
   heroData: {fileID: 11400000, guid: be14aa16d5ff7044ca5aa5b1fe84a6fd, type: 2}
   movement: {fileID: 0}
   collisionChecker: {fileID: 0}
-  primaryWeaponInfo:
+  primaryWeapon:
     prefab: {fileID: 7563254026784665460, guid: cf77f81fb91ab314e927db775ebe6fed, type: 3}
     runtimeObj: {fileID: 0}
     weapon: {fileID: 0}
-  secondaryWeaponInfo:
+  secondaryWeapon:
     prefab: {fileID: 7563254026784665460, guid: 7c2404d7d3be43a4ab8888fe432d8725, type: 3}
+    runtimeObj: {fileID: 0}
+    weapon: {fileID: 0}
+  shootWeapon:
+    prefab: {fileID: 1939966842618031925, guid: a6436aec67609f647ad707085d6a5469, type: 3}
     runtimeObj: {fileID: 0}
     weapon: {fileID: 0}
 --- !u!114 &4362519005528120263
@@ -233,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16bee903391a59b4e93f24fe59fc4bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHalthValue: 10
+  maxHalthValue: 30
 --- !u!114 &4362519005528120257
 MonoBehaviour:
   m_ObjectHideFlags: 0

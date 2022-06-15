@@ -16,5 +16,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 5a4f5bf88a135654e9db3b728531a66b, type: 3}
   useFunc: 2
   useParam: 1
+  description: just a strawberry
   sound: get_item
-  particle: {fileID: 198677932445220266, guid: 25b05367a2d94704e9ecf501893e593d, type: 3}
+  particle: {fileID: 2461003346670393601, guid: 1e5fb692842736646bb7f2751e3f209d, type: 3}

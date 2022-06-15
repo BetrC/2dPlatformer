@@ -32,7 +32,7 @@ public class Health : MonoBehaviour
             if (_healthValue == value)
                 return;
             float deltaValue = value - _healthValue;
-            _healthValue = value;
+            _healthValue = Mathf.Clamp(value, 0, maxHalthValue);
             onHealthUpdated.Invoke(_healthValue, maxHalthValue, deltaValue);
         }
     }
@@ -59,6 +59,6 @@ public class Health : MonoBehaviour
     public void Reset()
     {
         isDead = false;
-        HealthValue = maxHalthValue;
+        _healthValue = maxHalthValue;
     }
 }

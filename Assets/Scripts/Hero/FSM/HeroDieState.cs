@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HeroDieState : HeroState
 {
@@ -51,6 +52,16 @@ public class HeroDieState : HeroState
     {
         base.AnimationFinishTrigger();
         isAnimFinish = true;
-        GlobalCoroutine.Instance.StartCoroutine(Respawn());
+        if (GameManager.Instance.IsCurSceneBoosScene())
+        {
+            // 重新加载boss场景
+            GameManager.Instance.LoadLevel(SceneManager.GetActiveScene().buildIndex);
+            hero.Respawn();
+
+        } else
+        {
+            GlobalCoroutine.Instance.StartCoroutine(Respawn());
+        }
     }
+
 }

@@ -4,11 +4,14 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class CheckPoint : MonoBehaviour
 {
+    private bool passed = false;
+
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (!col.CompareTag("Player"))
+        if (passed || !col.CompareTag("Player"))
             return;
         GameManager.Instance.RecordRespawnPoint(transform);
+        passed = true;
     }
 
     private void OnDrawGizmos()

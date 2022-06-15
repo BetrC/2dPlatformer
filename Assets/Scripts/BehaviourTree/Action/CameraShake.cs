@@ -8,8 +8,8 @@ using TheKiwiCoder;
 public class CameraShake : ActionNode
 {
 
-    float intensity = 3;
-    float time = 1f;
+    public float intensity = 3;
+    public float time = 1f;
 
     protected override void OnStart()
     {

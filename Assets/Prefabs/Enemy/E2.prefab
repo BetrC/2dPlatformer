@@ -206,6 +206,7 @@ GameObject:
   - component: {fileID: 7446689641245037633}
   - component: {fileID: 7446689641245037632}
   - component: {fileID: 7446689641245037630}
+  - component: {fileID: -979108783144126036}
   m_Layer: 8
   m_Name: E2
   m_TagString: Untagged
@@ -272,7 +273,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1909678741
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -964740011, guid: 39d19ea548a1e3144a3129b75851f048, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -364,7 +365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16bee903391a59b4e93f24fe59fc4bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHalthValue: 100
+  maxHalthValue: 80
 --- !u!114 &7446689641245037632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,8 +379,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  health: {fileID: 0}
   hitProtectionTime: 0
-  hitProtectionTimeLeft: 0
   hitBox: {fileID: 0}
   hazard: {fileID: 0}
   movement: {fileID: 0}
@@ -396,6 +397,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tree: {fileID: 11400000, guid: 2bb85e4877eeee24fb7568a99ec4bffe, type: 2}
+--- !u!114 &-979108783144126036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7446689641245037622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73fd80e509e37f64d8a8e7d6f7be67c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - item: {fileID: 1270647340025877295, guid: 70c07c16acf2f9a448fd90bdeff629b8, type: 3}
+    dropRate: 0.8
+    minNum: 2
+    maxNum: 3
+  xOffsetMax: 3
+  yOffsetMax: 3
 --- !u!1 &7446689641371247050
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,7 +487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34a8ac9d8a474b4b8a8edda66c778e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
+  damage: 5
   damageInterval: 0.1
 --- !u!1 &7446689641675426939
 GameObject:
@@ -540,5 +560,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34a8ac9d8a474b4b8a8edda66c778e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 4
+  damage: 5
   damageInterval: 0.1

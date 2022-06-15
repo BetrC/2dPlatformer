@@ -9,6 +9,6 @@ public class FightNumberManager : MonoSingleton<FightNumberManager>
         GameObject obj = Pool.GetFromPool();
         FightNumber number = obj.GetComponent<FightNumber>();
         obj.SetActive(true);
-        number.Begin(value, receiver, type);
+        number.Begin(Mathf.Abs(value), receiver, type);
     }
 }

@@ -5,7 +5,7 @@ using System.Collections;
 
 public class FlyToHero : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float moveSpeed = 20f;
 
     private void Start()
     {
@@ -15,7 +15,7 @@ public class FlyToHero : MonoBehaviour
 
      IEnumerator FlyTo(Hero hero)
     {
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(1f);
 
         while (true)
 
@@ -23,6 +23,11 @@ public class FlyToHero : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, hero.transform.position, moveSpeed * Time.deltaTime);
             yield return null;
         }
+    }
+
+    private void OnDestroy()
+    {
+        transform.DOComplete();
     }
 
 }

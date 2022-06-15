@@ -26,4 +26,9 @@ public class AbilityManager : MonoSingleton<AbilityManager>
     {
         activedAbilitys[ability] = true;
     }
+
+    public void ResetAllAbility()
+    {
+        activedAbilitys.Clear();
+    }
 }

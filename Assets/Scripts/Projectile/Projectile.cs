@@ -8,4 +8,9 @@ public class Projectile : AbstractProjectile
         this.force = force;
         GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
     }
+
+    protected override bool HitDestroySelf()
+    {
+        return true;
+    }
 }

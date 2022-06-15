@@ -2,7 +2,7 @@ using UnityEngine;
 using DG.Tweening;
 
 
-public class DashTrail : MonoBehaviour
+public class DashTrail : MonoSingleton<DashTrail>
 {
     public float trailInterval = .05f;
     public Color trailColor;

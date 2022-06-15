@@ -1,4 +1,13 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+
+public enum InputActionType
+{
+    Player,
+    UI,
+}
 
 public class InputManager : Singleton<InputManager>
 {
@@ -11,13 +20,53 @@ public class InputManager : Singleton<InputManager>
             if (_input == null)
             {
                 _input = new PlayerInput();
-                _input.Player.Enable();
             }
             return _input;
         }
         set
         {
             _input = value;
+        }
+    }
+
+    protected override void Init()
+    {
+        base.Init();
+        SwitchInputActionMap(InputActionType.Player);
+
+        Input.Player.Menu.performed += Menu_performed;
+        Input.UI.Esc.performed += Esc_performed;
+        Input.UI.Submit.performed += Submit_performed;
+    }
+
+    private void Submit_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        GameUIManager.Instance.OnSubmit(obj);
+    }
+
+    private void Esc_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        GameUIManager.Instance.HideAllUI();
+    }
+
+    private void Menu_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        if(GameManager.Instance.IsCurSceneLevelScene())
+            GameUIManager.Instance.ShowMenu();
+    }
+
+    public void SwitchInputActionMap(InputActionType actionType)
+    {
+        switch (actionType)
+        {
+            case InputActionType.Player:
+                Input.Player.Enable();
+                Input.UI.Disable();
+                break;
+            case InputActionType.UI:
+                Input.Player.Disable();
+                Input.UI.Enable();
+                break;
         }
     }
 

@@ -9,12 +9,13 @@ public class ItemManager : Singleton<ItemManager>
         {
             case UseFunc.ActiveAbility:
                 ActiveAbility((Ability)item.useParam);
+                GameUIManager.Instance.ShowAbilityDetail(item);
                 break;
             case UseFunc.HealHero:
                 HealHero(hero, item.useParam);
                 break;
             case UseFunc.GetStrawberry:
-                GameManager.Instance.GetStrawberry(item.useParam);
+                GameManager.Instance.AddStrawberry(item.useParam);
                 break;
         }
     }

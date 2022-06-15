@@ -19,7 +19,10 @@ public class SoundManager : MonoSingleton<SoundManager>
         }
 
         tempSource = gameObject.AddComponent<AudioSource>();
+
+        PlaySound("bgm");
     }
+
 
     public void PlaySound(string name)
     {

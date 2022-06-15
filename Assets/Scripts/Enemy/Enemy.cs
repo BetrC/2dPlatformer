@@ -48,8 +48,11 @@ public class Enemy : DamageableActor
         substitute.Normalize();
         substitute *= strength;
 
-        Blackboard.BeHit = true;
-        Blackboard.HitBackVelocity = substitute;
+        if (strength > 0)
+        {
+            Blackboard.BeHit = true;
+            Blackboard.HitBackVelocity = substitute;
+        }
     }
 
 

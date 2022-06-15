@@ -22,6 +22,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   children:
@@ -50,6 +52,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   duration: 0.2
@@ -75,6 +79,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   speedX: 0
@@ -100,6 +106,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   speedX: 2
@@ -125,6 +133,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   children:
@@ -152,6 +162,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   duration: 0.416
@@ -177,6 +189,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: die
   drawGizmos: 0
   triggerName: die
@@ -203,6 +217,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 1
   whatIsGround:
@@ -230,6 +246,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   children:
@@ -260,6 +278,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   children:
@@ -290,6 +310,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   particle: {fileID: 4322493931549498828, guid: 4e460576e35f12746a140c7d852fa5d7, type: 3}
@@ -315,6 +337,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   speedX: 0
@@ -340,6 +364,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   child: {fileID: -678696639746219579}
@@ -365,6 +391,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 1
   wallCheckPositionOffset: {x: 0, y: 1.54}
@@ -394,6 +422,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   child: {fileID: -8886128451419311139}
@@ -421,6 +451,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   triggerName: idle
@@ -447,6 +479,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 1
   whatIsPlayer:
@@ -477,6 +511,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   teleportMaxDistance: 10
@@ -545,6 +581,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
 --- !u!114 &404433727853067797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -567,6 +605,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
 --- !u!114 &408804755492474741
@@ -591,6 +631,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   triggerName: idle
@@ -617,6 +659,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
 --- !u!114 &1744346723821349740
@@ -641,6 +685,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 1
   ledgeCheckPositionOffset: {x: 0.72, y: 0}
@@ -670,6 +716,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   HitBackTime: 0.2
@@ -696,6 +744,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
 --- !u!114 &2604048690599203366
@@ -720,6 +770,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   children:
@@ -750,6 +802,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   triggerName: idle
@@ -776,6 +830,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
 --- !u!114 &3440792101559892345
@@ -800,6 +856,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   child: {fileID: 1744346723821349740}
@@ -825,6 +883,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   children:
@@ -853,6 +913,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   child: {fileID: -6745357082860497203}
@@ -878,6 +940,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   children:
@@ -907,6 +971,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: <size=15>Attack 1</size>
   drawGizmos: 0
   children:
@@ -935,6 +1001,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   attackClipName: enemy_03_attack
@@ -963,6 +1031,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
 --- !u!114 &7407206398157304930
@@ -987,6 +1057,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   duration: 0.2
@@ -1012,6 +1084,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   children:
@@ -1039,6 +1113,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 1
   whatIsPlayer:
@@ -1069,6 +1145,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
 --- !u!114 &8902491042095749742
@@ -1093,6 +1171,8 @@ MonoBehaviour:
     BeHit: 0
     HitBackVelocity: {x: 0, y: 0}
     Dead: 0
+    Intro: 0
+    Introed: 0
   description: 
   drawGizmos: 0
   children:

@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5142041476262749979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5142041476262749978}
+  - component: {fileID: 5142041476262749977}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5142041476262749978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5142041476262749979}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.629545, y: -2.4634893, z: 7.7571363}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5142041476262749977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5142041476262749979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a4888e69a986944eb7bbd66bc972e36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - soundName: hero_walk
+    clip: {fileID: 8300000, guid: 9f36d9b47c988434bb056dde9a47526a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - soundName: hero_jump
+    clip: {fileID: 8300000, guid: 6ed7ca2f54532fc4bbbb951fe640c515, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - soundName: hero_climb
+    clip: {fileID: 8300000, guid: c38ef080623409646b450f15d01ecdb2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - soundName: hero_land
+    clip: {fileID: 8300000, guid: ece3dfa7f0e3e3f4c8b131e042d1ef35, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - soundName: enemy_hit_1
+    clip: {fileID: 8300000, guid: 155eea8245a91234ca736e02d9ec20c6, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - soundName: hero_attack_1
+    clip: {fileID: 8300000, guid: c50c2f4df1e220c4c86df578d85f3c86, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - soundName: hero_attack_2
+    clip: {fileID: 8300000, guid: 889913e1d68fcc1429f17340cc5aedd4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - soundName: hero_attack_3
+    clip: {fileID: 8300000, guid: 3ac32a5d7f2191a478f4f51ca09ba58d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - soundName: hero_attack_3
+    clip: {fileID: 8300000, guid: 3ac32a5d7f2191a478f4f51ca09ba58d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - soundName: hero_charge_attack
+    clip: {fileID: 8300000, guid: a3402af73c02cc544b0ee2cc39f88227, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - soundName: hero_dash
+    clip: {fileID: 8300000, guid: 468e5b0ce65e36743a4794a954ab3e73, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - soundName: bgm
+    clip: {fileID: 8300000, guid: d0a7de171f25a4149b230d76ea0726fc, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    audioSource: {fileID: 0}
+  - soundName: hero_hit
+    clip: {fileID: 8300000, guid: d1b1c54e943676443a9a3680bc96a88a, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - soundName: hero_die
+    clip: {fileID: 8300000, guid: 7b9fcd828d3e1a34faff0630e05b5375, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - soundName: hero_get_ability
+    clip: {fileID: 8300000, guid: e0bb28667a527de40a42a4e8eccf0c4d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - soundName: get_item
+    clip: {fileID: 8300000, guid: 8d68d8180f99deb4a9a6aa1a61e3cc95, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - soundName: explosion
+    clip: {fileID: 8300000, guid: 4cd327b64fe903a48a494c2baea19a49, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}
+  - soundName: shoot
+    clip: {fileID: 8300000, guid: 5fe31d5951994d34dbe4cae076ddb2b0, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    audioSource: {fileID: 0}

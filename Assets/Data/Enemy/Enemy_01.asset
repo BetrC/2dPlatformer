@@ -333,7 +333,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 4d384c9d1f3b16c4dbca9bef3afa7f39
-  position: {x: -481.86597, y: 1101.415}
+  position: {x: -460.66663, y: 1101.3334}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
@@ -431,6 +431,32 @@ MonoBehaviour:
   drawGizmos: 0
   healthCheckType: 1
   value: 0.2
+--- !u!114 &-1546116709744152407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49935a494dc20004ea3814bf5580564e, type: 3}
+  m_Name: FaceHero
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: c24959fcd54356d4595c86716a6c3706
+  position: {x: -610.6666, y: 1101.3334}
+  blackboard:
+    CurHealth: 0
+    MaxHealth: 0
+    BeHit: 0
+    HitBackVelocity: {x: 0, y: 0}
+    Dead: 0
+    Intro: 0
+    Introed: 0
+  description: 
+  drawGizmos: 0
 --- !u!114 &-678696639746219579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,7 +529,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: affa063b4e3856d4a8ece096995d0ade
-  position: {x: -699.1991, y: 1101.415}
+  position: {x: -761, y: 1101.3334}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
@@ -517,9 +543,9 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64
-  detectType: 0
+  detectType: 1
   detectOffset: {x: 0, y: 0}
-  detectDistance: 1
+  detectDistance: 2
 --- !u!114 &-362115716414750729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,7 +561,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 3c07cba63370b9b40a3ee314ff5815c6
-  position: {x: -892.5325, y: 1101.415}
+  position: {x: -961.66675, y: 1101.3334}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
@@ -609,6 +635,7 @@ MonoBehaviour:
   - {fileID: 3316838813604601714}
   - {fileID: -8268480659103267002}
   - {fileID: -4360333565575509007}
+  - {fileID: -1546116709744152407}
   blackboard:
     CurHealth: 0
     MaxHealth: 0
@@ -1046,7 +1073,7 @@ MonoBehaviour:
     m_Bits: 64
   detectType: 0
   detectOffset: {x: 0, y: 0}
-  detectDistance: 3
+  detectDistance: 6
 --- !u!114 &4970901029360993671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1163,6 +1190,7 @@ MonoBehaviour:
   children:
   - {fileID: -362115716414750729}
   - {fileID: -392975465634472440}
+  - {fileID: -1546116709744152407}
   - {fileID: -4613345489707878890}
   - {fileID: 6223481438165719420}
 --- !u!114 &6223481438165719420
@@ -1363,7 +1391,7 @@ MonoBehaviour:
     m_Bits: 64
   detectType: 0
   detectOffset: {x: 0, y: 0}
-  detectDistance: 2
+  detectDistance: 4
 --- !u!114 &9049260273935968951
 MonoBehaviour:
   m_ObjectHideFlags: 0

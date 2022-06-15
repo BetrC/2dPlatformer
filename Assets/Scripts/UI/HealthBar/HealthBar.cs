@@ -38,7 +38,7 @@ public class HealthBar : MonoBehaviour
         // 跟随角色位置
         if (bindActor != null && followTarget)
         {
-            transform.position = bindActor.GetHeadPosition();
+            transform.position = Camera.main.WorldToScreenPoint(bindActor.GetHeadPosition());
         }
     }
 

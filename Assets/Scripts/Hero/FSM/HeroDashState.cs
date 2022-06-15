@@ -8,8 +8,6 @@ using UnityEngine;
 
 public class HeroDashState : HeroAbilityState
 {
-    public DashTrail dashTrail;
-
     public int dashTime;
 
     public HeroDashState(StateMachine stateMachine, Hero hero, string animatorBoolParam) : base(stateMachine, hero, animatorBoolParam)
@@ -20,9 +18,8 @@ public class HeroDashState : HeroAbilityState
     {
         base.Enter();
         dashTime--;
-        if (dashTrail == null)
-            dashTrail = GameObject.FindObjectOfType<DashTrail>();
-        dashTrail.ShowTrail(hero);
+        DashTrail.Instance.ShowTrail(hero);
+
         hero.movement.SetFacingDirVelocityX(heroData.dashSpeed);
         hero.movement.SetGravityScale(heroData.dashGravityScale);
         hero.movement.SetBetterJumpEnable(false);

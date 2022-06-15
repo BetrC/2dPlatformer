@@ -43,7 +43,7 @@ public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T
         } else if (m_instance != this)
         {
             Debug.LogError("场景中存在多个相同类型的单例对象： " + GetType().Name + "，该对象将会被销毁");
-            DestroyImmediate(this);
+            DestroyImmediate(this.gameObject);
             return;
         }
 

@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34a8ac9d8a474b4b8a8edda66c778e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
+  damage: 4
   damageInterval: 0.1
 --- !u!1 &8608275286032882932
 GameObject:
@@ -303,6 +303,7 @@ GameObject:
   - component: {fileID: 8608275286032882819}
   - component: {fileID: 8608275286032882818}
   - component: {fileID: 8608275286032882940}
+  - component: {fileID: 3310308093706134174}
   m_Layer: 8
   m_Name: E1
   m_TagString: Untagged
@@ -369,7 +370,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1909678741
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 131859976, guid: c4ba1c58d076a1542984aa983eef267c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -461,7 +462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16bee903391a59b4e93f24fe59fc4bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHalthValue: 100
+  maxHalthValue: 80
 --- !u!114 &8608275286032882818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -475,8 +476,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  health: {fileID: 0}
   hitProtectionTime: 0
-  hitProtectionTimeLeft: 0
   hitBox: {fileID: 0}
   hazard: {fileID: 0}
   movement: {fileID: 0}
@@ -493,6 +494,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tree: {fileID: 11400000, guid: 52696e0c6edcaae4a81e422be76ee2f9, type: 2}
+--- !u!114 &3310308093706134174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8608275286032882932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73fd80e509e37f64d8a8e7d6f7be67c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - item: {fileID: 1270647340025877295, guid: 70c07c16acf2f9a448fd90bdeff629b8, type: 3}
+    dropRate: 0.8
+    minNum: 2
+    maxNum: 3
+  xOffsetMax: 3
+  yOffsetMax: 3
 --- !u!1 &8608275287142744560
 GameObject:
   m_ObjectHideFlags: 0

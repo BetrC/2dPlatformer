@@ -11,8 +11,6 @@ public class SpawnWaveProjectile : ActionNode
 
     public float spawnInterval;
 
-    public Vector2 force;
-
     public Transform spawnTrans;
 
     protected override void OnStart()
@@ -41,7 +39,7 @@ public class SpawnWaveProjectile : ActionNode
         AbstractProjectile projectile = Instantiate(prefab, spawnTrans.position, Quaternion.identity);
         projectile.Shooter = context.gameObject;
         projectile.transform.rotation = spawnTrans.rotation;
-        projectile.SetForce(force * context.movement.FacingDirection);
+        projectile.SetForce(Vector2.right * context.movement.FacingDirection);
     }
 }
 

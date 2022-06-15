@@ -17,7 +17,7 @@ public class UIHealthManager : MonoSingleton<UIHealthManager>
 
     public void Reset()
     {
-        HealthBarPool.Reset();
+        HealthBarPool.ResetPool();
     }
 
     private void Update()

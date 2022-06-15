@@ -6,8 +6,8 @@ using DG.Tweening;
 public enum FightNumType
 {
     HeroHit,
-    EnemyHit
-
+    EnemyHit,
+    HeroCure,
 }
 
 public class FightNumber : MonoBehaviour
@@ -19,22 +19,27 @@ public class FightNumber : MonoBehaviour
 
     public FightNumberConfig heroHitConfig;
 
+    public FightNumberConfig heroCureConfig;
+
 
     private FightNumberConfig GetConfigByHitType(FightNumType type)
     {
         switch (type)
         {
             case FightNumType.HeroHit:
-                return heroHitConfig;
+                    return heroHitConfig;
                 case FightNumType.EnemyHit:
-                return enemyHitconfig;
+                    return enemyHitconfig;
+                case FightNumType.HeroCure:
+                    return heroCureConfig;
         }
         return enemyHitconfig;
     }
 
     public void Begin(float value, Transform receiver, FightNumType hitType)
     {
-        text.text = value.ToString();
+
+        text.text = hitType == FightNumType.HeroCure ? "+" + value.ToString() : value.ToString();
         text.gameObject.SetActive(true);
 
         var config = GetConfigByHitType(hitType);

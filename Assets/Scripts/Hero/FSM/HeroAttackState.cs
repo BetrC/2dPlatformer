@@ -24,6 +24,9 @@ public class HeroAttackState : HeroAbilityState
         if (hero.secondaryWeapon.IsTriggered())
         {
             useWeapon = hero.secondaryWeapon.weapon;
+        } else if (hero.shootWeapon.IsTriggered())
+        {
+            useWeapon = hero.shootWeapon.weapon;
         }
 
         if (weapon != useWeapon)
@@ -60,8 +63,9 @@ public class HeroAttackState : HeroAbilityState
 
     public override bool TriggeredAbility()
     {
-        return hero.primaryWeapon.IsTriggered() ||
-            hero.secondaryWeapon.IsTriggered();
+        return hero.primaryWeapon.IsTriggered()
+            || hero.secondaryWeapon.IsTriggered()
+            || hero.shootWeapon.IsTriggered();
     }
 
     public void SetFlipCheck(bool check)

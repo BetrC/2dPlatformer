@@ -6,13 +6,19 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/start.unity
+    guid: 89a5245191978014e84ecf5f01ad49f5
+  - enabled: 1
+    path: Assets/Scenes/transition.unity
+    guid: a57e69457efc9fb439d4c78bdbbe89f4
+  - enabled: 1
     path: Assets/Scenes/Level0.unity
     guid: 78e5dc9117a6e43aabd75f86a1d38e93
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 54388fe5256c52f43bf2a8994a5353a1
   - enabled: 1
-    path: Assets/Scenes/Boss.unity
+    path: Assets/Scenes/Level-Boss.unity
     guid: 36ad46fb019ec9c488701aac744dc3ab
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 0e59ca320514cbc4383818515bc1ff8a, type: 2}

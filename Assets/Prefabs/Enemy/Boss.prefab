@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34a8ac9d8a474b4b8a8edda66c778e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 4
+  damage: 5
   damageInterval: 0.1
 --- !u!1 &1557112933690999009
 GameObject:
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34a8ac9d8a474b4b8a8edda66c778e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
+  damage: 4
   damageInterval: 0.1
 --- !u!1 &1557112933763429679
 GameObject:
@@ -321,6 +321,7 @@ GameObject:
   - component: {fileID: 1557112935338952239}
   - component: {fileID: 1557112935338952233}
   - component: {fileID: 701943467599203219}
+  - component: {fileID: 4060931911705611395}
   m_Layer: 8
   m_Name: Boss
   m_TagString: Untagged
@@ -388,7 +389,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1909678741
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -442835429, guid: 531054f960948dc46886ec89684e8e5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -480,7 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16bee903391a59b4e93f24fe59fc4bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHalthValue: 100
+  maxHalthValue: 150
 --- !u!114 &1557112935338952233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,11 +508,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  health: {fileID: 0}
   hitProtectionTime: 0
-  hitProtectionTimeLeft: 0
   hitBox: {fileID: 0}
   hazard: {fileID: 0}
   movement: {fileID: 0}
+--- !u!114 &4060931911705611395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557112935338952232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73fd80e509e37f64d8a8e7d6f7be67c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - item: {fileID: 1270647340025877295, guid: ddb964a47632e704d935c76303e0760e, type: 3}
+    dropRate: 1
+    minNum: 3
+    maxNum: 3
+  xOffsetMax: 5
+  yOffsetMax: 2
 --- !u!1 &6608779917679162045
 GameObject:
   m_ObjectHideFlags: 0

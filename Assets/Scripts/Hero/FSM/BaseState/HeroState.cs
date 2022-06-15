@@ -12,7 +12,7 @@ public class HeroState : State
     /// </summary>
     private string animatorBoolParam;
 
-    protected int FacingDirection => hero.movement.FacingDirection;
+    public int FacingDirection => hero.movement.FacingDirection;
 
     public bool CanReceiveHit;
 

@@ -16,5 +16,6 @@ MonoBehaviour:
   icon: {fileID: 1229647983, guid: 1a0c14f396eccd649b2f8d33e709e4fd, type: 3}
   useFunc: 0
   useParam: 1
+  description: Jump for a second time, help you get higher
   sound: hero_get_ability
-  particle: {fileID: 198677932445220266, guid: 25b05367a2d94704e9ecf501893e593d, type: 3}
+  particle: {fileID: 2461003346670393601, guid: 1e5fb692842736646bb7f2751e3f209d, type: 3}

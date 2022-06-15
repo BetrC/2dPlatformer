@@ -7,12 +7,14 @@ using UnityEngine;
 
 public class AcceleratingProjectile : AbstractProjectile
 {
-    public float speed = 5.0f;
-
     public float lifeTime = 4f;
 
     private Vector3 direction;
-    private Vector3 velocity;
+    public Vector3 velocity;
+
+    public float acceleration = 5.0f;
+
+    public bool hitDestroySelf = false;
 
     private void Start()
     {
@@ -23,25 +25,18 @@ public class AcceleratingProjectile : AbstractProjectile
     {
         this.force = force;
         direction = force.normalized;
+
+        velocity.x *= force.x;
+        velocity.y *= force.y;
+    }
+    protected override bool HitDestroySelf()
+    {
+        return hitDestroySelf;
     }
 
     void Update()
     {
-        velocity += direction * speed * Time.deltaTime;
+        velocity += direction * acceleration * Time.deltaTime;
         transform.position += velocity * Time.deltaTime;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        // Can't hurt yourself
-        if (collision.gameObject == Shooter)
-            return;
-
-        IDamageable damageable = collision.GetComponent<IDamageable>();
-
-        if (damageable != null)
-        {
-            damageable.TakeDamage(damage, Vector2.zero, 0);
-        }
     }
 }

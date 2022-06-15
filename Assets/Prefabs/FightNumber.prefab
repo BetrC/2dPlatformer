@@ -96,3 +96,4 @@ MonoBehaviour:
   text: {fileID: 3108274935531973960}
   enemyHitconfig: {fileID: 11400000, guid: 407036f703e79ed4aa0f82c0b10c208c, type: 2}
   heroHitConfig: {fileID: 11400000, guid: ddceea575f60e1946a7d3b99b79a52a0, type: 2}
+  heroCureConfig: {fileID: 11400000, guid: 45d93f19ddf3ac9418a295693b34cf1a, type: 2}

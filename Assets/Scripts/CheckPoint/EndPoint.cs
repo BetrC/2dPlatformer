@@ -6,11 +6,22 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(BoxCollider2D))]
 public class EndPoint : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D col)
+    public bool hasTriggered = false;
+
+    protected virtual void OnTriggerStay2D(Collider2D collision)
     {
-        if (col.CompareTag("Player"))
+        if (hasTriggered)
+            return;
+        if (collision is CircleCollider2D && collision.CompareTag("Player") && InputManager.Instance.GrabWallHolding)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            hasTriggered = true;
+            Leave();
         }
+    }
+
+    protected virtual void Leave()
+    {
+        GameManager.Instance.LoadLevel(SceneManager.GetActiveScene().buildIndex + 1);
+        GameUIManager.Instance.HideTips();
     }
 }
