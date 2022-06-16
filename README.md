@@ -24,13 +24,13 @@ This is an action platform game. you collect strawberry, kill the boss then fini
 
 ### Game Resource From:
 #### Art work:
-https://penusbmic.itch.io/sci-fi-hero-sprite
-https://www.kenney.nl/
-https://kingkelp.itch.io/8guns
+- https://penusbmic.itch.io/sci-fi-hero-sprite
+- https://www.kenney.nl/
+- https://kingkelp.itch.io/8guns
 
 #### Sounds:
-https://opengameart.org/content/12-player-movement-sfx
-https://opengameart.org/content/8-magic-attacks
-https://opengameart.org/content/sound-effects-pack-2
+- https://opengameart.org/content/12-player-movement-sfx
+- https://opengameart.org/content/8-magic-attacks
+- https://opengameart.org/content/sound-effects-pack-2
 
 Hope You Enjoy yourself.
