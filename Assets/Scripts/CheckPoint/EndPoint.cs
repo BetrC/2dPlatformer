@@ -12,7 +12,7 @@ public class EndPoint : MonoBehaviour
     {
         if (hasTriggered)
             return;
-        if (collision is CircleCollider2D && collision.CompareTag("Player") && InputManager.Instance.GrabWallHolding)
+        if (collision is CircleCollider2D && collision.CompareTag("Player") && InputManager.Instance.LeavePressed)
         {
             hasTriggered = true;
             Leave();

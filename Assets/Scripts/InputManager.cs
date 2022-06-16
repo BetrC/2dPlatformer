@@ -91,4 +91,6 @@ public class InputManager : Singleton<InputManager>
     public bool GrabWallHolding => Input.Player.GrabWall.IsPressed();
 
     public bool ShootHolding => Input.Player.Shoot.IsPressed();
+
+    public bool LeavePressed => Input.Player.Submit.triggered;
 }
