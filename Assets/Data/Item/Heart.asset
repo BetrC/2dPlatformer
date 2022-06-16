@@ -18,4 +18,4 @@ MonoBehaviour:
   useParam: 2
   description: 
   sound: 
-  particle: {fileID: 2461003346670393601, guid: 1e5fb692842736646bb7f2751e3f209d, type: 3}
+  particle: {fileID: 0}

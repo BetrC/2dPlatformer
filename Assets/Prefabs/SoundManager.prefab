@@ -118,7 +118,7 @@ MonoBehaviour:
     loop: 1
     audioSource: {fileID: 0}
   - soundName: hero_hit
-    clip: {fileID: 8300000, guid: d1b1c54e943676443a9a3680bc96a88a, type: 3}
+    clip: {fileID: 8300000, guid: 2d630fd6583a63840bb775c764c18ec4, type: 3}
     volume: 1
     pitch: 1
     loop: 0
