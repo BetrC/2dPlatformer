@@ -36,16 +36,14 @@ public class GameFinishUI : MonoBehaviour
     {
         strawBerryNum.text = $"{0}/{GameManager.maxStrawberryCount}";
         desc.gameObject.SetActive(false);
-
-        yield return new WaitForSeconds(.2f);
         int count = 0;
-        while(count <= GameManager.Instance.strawberryCount)
+        while(count <= GameManager.Instance.StrawberryCount)
         {
             strawBerryNum.text = $"{count++}/{GameManager.maxStrawberryCount}";
-            yield return new WaitForSeconds(.1f);
+            yield return new WaitForSeconds(.05f);
         }
 
-        desc.text = GameManager.Instance.strawberryCount < GameManager.maxStrawberryCount ? "Almost There!" : "You Are Absolutely An Animal!!";
+        desc.text = GameManager.Instance.StrawberryCount < GameManager.maxStrawberryCount ? "Almost There!" : "You Are Absolutely An Animal!!";
         desc.gameObject.SetActive(true);
     }
 

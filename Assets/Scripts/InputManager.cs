@@ -46,7 +46,7 @@ public class InputManager : Singleton<InputManager>
 
     private void Esc_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        GameUIManager.Instance.HideAllUI();
+        GameUIManager.Instance.HideMenu();
     }
 
     private void Menu_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)

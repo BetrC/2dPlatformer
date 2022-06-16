@@ -118,7 +118,12 @@ public class HeroInAirState : HeroState
         else if (hero.WallSlideState.IsTriggered())
         {
             stateMachine.ChangeState(hero.WallSlideState);
+        }else if (hero.WallJumpState.JumpInputBuffer)
+        {
+            stateMachine.ChangeState(hero.JumpState);
         }
+
+        hero.WallJumpState.ResetJumpInputBuffer();
 
         if (isExitingState)
             return;

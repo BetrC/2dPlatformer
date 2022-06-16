@@ -484,7 +484,7 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64
-  detectType: 1
+  detectType: 0
   detectOffset: {x: 0, y: 0}
   detectDistance: 6
 --- !u!114 &11400000

@@ -17,11 +17,24 @@ public class GameManager : MonoSingleton<GameManager>
     public Hero heroPrefab;
     public Hero hero;
 
-    public int strawberryCount = 0;
+    private int _strawberryCount = 0;
 
     public const int maxStrawberryCount = 12;
 
-    internal int waitToLoadSceneIndex = -1;
+    public int waitToLoadSceneIndex = -1;
+
+    public int StrawberryCount
+    {
+        get { return _strawberryCount; }
+        set
+        {
+            if (_strawberryCount != value)
+            {
+                _strawberryCount = value;
+                StrawBerryNumUpdate.Invoke(_strawberryCount);
+            }
+        }
+    }
 
     public OnStrawBerryNumUpdate StrawBerryNumUpdate = new();
     public OnHeroCreated OnHeroCreated = new();
@@ -36,8 +49,8 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void AddStrawberry(int useParam)
     {
-        strawberryCount++;
-        StrawBerryNumUpdate.Invoke(strawberryCount);
+        StrawberryCount = StrawberryCount + useParam;
+        StrawBerryNumUpdate.Invoke(StrawberryCount);
     }
 
     public bool IsCurSceneBoosScene()
@@ -75,6 +88,7 @@ public class GameManager : MonoSingleton<GameManager>
             FindOrCreateHero();
             UIHealthManager.Instance.Reset();
         }
+        GameUIManager.Instance.HideAllUI();
     }
 
     public void HitFreezeTime()
@@ -130,7 +144,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     public void ResetData()
     {
-        strawberryCount = 0;
+        StrawberryCount = 0;
         hero.health.Reset();
         AbilityManager.Instance.ResetAllAbility();
     }

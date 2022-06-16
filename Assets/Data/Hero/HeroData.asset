@@ -24,7 +24,6 @@ MonoBehaviour:
   coyoteTime: 0.15
   wallJumpCoyoteTime: 0.5
   jumpFallThreshould: 0.1
-  canJumpTime: 1
   dashSpeed: 40
   canDashTime: 1
   defaultGravityScale: 3

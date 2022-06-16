@@ -8,6 +8,8 @@ public class HeroWallJumpState : HeroAbilityState
 
     public int JumpDirection = 1;
 
+    public bool JumpInputBuffer = false;
+
     public HeroWallJumpState(StateMachine stateMachine, Hero hero, string animatorBoolParam) : base(stateMachine, hero, animatorBoolParam)
     {
     }
@@ -35,9 +37,18 @@ public class HeroWallJumpState : HeroAbilityState
     {
         base.LogicUpdate();
 
+        if (isExitingState)
+            return;
+
         if (Time.time > heroData.wallJumpTime + enterTime)
         {
             isAbilityDone = true;
+            return;
+        }
+
+        if (hero.JumpState.TriggeredAbility())
+        {
+            JumpInputBuffer = true;
         }
     }
 
@@ -53,7 +64,11 @@ public class HeroWallJumpState : HeroAbilityState
         }
     }
 
-
+    public void ResetJumpInputBuffer()
+    {
+        if (JumpInputBuffer)
+            JumpInputBuffer = false;
+    }
 
     public override bool TriggeredAbility()
     {

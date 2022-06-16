@@ -11,7 +11,7 @@ public class StrawBerryUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        num.text = GameManager.Instance.strawberryCount.ToString();
+        num.text = GameManager.Instance.StrawberryCount.ToString();
         GameManager.Instance.StrawBerryNumUpdate.AddListener(OnStrawBerryNumUpdate);
     }
 

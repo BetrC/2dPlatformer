@@ -99,8 +99,11 @@ public class GameUIManager : MonoSingleton<GameUIManager>
 
     public void HideAllUI()
     {
+        HideAbilityDetailUI();
+        HideFinishUI();
         HideMenu();
         HideAbilityDetailUI();
+
     }
 
     public void OnSubmit(InputAction.CallbackContext obj)
