@@ -46,6 +46,6 @@ SpriteAtlas:
   - Bar
   - white
   m_RenderDataMap: {}
-  m_Tag: New Sprite Atlas
+  m_Tag: Health
   m_IsVariant: 0
   m_IsPlaceholder: 0
