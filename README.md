@@ -1,6 +1,9 @@
 ### Game Description
 This is an action platform game. you collect strawberry, kill the boss then finish the game!
 
+### ITCH Link
+https://betrc.itch.io/edi
+
 ### How To Play
 - down the latest build version
 - unpack the downloaded file
