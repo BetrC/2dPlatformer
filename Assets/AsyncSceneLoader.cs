@@ -6,11 +6,14 @@ using UnityEngine.SceneManagement;
 public class AsyncSceneLoader : MonoBehaviour
 {
 
-    public float atLeastShowTime = 1f;
+    public float atLeastShowTime = 2f;
+
+    private float startTime;
 
     // Start is called before the first frame update
     void Start()
     {
+        startTime = Time.unscaledTime;
         StartCoroutine(LoadScene());
     }
 
@@ -19,7 +22,7 @@ public class AsyncSceneLoader : MonoBehaviour
         AsyncOperation async = SceneManager.LoadSceneAsync(GameManager.Instance.waitToLoadSceneIndex);
         async.allowSceneActivation = false;
 
-        while(async.progress < 0.9f || (Time.time < Time.timeSinceLevelLoad + atLeastShowTime))
+        while(async.progress < 0.9f || (Time.unscaledTime < startTime + atLeastShowTime))
         {
             yield return null;
         }

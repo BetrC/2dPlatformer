@@ -272,7 +272,6 @@ GameObject:
   m_Component:
   - component: {fileID: 408513392}
   - component: {fileID: 408513393}
-  - component: {fileID: 408513394}
   m_Layer: 0
   m_Name: AsyncSceneLoader
   m_TagString: Untagged
@@ -307,15 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0baa6cb1da418754f92f888cdf86708a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atLeastShowTime: 1
---- !u!81 &408513394
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408513391}
-  m_Enabled: 1
+  atLeastShowTime: 1.2
 --- !u!1 &538426702
 GameObject:
   m_ObjectHideFlags: 0
