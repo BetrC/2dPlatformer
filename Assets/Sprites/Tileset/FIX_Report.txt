@@ -1,0 +1,3 @@
+Why make an atlas?
+
+https://forum.unity.com/threads/tilemap-has-tearing-between-tiles-even-with-pixel-snap.499154/
